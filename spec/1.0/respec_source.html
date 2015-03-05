@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Archie Markup Language (ArchieML) 1.0</title>
+    <meta charset='utf-8'>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
+            async class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          specStatus: "unofficial",
+          shortName:  "archieml",
+          publishDate:  "2015-03-06",
+          logos: [{}],
+          editors: [
+                {   name:       "Michael Strickland",
+                    company:    "The New York Times",
+                    companyUrl: "http://www.nytimes.com",
+                    mailto:     "michael.strickland@nytimes.com" },
+          ],
+          authors: [
+                {   name:       "Jeremy Ashkenas",
+                    mailto:     "jeremy.ashkenas@nytimes.com"},
+                {   name:       "Matthew Ericson",
+                    mailto:     "matte@nytimes.com"},
+                {   name:       "Tom Giratikanon",
+                    mailto:     "tom.giratikanon@nytimes.com"},
+                {   name:       "Archie Tse",
+                    mailto:     "tse@nytimes.com"},
+          ],
+          additionalCopyrightHolders: "Copyright © 2015 The New York Times"
+      };
+    </script>
+
+    <style>
+      body {
+        background-image: none !important;
+        padding: 0em 1em 2em 2em !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+        ArchieML is a text format optimized for human writability. It was designed for users unfamiliar with existing serialization formats, and defines a forgiving, incremental parser that does not throw syntax errors.
+      </p>
+    </section>
+
+    <section id='sotd'>
+      <p>
+        This is the first candidate recommendation of the Archie Markup Language
+        specification. <strong>It is a pre-release draft of the spec</strong>. As such, it can implemented
+        in parsers, however this candidate should not be considered the definition of ArchieML
+        1.0.
+      </p>
+
+      <p>
+        The public is invited to provide feedback on this draft, either through
+        the <a href="https://github.com/NYTimes/archieml.org/issues">Github Issues</a> page
+        for archieml.org, or via email. The comment period on this candidate recommendation will be
+        open for at least four weeks following its publication. At that time, this
+        candidate will either be revised or promoted to a more final state, eventually
+        reaching recommendation status for the 1.0 release. That recommendation will
+        then be considered the definition of ArchieML 1.0.
+      </p>
+
+      <p>
+        Major changes to the spec at that point will not require implementation to be 1.0-compliant.
+      </p>
+
+      <p>
+        In the mean time, parsers that choose to implement this candidate version of the spec
+        should note the URL of this document prominently.
+      </p>
+    </section>
+
+    <section>
+      <section>
+        <h3>Goals</h3>
+
+        <ul>
+          <li>Whitespace should not be signifiant to the document structure</li>
+          <li>Unstructured text should be ignored, and shouldn't cause parsing errors</li>
+          <li>Data structures should be familiar to non-programmers, such as [inline comments] and arrays denoted by bullet points / asterisks</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Definitions</h3>
+
+        <ul>
+          <li>A <strong>token</strong> is defined as either a key, or a namespace for a key, either of which can use any of the following characeters: alphanumeric (upper- and lower-case), hyphens (-) and underscores (_). In addition, periods (.) may be used to specify nested keys or namespaces, but they may not appear at either end of a token.</li>
+          <li>The <strong>output</strong> is an object-like hash of data that will be returned by the parser.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h2>Parsing overview</h2>
+
+      <section>
+        <h3>Special tokens</h3>
+        <p>
+          Parsers should implement a system by which whole lines are interpreted either as a special command, or text to be read into a buffer.
+        </p>
+        <p>
+          Special lines are defined as those that begin with any of the following general patterns:
+        </p>
+        <ul>
+          <li>token:</li>
+          <li>:token</li>
+          <li>{token}</li>
+          <li>[token]</li>
+          <li>{}</li>
+          <li>[]</li>
+          <li>*</li>
+        </ul>
+        <p>
+          Any non-newline whitespace may appear at either end of a token or any of the punctuation used above ({, }, [, ], :, *), and parsing should not be affected. Special lines are defined by their beginnings; all text after the patterns mentioned above are valid and do not affect the line's status.
+        </p>
+        <p>
+          When a special line is found, logic should be executed that immediately affects the output. For example, if a key/value pair is encountered, the value specified on that line should immediately be added to the output. A document may end at any time, and the output object should always be in a state ready to be returned by the parser.
+        </p>
+        <p>
+          Based on context, some lines that fit one of the above patterns may not be defined as special; for example, bullet point lines ("* anything") are only special when the parser is inside an array. In these cases (defined below), the line should be interpreted as a non-special line.
+        </p>
+        <p>
+          All lines that are not "special" are interpreted as plain text. When they are encountered, they do not immediately affect the output. However, every non-special line should be incrementally placed into a buffer that is used during multi-line value parsing. This buffer should be emptied whenever a special line is encountered.
+        </p>
+      </section>
+
+      <section>
+        <h2>Conflict resolution</h2>
+
+        <p>
+          ArchieML does not throw syntax errors. Documents are parsed line by line, and any line that does not conform to one of the special line syntaxes above is interpreted as plain text. Syntax errors should thus be ignored.
+        </p>
+        <p>
+          If a key is encountered twice, the latter occurrence should take precedence. This is to say that no check needs to be made whether a key is defined twice; if that is the case, the key should simply be redefined, and the original value lost.
+        </p>
+        <p>
+          In cases where duplicate keys change the data structure of the output (for example, a key changes from holding a string to being a namespace for a complex object), the latter definition should again take precedence. Parsers should thus override the existing data structure of the output as necessary to accomodate special lines as they come in.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Keys</h2>
+
+      <p>
+        Keys, both at the top level of the output, and within nested objects, may contain only alphanumeric characters, hyphens and underscores, in any sequence. If other charactes are included, then the line should not be interpreted as a key/value pair, and instead treated as a non-special line.
+      </p>
+      <p>
+        Keys may be defined within key/value lines, as well as lines defining {objects} and [arrays]. The same rules apply in all cases.
+      </p>
+      <p>
+        Any key may also include any number of periods (.) that function as dot-notation to define nested values. At the time this key or object is defined, the output should conform the data structure suggested by the latest key. Any conflict resolution that needs to take place should happen immediately.
+      </p>
+    </section>
+
+    <section>
+      <h2>Values</h2>
+      <p>
+        Values are the characters that are stored within the output's data structure. Any characters that follow either "token:" or "*" at the start of a special line should immediately be stored as a value.
+      </p>
+      <p>
+        Values are always stored in the output as strings, and leading and trailing whitespace should be stripped away. A value ends when a newline is encountered.
+      </p>
+
+      <section>
+        <h2>Multi-line values</h2>
+
+        <p>
+          As mentioned above, all non-special lines should be stored into a buffer that resets whenever any special line is encountered. This is because multi-line strings (that extend beyond the initial newline encountered at the end of a value) are defined only by including an ending anchor tag, ":end". Tus, the parser can not know ahead of time whether the text after a value may need to be included.
+        </p>
+        <p>
+          When a special line beginning with ":end" is encountered, the buffer should be emptied. If the last special line that was parsed was either a "token:" line or a "*" line (both of which signal the start of a value), then the contents of the buffer should be appended to that value, which should already contain the first line of the value.
+        </p>
+        <p>
+          Because the first line of a value is always inserted into the output immediately (before the rest of the value is parsed), and surrounding whitespace around the initial values is discarded, care should be taken to preserve newlines between the first and second line of a value. A simple way to accomplish this is to send any trailing newline whitespace from the first line of a value into the buffer, so that it is included when you append the buffer to the value's first line.
+        </p>
+        <p>
+          As characters are added to the buffer, all whitespace should be preserved, including newlines. The end effect should be that leading whitespace on the first line, and trailing whitespace on the last line is discarded, and nothing else.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Escape characters</h2>
+
+      <p>
+        If you wish to include a line within a multi-line value that would normally be interpreted as a special line, you can escape the line. This is accomplished by prepending the line with a backslash (\).
+      </p>
+      <p>
+        At a basic level, this backslash has no special meaning. However, its presence should prevent the line from being treated as special.
+      </p>
+      <p>
+        To accomodate this, these leading backslashes must be removed when parsing multi-line values. All lines in a multi-line value (but not the first line, since no escaping of characters is necessary there) should be post-processed to remove these leading backslashes.
+      </p>
+      <p>
+        To avoid as much processing as possible, leading backslashes should be removed only when the backslash is the first character of a line, and when the second character is any of the following: {, [, *, : or \.
+      </p>
+      <p>
+        Parsers should always remove leading backslashes in these cases, whether or not the line would have been treated as special without it. Leading backslashes may, in turn, be escaped with an additional leading backslash, preserving the ability to actually begin a line with one in the output.
+      </p>
+    </section>
+
+    <section>
+      <h2>Object blocks</h2>
+
+      <p>
+        Object blocks are a shorthand way to avoid repeating a namespace for multiple keys. You can specify the start of an object block with a line that begins with {token}, where token is a key-like string that may include dot-notation.
+      </p>
+      <p>
+        All key-value pairs that are defined within this block should be added to the output within the namespace defined by the object line. In other words, a key "key" within the object block "{object}" should be parsed the same way as a key defined by "object.key".
+      </p>
+      <p>
+        The namespace defined by an object block should persist until either A) a new object block is defined, or B) an empty object or array key ({} or []) is encountered.
+      </p>
+      <p>
+        Object blocks are syntactic sugar. As such, keys within them should be treated exactly as they would if they'd defined their namespaces naturally through dot notation. Becase of this, object can be "reopened" if an object block is defined more than once. This is to say, avoiding any conflicts encountered from the conflict resoution section above, values should always be merged into the output without deleting values unless necessary.
+      </p>
+    </section>
+
+    <section>
+      <h2>Arrays</h2>
+
+      <section>
+        <h3>Object arrays</h3>
+
+        <p>
+          Arrays of objects can be defined to create multiple instances of an object. They begin by declaring an array line, similar to an object block above; however, arrays use square brackets instead of curly brackets. The token used should again be a key-like string in which dot-notation is allowed.
+        </p>
+        <p>
+          When an array definition is encountered, the parser may create an empty array at the given key if desired, or it may wait until a value is defined within it.
+        </p>
+        <p>
+          Keys within the array block should be assigned to an object within that array. All rules defined above relating to keys still applies, but within the scope of a particular object inside the array.
+        </p>
+        <p>
+          When an array begins, the parser should take note of the first key that is defined. Every time that key is defined again, the parser should create a new element inside the array, and that key's value, and subsequent values, should be added to that new object. The first key is thus an implicit element delimiter for the array.
+        </p>
+        <p>
+          If an array is reopened, then the first key defined within that occurance of the array should be used as the delimiter key, which may differ from the first delimiter key used.
+        </p>
+      </section>
+
+      <section>
+        <h3>String arrays</h3>
+
+        <p>
+          Arrays can also be created that contain only strings, not objects. They begin the same way as object arrays do, and the same rules apply around naming a string array. String arrays contain values defined by lines beginning with "*". All characters following an "*", minus surrounding whitespace, should be stored as a new value inside the array.
+        </p>
+        <p>
+          When an array is opened, the parser should take note of which special line is defined first: either a key/value line, or an asterisk (*) line. If the former is defined first, then the array is defined as an object array. Otherwise, it's defined as a string array.
+        </p>
+        <p>
+          Object arrays should treat "token:" lines as special, and "*" lines as non-special. String arrays should treat "token:" lines as non-special, and "*" lines as special.
+        </p>
+        <p>If an array is reopened, the original type of the array should still apply, and the other type of line should continue to be treated as non-special.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Inline comments</h2>
+
+      <p>
+        Inline comments in ArchieML is modeled after a longstanding practice in copy editing where editors notes are placed within square brackets. In this tradition, all text within a matching set of square brackets on a single line, including the brackets, should be ignored by parsers.
+      </p>
+      <p>
+        In the event that square brackets are desired in the final value, a double set of brackets should be used. Parsers should replace sets of double brackets with single sets of brackets in the output. Care should also be taken not to remove text inside single brackets that is surrounded by an additional set of brackets.
+      </p>
+      <p>
+        As with other special punctuation, surrounding non-newline whitespace should not affect parsing.</p>
+      </p>
+      <p>
+        To avoid making assumptions about the end use of the output, whitespace on either side of inline comments is preserved, which may result in extra whitespace after comments have been removed.
+      </p>
+    </section>
+
+    <section>
+      <h2>Command keys</h2>
+      <p>
+        Command keys are defined as any special line matching the ":token" pattern. Speciailly, parsers should only treat this pattern of line as special if the token begins with any of the following sequences (again, allowing any non-newline whitespace on either end of the colon (:) or token:
+      </p>
+      <ul>
+        <li>:skip</li>
+        <li>:endskip</li>
+        <li>:end</li>
+        <li>:ignore</li>
+      </ul>
+      <p>Any text after the token should be ignored, and should not affect whether the line is interpreted as a command key. This includes cases where the token and extra characters are not separated by whitespace, such as ":ignoreeverything". This is so that the intended effect of the command is not lost due to simple syntax errors.</p>
+      <p>Due to this flexibility, care should be taken so that ":endskip" lines are not interpreted as ":end" lines.</p>
+
+      <section>
+        <h3>End command</h3>
+
+        <p>The specifics of ":end" command keys are described above in "Multi-line values." It is noted here, however, that ":end" lines which occur after an object line ({object}), array line ([array]), or any other special line that is not a key/value line or array element line (*) should have no effect on the output.</p>
+      </section>
+
+      <section>
+        <h3>Skip blocks</h3>
+
+        <p>
+          When a line beginning with ":skip" is encountered, the parser should begin to ignore all lines of text. Non-special lines do not need to be added to the buffer, and all special lines can be ignored. With the exception of two lines: those beginning with either ":endskip" or ":ignore".
+        </p>
+        <p>
+          This allows for creating blocks of text where even lines that fit the formal of special keys are ignored and do not affect parsing.
+        </p>
+        <p>
+          Encountering ":endskip" should resume normal parsing. No special actions need be taken upon resuming parsing, and the buffer should be empty at this point. ":ignore" lines should be handled as defined below.
+        </p>
+      </section>
+
+      <section>
+        <h3>Ignore</h3>
+
+        <p>
+          As soon as a line beginning with ":ignore" is encountered, parsing should stop immediately, and the output should be returned. This is a safety mechanism to allow for a safe comment / scratchpad area that has no chance of ending up in, or affecting, the output.
+        </p>
+      </section>
+    </section>
+
+    <script class='remove'>
+      setTimeout(function() {
+        $('link').attr('href', 'w3c-unofficial.css')
+        $('h2')[0].firstChild.data = "Candidate Recommendation ";
+        $('#sotd p')[0].remove();
+      }, 1000);
+    </script>
+
+  </body>
+</html>

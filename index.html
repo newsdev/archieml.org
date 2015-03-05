@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html en="en">
+<head>
+  <meta charset='utf-8'>
+  <title>Archie Markup Language (ArchieML)</title>
+  <meta name="description" content="ArchieML is a text format optimized for human writability. It was designed for users unfamiliar with existing serialization formats, and defines a forgiving, incremental parser that does not throw syntax errors.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://archieml.org">
+  <meta name="twitter:title" content="Archie Markup Language (ArchieML)">
+  <meta name="twitter:description" content="ArchieML is a text format optimized for human writability, with a syntax designed to be as simple as possible.">
+  <meta name="twitter:image" content="TK">
+  <link rel="canonical" href="http://archieml.org/" />
+  <link href="poole.css" media="all" rel="stylesheet" />
+  <link href="hyde.css" media="all" rel="stylesheet" />
+  <link href="archieml.css" media="all" rel="stylesheet" />
+
+  <script type="text/javascript" src="http://typeface.nytimes.com/zam5nzz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script src="archieml.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <div><img style="margin:0 auto; display: block;" src="archieml-tri.png" width="200"></div>
+      <h1>ArchieML</h1>
+      <p class="lead" style="line-height:1.7rem; font-size: 1.1rem; margin-bottom: 40px;">ArchieML is a text format optimized for human writability.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item sidebar-nav-hash"><a href="#resources">Resources</a></li>
+      <li class="sidebar-nav-item sidebar-nav-hash"><a href="#demo">Demo</a></li>
+      <li class="sidebar-nav-item sidebar-nav-hash"><a href="#usage">Usage</a></li>
+      <li class="sidebar-nav-item"><a href="/spec/1.0/CR-20150306.html">Spec</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content container">
+  <h2>What is ArchieML?</h2>
+  <p>
+    ArchieML was created at The New York Times to make it easier to write and edit copy that could simultaneously be used to prototype web pages, or more specifically interactive graphics. One of the main goals was to make it easy to tag text as data, without having to type a lot of special characters. Another goal was to allow the document to contain lots of notes and draft text that would not be read into the data.
+  </p>
+
+  <hr>
+
+  <p>ArchieML makes several core assumptions to make it easy to use:</p>
+
+  <ul>
+    <li>Whitespace is not signifiant to the document structure</li>
+    <li>Unstructured text is ignored, and doesn't cause parsing errors</li>
+    <li>Data structures are familiar to non-programmers, such as [inline comments] and arrays denoted by bullet points / asterisks</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="resources">Resources</h2>
+
+  <p>There are two official parsers that implement the ArchieML spec. Both are open source and have test coverage.</p>
+
+  <ul>
+    <li><strong>js-archieml</strong> is a JavaScript AML parser that is available over npm and supports use in-browser and using AMD. <a href="https://github.com/newsdev/js-archieml">Github</a>. <a href="https://www.npmjs.com/packages/js-archieml">npm</a>.</li>
+    <li><strong>rb_aml</strong> is a Ruby AML parser available over RubyGems. <a href="https://github.com/newsdev/rb_aml">Github</a>. <a href="https://rubygems.org/gems/rb_aml">RubyGems</a>.</li>
+  </ul>
+
+  <p>At The New York Times, we normally write ArchieML in Google Documents. Both parsers include quickstart examples for how to download text from Google Docs and run it through the parser. They also include some formatting steps we take, such as converting links to HTML tags. <a href="https://github.com/newsdev/js-archieml/tree/master#using-with-google-documents">JavaScript example</a>. <a href="https://github.com/newsdev/rb_aml/tree/master#using-with-google-documents">Ruby example</a>.</p>
+
+  <hr>
+
+  <h2 id="demo">Introductory Demo</h2>
+
+  <p>Click on any ArchieML textarea to try it out yourself, and see how changes affect the output.</p>
+
+  <h3>Keys and values</h3>
+
+  <p>Strings can be stored as part of key/value pairs, defined whenever a line in ArchieML begins with a token followed by a colon. Keys can contain letters, numbers, hypens and underscores. The rest of the string is the value.</p>
+
+<aml>
+key: This is a value
+</aml>
+
+  <p>Whitespace surrounding keys and values is ignored. Indent as you like. Keys are case sensitive.</p>
+
+<aml>
+1: value
+2:value
+3   : value
+ 4:    value
+5:	value	
+
+key: value
+Key: value
+</aml>
+
+  <p>Lines that don't like keys or other special commands are ignored:</p>
+
+<aml>
+This is a key:
+
+  key: value
+
+It's a nice key!
+</aml>
+
+  <h3>Nested key structure</h3>
+
+  <p>Use dot-notation to create nested objects.</p>
+
+<aml>
+colors.red: #f00;
+colors.green: #0f0;
+colors.blue: #00f;
+</aml>
+
+  <p>You can also use "object" blocks to namespace a group of keys.</p>
+
+<aml>
+{colors}
+red: #f00;
+green: #0f0;
+blue: #00f;
+
+{numbers}
+one: 1
+ten: 10
+one-hundred: 100
+{}
+
+key: value
+</aml>
+
+  <p>You can end an object with a line beginning with {}, or by beginning a new object. ArchieML is parsed one line at a time, so ending "tags" like {} are never required.</p>
+
+  <p>Dot notaion can be used in object namespaces as well:</p>
+
+<aml>
+{colors.reds}
+crimson: #dc143c;
+darkred: #8b0000;
+
+{colors.blues}
+cornflowerblue: #6495ed;
+darkblue: #00008b;
+</aml>
+
+  <h3>Arrays of objects</h3>
+  <p>Groups of keys can be placed inside an array by giving the array a name within brackets. The name of the array can be any valid key, and can use dot-notation. You can optionally end an array with an empty set of brackets, or by beginning a new array.</p>
+
+<aml>
+[scope.array]
+[]
+</aml>
+
+  <p>All keys inside the array are inserted into a single object within the array. The parser remembers the first key it found, and whenever it encounters it again, a new object is started.</p>
+
+<aml>
+[arrayName]
+
+Jeremy spoke with her on Friday, follow-up scheduled for next week
+name: Amanda
+age: 26
+
+# Contact: 434-555-1234
+name: Tessa
+age: 30
+
+[]
+</aml>
+
+  <h3>Arrays of strings</h3>
+
+  <p>You can also create "simple" or "flat" arrays of strings. If an asterisk is encountered first within an array, that array will become a simple array, and key/value pairs within it will be ignored. If a key/value pairs is encountered first, then asterisk lines will be ignored.</p>
+
+<aml>
+[days]
+* Sunday
+note: holiday!
+* Monday
+* Tuesday
+
+Whitespace is still fine around the '*'
+  *   Wednesday
+
+* Thursday
+
+Friday!
+* Friday
+* Saturday
+[]
+</aml>
+
+  <h3>Multi-line values</h3>
+
+  <p>Values automatically end when a newline is encountered. But all subsequent text is read into a buffer that can be added to that key. Anchor the end of a multi-line value by following the value with a line beginning with ":end". All whitespace within the block is preserved.</p>
+
+  <p>Try removing the last line to see how it changes the output:</p>
+
+<aml>
+key: value
+ More value
+
+Even more value
+:end
+</aml>
+
+  <h4>Works within object and simple arrays</h4>
+
+<aml>
+[arrays.complex]
+key: value
+more value
+:end
+
+[arrays.simple]
+* value
+more value
+:end
+</aml>
+
+  <h4>Escape characters</h4>
+
+  <p>You can place any text inside of a multi-line value. If one of your lines would be interpreted by the parser as a key or some other special command, you may have to escape that line by adding a backslack to the beginning of it. The backslash won't be included in the value.</p>
+  <p>Try removing the backslashes from the following lines:</p>
+
+<aml>
+key: value
+\:end
+:end
+</aml>
+
+<aml>
+key: value
+more\: value
+:end
+</aml>
+
+<aml>
+key: value
+[escaping *s is not necessary if we're not inside an array, but will still be removed]
+\* value
+:end
+</aml>
+
+<aml>
+key: value
+\:ignore
+\:skip
+\:endskip
+:end
+</aml>
+
+  <h3>Inline comments</h3>
+
+  <p>Anything within a complete set of single brackets on one line will be ignored.</p>
+
+<aml>
+title: Lorem ipsum [IGNORED] dolor sit amet
+</aml>
+
+  <p>Double up the brackets to preserve a single set.</p>
+
+<aml>
+title: Lorem ipsum [[PRESERVED]] dolor sit amet
+</aml>
+
+  <h3>Block comments</h3>
+
+  <p>Wrap text between lines that begin with ":skip" and ":endskip" to ignore blocks of text.</p>
+
+<aml>
+:skip
+  this: text
+  will: be
+  ignored
+:endskip
+</aml>
+
+  <p>There is also a safety mechanism of sorts built in. When the parser encounters a line beginning with ":ignore" (even if it's within a :skip block), parsing immediately stops, and the rest of the document is ignored.</p>
+
+<aml>
+key: value
+:ignore
+
+[array]
+* Blah
+[]
+
+other-key: other value
+</aml>
+
+  <script type="text/javascript">
+    var amls = Array.prototype.slice.call(document.getElementsByTagName('aml'));
+    amls.forEach(function(aml) {
+      var div = document.createElement('div');
+      div.setAttribute('class', 'example');
+      div.appendChild(document.createElement('div'));
+      div.appendChild(document.createElement('div'));
+      div.children[0].appendChild(document.createElement('textarea'));
+      div.children[1].appendChild(document.createElement('pre'));
+      div.children[0].children[0].value = aml.innerText.replace(/(^\n)|(\n$)/g, '');
+
+      var parent = aml.parentNode;
+      parent.insertBefore(div, aml.nextSibling);
+      parent.removeChild(aml);
+
+      var source = div.children[0].children[0];
+      var destination = source.parentNode.parentNode.children[1].children[0];
+      source.style['min-height'] = (source.scrollHeight + 2) + 'px';
+      source.addEventListener('keyup', function(e) {
+        destination.innerHTML = JSON.stringify(load(source.value), null, 2);
+      });
+      source.dispatchEvent(new Event('keyup'));
+    });
+  </script>
+
+  <hr>
+
+  <h2 id="usage">Usage</h2>
+
+  <p>If you use JavaScript or Ruby, we hope you'll try one of the <a href="#resources">existing ArchieML parsers</a>.</p>
+  
+  <p>If you want to make a parser yourself (or want the technical details on the format), the full specification is online <a href="/spec/1.0/">here</a>.</p>
+  <p>Questions or concerns? The Github repository for this site is available at <a href="https://github.com/NYTimes/archieml.org">NYTimes/archieml.org</a>, and you can use its <a href="https://github.com/NYTimes/archieml.org/issues">Issues</a> page to submit questions or bugs on the spec itself.</p>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60337978-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</div>
+
+</body>
+</html>
