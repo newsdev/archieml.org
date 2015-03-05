@@ -49,7 +49,7 @@ div.example > div > textarea {
 }
 div.example > div > textarea:hover {
   outline: none;
-  border: 1px solid lime;
+  border: 1px solid coral;
   transition:         border-color 0.2s linear;
   -webkit-transition: border-color 0.2s linear;
 }
