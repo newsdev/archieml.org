@@ -92,3 +92,6 @@ div.example div pre, div div textarea {
   box-sizing: border-box;
 }
 aml { display: none; }
+acronym {
+  border-bottom: 1px dotted #CCC;
+}
