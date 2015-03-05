@@ -47,9 +47,17 @@ div.example > div > textarea {
   min-height: 78px;
   border: 1px solid #eee;
 }
+div.example > div > textarea:hover {
+  outline: none;
+  border: 1px solid lime;
+  transition:         border-color 0.2s linear;
+  -webkit-transition: border-color 0.2s linear;
+}
 div.example > div > textarea:focus {
   outline: none;
   border: 1px solid #444;
+  transition:         border-color 0.2s linear;
+  -webkit-transition: border-color 0.2s linear;
 }
 div.example > div > pre {
   padding: 15px;
