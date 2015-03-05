@@ -44,7 +44,7 @@ function load(input) {
       parseStartKey(match[1], match[2] || '');
 
     } else if (!isSkipping && arrayElement.exec(input) && array && arrayType !== 'complex') {
-      match = arrayElement.exec(input)
+      match = arrayElement.exec(input);
 
       parseArrayElement(match[1]);
 
@@ -98,7 +98,7 @@ function load(input) {
 
     arrayType = arrayType || 'simple';
 
-    array.push('')
+    array.push('');
     bufferKey = array;
     bufferString = value;
     flushBufferInto(array, {replace: true});
@@ -155,16 +155,16 @@ function load(input) {
       var keyScope = data;
       var keyBits = scopeKey.split('.');
       for (var i=0; i<keyBits.length - 1; i++) {
-        keyScope = keyScope[keyBits[i]] = keyScope[keyBits[i]] || {}
+        keyScope = keyScope[keyBits[i]] = keyScope[keyBits[i]] || {};
       }
 
       if (scopeType == '[') {
         array = keyScope[keyBits[keyBits.length - 1]] = keyScope[keyBits[keyBits.length - 1]] || [];
         // If we're reopening this array, set the arrayType
-        if (array.length > 0) arrayType = typeof array[0] === 'string' ? 'simple' : 'complex'
+        if (array.length > 0) arrayType = typeof array[0] === 'string' ? 'simple' : 'complex';
 
       } else if (scopeType == '{') {
-        scope = keyScope[keyBits[keyBits.length - 1]] = keyScope[keyBits[keyBits.length - 1]] || {}
+        scope = keyScope[keyBits[keyBits.length - 1]] = keyScope[keyBits[keyBits.length - 1]] || {};
       }
     }
   }
@@ -175,19 +175,17 @@ function load(input) {
 
     if (type == 'append') {
       // If we're appending to a multi-line string, escape special punctuation
-      // (:, [, {, *, \) at the beginning of any line, and (:) immediately after
-      // a valid key token at the beginning of any line.
+      // by using a backslash at the beginning of any line.
       // Note we do not do this processing for the first line of any value.
-      value = value.replace(new RegExp('^(\\s*)\\\\(:|\\[|\\{|\\*|\\\\)'), "$1$2")
-      value = value.replace(new RegExp('^(\\s*[A-Za-z0-9-_\.]+[ \t\r]*)\\\\(:)'), "$1$2")
+      value = value.replace(new RegExp('^(\\s*)\\\\'), "$1");
     }
 
-    return value
+    return value;
   }
 
   function flushBuffer() {
     var result = bufferString + '';
-    bufferString = ''
+    bufferString = '';
     return result;
   }
 
@@ -199,12 +197,12 @@ function load(input) {
       value = formatValue(value, 'replace').replace(new RegExp('^\\s*'), '');
       bufferString = (new RegExp('\\s*$')).exec(value)[0];
     } else {
-      value = formatValue(value, 'append')
+      value = formatValue(value, 'append');
     }
 
     if (typeof key === 'object') {
       // key is an array
-      if (options.replace) key[key.length - 1] = ''
+      if (options.replace) key[key.length - 1] = '';
 
       key[key.length - 1] += value.replace(new RegExp('\\s*$'), '');
 
@@ -213,8 +211,8 @@ function load(input) {
       bufferScope = scope;
 
       for (var i=0; i<keyBits.length - 1; i++) {
-        if (typeof bufferScope[keyBits[i]] === 'string') bufferScope[keyBits[i]] = {}
-        bufferScope = bufferScope[keyBits[i]] = bufferScope[keyBits[i]] || {}
+        if (typeof bufferScope[keyBits[i]] === 'string') bufferScope[keyBits[i]] = {};
+        bufferScope = bufferScope[keyBits[i]] = bufferScope[keyBits[i]] || {};
       }
 
       if (options.replace) bufferScope[keyBits[keyBits.length - 1]] = '';
@@ -234,19 +232,21 @@ function load(input) {
 }
 
 var root = this;
+var archieml = {load: load};
 
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
-    exports = module.exports = load;
+    exports = module.exports = archieml;
   }
-  exports.load = load;
+  exports.archieml = archieml;
 } else {
-  this.load = load;
+  this.archieml = archieml;
 }
 
 if (typeof define === 'function' && define.amd) {
   define('archieml', [], function() {
-    return root;
+    return archieml;
   });
 }
 }.call(this))
+
