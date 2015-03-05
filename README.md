@@ -4,7 +4,7 @@ This codebase powers the [archieml.org](http://archieml.org) website.
 
 ## Archie Markup Language Specification
 
-This repository is also the main discussion form for issues and suggestions on the ArchieML spec. Please use the [Issues](https://github.com/newsdev/archieml.org) page to contribute.
+This repository is also the main discussion form for issues and suggestions on the ArchieML spec. Please use the [Issues](https://github.com/NYTimes/archieml.org/issues) page to contribute.
 
 ## Parsers
 
