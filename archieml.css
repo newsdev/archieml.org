@@ -4,12 +4,6 @@ html {
 .sidebar-about h1 {
   font-size: 3rem;
 }
-.sidebar-nav-item {
-  margin: 0 0 0 21px;
-}
-.sidebar-nav-hash {
-  margin: 0;
-}
 .sidebar-nav-hash:before {
   content: "#";
   font-family: "nyt-stymie", serif;
