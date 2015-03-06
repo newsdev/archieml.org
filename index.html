@@ -34,7 +34,7 @@
     <div class="sidebar-about">
       <div><img style="margin:0 auto; display: block;" src="/assets/archieml-tri.png" width="200"></div>
       <h1>ArchieML</h1>
-      <p class="lead">ArchieML is a text format optimized for human writability.</p>
+      <p class="lead">ArchieML is a structured text format optimized for human writability.</p>
     </div>
 
     <ul class="sidebar-nav">
@@ -50,10 +50,14 @@
 <div class="content container">
   <h2>What is Archie Markup Language?</h2>
   <p>
-    ArchieML (or "AML") was created at The New York Times to make it easier to write and edit copy that could simultaneously be used to prototype web pages, or more specifically interactive graphics. One of the main goals was to make it easy to tag text as data, without having to type a lot of special characters. Another goal was to allow the document to contain lots of notes and draft text that would not be read into the data.
+    ArchieML (or "AML") was created at The New York Times to make it easier to write and edit structured text on deadline that could simultaneously be used to render in web pages, or more specifically interactive graphics. 
+  </p>
+  <p>One of the main goals was to make it easy to tag text as data, without having type a lot of special characters. Another goal was to allow the document to contain lots of notes and draft text that would not be read into the data. And finally, because we make extensive use of Google Documents's concurrent editing features — while working on a graphic, we can have several reporters, editors and developers all pouring information into a single document — we wanted to have a format could survive being edited by users who may never have seen ArchieML or any other markup language at all before.
   </p>
 
   <hr>
+
+  <h3>Why not YAML? Or JSON?</h3>
 
   <p>ArchieML differs from other populate formats like <a href="http://yaml.org/">YAML</a> and <a href="http://json.org/">JSON</a> in several areas that we've found are key to making it easy to use:</p>
 
@@ -74,14 +78,25 @@
     </li>
     <li>
       <p>
-        <strong>Data structures are familiar to non-programmers</strong>
+        <strong>The notation makes sense to non-programmers</strong>
         <br>
-        Lists of values are noted with bullet points / asterisks, not hyphens or quoted strings that must be separated with commas. Comments are written [INLINE INSIDE BRACKETS? THIS WORK, RACHEL?].
+        Lists of values are noted with bullet points / asterisks, not hyphens or quoted strings that must be separated with commas. Comments are written [INLINE INSIDE BRACKETS? THIS WORK, RACHEL?]. A overriding goal was to have a intuitive format that could be passed to a non-technical user  — a reporter, an assigning editor or a copy editor — for them to edit, and chances are they'd be able to make all the changes they need without breaking the parsing of document. If we were using another format, we'd have to explain indentation rules in YAML, or how to match curly braces or properly escape quotation marks in JSON, and so forth.
       </p>
     </li>
   </ul>
 
   <hr>
+
+  <h3>How Does It Work in Practice?</h3>
+
+  <p>For a very simple example, here's the Google Doc that powers a <a href="http://www.nytimes.com/interactive/2015/01/31/sports/football/common-ploys-of-patriots-and-seahawks.html">recent graphic about the trick plays</a> used by the New England Patriots and Seattle Seahawks:</p> 
+
+  <div class="example-image"><img src="assets/example-football.png"></div>
+
+  <p>To generate the graphic, we load the ArchieML data from the document using the <a href="https://www.npmjs.com/packages/archieml-js">archieml-js npm module</a>, then pass it to an underscore template to render the final markup server-side. This lets the journalists who are focusing on the text and content concentrate on getting the copy in shape independently of the developers working on the graphic.</p>
+
+  <p>While this is a very simple example, with only a few bits of text and data, we're covering a breaking news story, we can have a half-dozen people all contributing to a Google Doc at the same time as we gather all the information we need for a graphic and turn it into the final copy blocks that make their way into the finished piece.</p>
+
 
   <h2 id="resources">Resources</h2>
 
