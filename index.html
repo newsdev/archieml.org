@@ -361,7 +361,8 @@ other-key: other value
       div.appendChild(document.createElement('div'));
       div.children[0].appendChild(document.createElement('textarea'));
       div.children[1].appendChild(document.createElement('pre'));
-      div.children[0].children[0].value = aml.innerText.replace(/(^\n)|(\n$)/g, '');
+      var content = aml.innerText || aml.childNodes[0].data;
+      div.children[0].children[0].value = content.replace(/(^\n)|(\n$)/g, '');
 
       var parent = aml.parentNode;
       parent.insertBefore(div, aml.nextSibling);
