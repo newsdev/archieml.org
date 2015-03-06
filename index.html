@@ -47,19 +47,37 @@
 </div>
 
 <div class="content container">
-  <h2>What is ArchieML?</h2>
+  <h2>What is Archie Markup Language?</h2>
   <p>
-    ArchieML was created at The New York Times to make it easier to write and edit copy that could simultaneously be used to prototype web pages, or more specifically interactive graphics. One of the main goals was to make it easy to tag text as data, without having to type a lot of special characters. Another goal was to allow the document to contain lots of notes and draft text that would not be read into the data.
+    ArchieML (or "AML") was created at The New York Times to make it easier to write and edit copy that could simultaneously be used to prototype web pages, or more specifically interactive graphics. One of the main goals was to make it easy to tag text as data, without having to type a lot of special characters. Another goal was to allow the document to contain lots of notes and draft text that would not be read into the data.
   </p>
 
   <hr>
 
-  <p>ArchieML makes several core assumptions to make it easy to use:</p>
+  <p>ArchieML differs from other populate formats like <a href="http://yaml.org/">YAML</a> and <a href="http://json.org/">JSON</a> in several areas that we've found are key to making it easy to use:</p>
 
   <ul>
-    <li>Whitespace is not significant to the document structure</li>
-    <li>Unstructured text is ignored, and doesn't cause parsing errors</li>
-    <li>Data structures are familiar to non-programmers, such as [inline comments] and arrays denoted by bullet points / asterisks</li>
+    <li>
+      <p>
+        <strong>Whitespace is not significant to the document structure</strong>
+        <br>
+        In YAML, lines must be indented precisely and variably; the wrong number of spaces to the left of a key invalidates the document, and tabs can't be used. AML ignores all whitespace not within a value. We believe this makes it easier for non-programmers to use, and is essential for use in environments with non-monospaced fonts, like in Google Documents.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Unstructured text is ignored; there is no such thing as a parsing error</strong>
+        <br>
+        AML was designed so that writers could work in a freeform environment. They should be able to add inline comments to text or entire paragraphs as scratch work that do not appear in the output. JSON and YAML have strict schemas that forbid text deviating from a pattern. AML doesn't assume text follows any pattern. If it finds text that looks like data, it treats it as data. Otherwise, it moves on.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Data structures are familiar to non-programmers</strong>
+        <br>
+        Lists of values are noted with bullet points / asterisks, not hyphens or quoted strings that must be separated with commas. Comments are written [INLINE INSIDE BRACKETS? THIS WORK, RACHEL?].
+      </p>
+    </li>
   </ul>
 
   <hr>
