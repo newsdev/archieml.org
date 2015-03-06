@@ -10,6 +10,39 @@ html {
   color: #fff;
   margin: 0 8px 0 0;
 }
+.lead {
+  line-height:1.7rem;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+.rear {
+  font-weight: normal;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.rear:before {
+  content: "“";
+  text-align: right;
+  left: -1.4rem;
+  top: 0.4rem;
+}
+.rear:after {
+  content: "”";
+  right: -1.4rem;
+  bottom: -0.4rem;
+}
+.rear:before, .rear:after {
+  color: #444;
+  width: 1rem;
+  display: inline-block;
+  position: absolute;
+  font-size: 2rem;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: "nyt-stymie", serif;
 }
