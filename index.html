@@ -162,6 +162,8 @@
 
   <p>Click on any ArchieML textarea to try it out yourself, and see how changes affect the output.</p>
 
+  <p>Or try out ArchieML in the <a href="/sandbox.html">Sandbox</a>.</p>
+
   <h3>Keys and values</h3>
 
   <p>Strings can be stored as part of key/value pairs, defined whenever a line in ArchieML begins with a token followed by a colon. Keys can contain letters, numbers, hypens and underscores. The rest of the string is the value.</p>
@@ -379,38 +381,12 @@ key: value
 other-key: other value
 </aml>
 
-  <script type="text/javascript">
-    var amls = Array.prototype.slice.call(document.getElementsByTagName('aml'));
-    amls.forEach(function(aml) {
-      var div = document.createElement('div');
-      div.setAttribute('class', 'example');
-      div.appendChild(document.createElement('div'));
-      div.appendChild(document.createElement('div'));
-      div.children[0].appendChild(document.createElement('textarea'));
-      div.children[1].appendChild(document.createElement('pre'));
-      var content = aml.innerText || aml.childNodes[0].data;
-      div.children[0].children[0].value = content.replace(/(^\n)|(\n$)/g, '');
-
-      var parent = aml.parentNode;
-      parent.insertBefore(div, aml.nextSibling);
-      parent.removeChild(aml);
-
-      var source = div.children[0].children[0];
-      var destination = source.parentNode.parentNode.children[1].children[0];
-      source.style['min-height'] = (source.scrollHeight + 2) + 'px';
-      source.addEventListener('keyup', function(e) {
-        destination.innerHTML = JSON.stringify(archieml.load(source.value), null, 2);
-      });
-      source.dispatchEvent(new Event('keyup'));
-    });
-  </script>
-
   <hr>
 
   <h2 id="usage">Usage</h2>
 
   <p>If you use JavaScript or Ruby, we hope you'll try one of the <a href="#resources">existing ArchieML parsers</a>.</p>
-  
+
   <p>If you want to make a parser yourself (or want the technical details on the format), the full specification is online <a href="/spec/1.0/">here</a>.</p>
   <p>Questions or concerns? The Github repository for this site is available at <a href="https://github.com/newsdev/archieml.org">newsdev/archieml.org</a>, and you can use its <a href="https://github.com/newsdev/archieml.org/issues">Issues</a> page to submit questions or bugs on the spec itself.</p>
 
@@ -419,18 +395,18 @@ other-key: other value
   <p style="font-size:.8em;opacity:0.5;">Created by <a href="https://twitter.com/moriogawa">Michael Strickland</a>, <a href="https://twitter.com/archietse">Archie Tse</a> and <a href="https://twitter.com/mericson">Matthew Ericson</a> / <a href="https://github.com/newsdev">The New York Times</a></p>
   <p style="font-size:.8em;opacity:0.5;">Copyright (c) 2015 The New York Times Company</p>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-60337978-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
 </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60337978-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="/assets/sandbox.js"></script>
 
 </body>
 </html>

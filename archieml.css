@@ -134,3 +134,36 @@ footer {
   font-size: 0.8rem;
   color: #888;
 }
+
+.sandbox-nav {
+  background: #202020;
+}
+.sandbox-nav .container {
+  padding: 0 1rem 1rem 1rem;
+}
+.sandbox-nav h1, .sandbox-nav h2 {
+  display: inline-block;;
+}
+.sandbox-nav h1 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+.sandbox-nav h1 a {
+  color: white;
+  text-decoration: none;
+}
+.sandbox-nav img {
+  display: inline-block;
+  margin: 1rem 1rem -0.6rem 1rem;
+}
+.sandbox-nav h2 {
+  color: white;
+  letter-spacing: 1px;
+}
+.sandbox .container {
+  max-width: inherit;
+}
+.sandbox textarea {
+  min-height: 80%;
+}
