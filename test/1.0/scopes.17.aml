@@ -1,0 +1,6 @@
+test: key can later be overwriten to become a namespace
+result: {"key": {"subkey": "subvalue"}}
+
+key: value
+{key}
+subkey: subvalue
