@@ -1,0 +1,6 @@
+test: starts parsing again after :endskip
+result: {"key": "value"}
+
+:skip
+:endskip
+key:value

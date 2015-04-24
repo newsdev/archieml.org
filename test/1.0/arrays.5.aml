@@ -1,0 +1,4 @@
+test: ignores tabs on either side of [array] variable name
+result: {"array": []}
+
+[		array		]

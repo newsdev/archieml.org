@@ -1,0 +1,6 @@
+test: allows escaping key lines with a leading backslash
+result: {"key": "value\nkey2:value"}
+
+key:value
+\key2:value
+:end

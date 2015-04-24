@@ -1,0 +1,6 @@
+test: allows escaping of non-commands at the beginning of lines
+result: {"key": "value\n:notacommand"}
+
+key:value
+\:notacommand
+:end

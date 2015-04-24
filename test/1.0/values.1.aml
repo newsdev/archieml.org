@@ -1,0 +1,4 @@
+test: Parses key value pairs
+result: {"key": "value"}
+
+key:value

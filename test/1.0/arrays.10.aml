@@ -1,0 +1,6 @@
+test: ignore spaces inside []
+result: {"array": [], "key": "value"}
+
+[array]
+[  ]
+key:value

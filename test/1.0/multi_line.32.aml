@@ -1,0 +1,9 @@
+test: allows escaping multiple lines in a value
+result: {"key": "value\n:end\n:ignore\n:endskip\n:skip"}
+
+key:value
+\:end
+\:ignore
+\:endskip
+\:skip
+:end

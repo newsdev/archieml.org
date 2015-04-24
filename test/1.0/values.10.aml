@@ -1,0 +1,4 @@
+test: HTML is allowed in values
+result: {"key": "<strong>value</strong>"}
+
+key: <strong>value</strong>

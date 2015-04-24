@@ -1,0 +1,7 @@
+test: ignores key:value pairs between elements
+result: {"array": ["Value 1", "Value 2"]}
+
+[array]
+* Value 1
+key:value
+* Value 2

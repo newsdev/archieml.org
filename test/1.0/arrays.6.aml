@@ -1,0 +1,4 @@
+test: ignores text after [array]
+result: {"array": []}
+
+[array]a

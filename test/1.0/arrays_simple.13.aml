@@ -1,0 +1,7 @@
+test: does not allow escaping of colons not at the beginning of lines
+result: {"array": ["Value 1\nword key\\:value"]}
+
+[array]
+* Value 1
+word key\:value
+:end

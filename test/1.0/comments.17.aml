@@ -1,0 +1,5 @@
+test: double brackets work in simple arrays
+result: {"array": ["Val[real]ue"]}
+
+[array]
+* Val[[real]]ue

@@ -1,0 +1,6 @@
+test: when a duplicate key is encountered, a new item in the array is started
+result: {"array": [{"key": "first"}, {"key": "second"}]}
+
+[array]
+key:first
+key:second

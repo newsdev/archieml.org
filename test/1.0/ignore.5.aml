@@ -1,0 +1,5 @@
+test: ignores tabs on either side of :ignore
+result: {}
+
+		:ignore		
+key:value

@@ -1,0 +1,4 @@
+test: supports adjacent comments
+result: {"key": "value   value"}
+
+key:value [inline comments] [inline comments] value

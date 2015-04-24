@@ -1,0 +1,4 @@
+test: supports comments at end of string
+result: {"key": "value"}
+
+key:value [inline comments]

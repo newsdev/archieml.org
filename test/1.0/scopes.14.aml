@@ -1,0 +1,6 @@
+test: ignore tabs inside {}
+result: {"scope": {}, "key": "value"}
+
+{scope}
+{		}
+key:value

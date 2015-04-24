@@ -1,0 +1,6 @@
+test: lines without keys don't affect parsing
+result: {"key": "value"}
+
+other stuff
+key: value
+other stuff

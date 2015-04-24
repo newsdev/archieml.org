@@ -1,0 +1,5 @@
+test: keys are case-sensitive
+result: {"key": "value", "Key": "Value"}
+
+key: value
+Key: Value

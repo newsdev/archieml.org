@@ -1,0 +1,7 @@
+test: duplicate keys must match on dot-notation scope
+result: {"array": [{"scope": {"key": "value"}, "key": "value", "otherscope": {"key": "value"}}]}
+
+[array]
+scope.key:value
+key:value
+otherscope.key:value

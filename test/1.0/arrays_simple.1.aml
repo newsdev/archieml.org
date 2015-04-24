@@ -1,0 +1,5 @@
+test: creates a simple array when an * is encountered first
+result: {"array": ["Value"]}
+
+[array]
+*Value

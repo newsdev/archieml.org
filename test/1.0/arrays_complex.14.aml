@@ -1,0 +1,8 @@
+test: complex arrays can be redefined as simple arrays
+result: {"array": ["Value"]}
+
+[array]
+key:value
+[]
+[array]
+*Value

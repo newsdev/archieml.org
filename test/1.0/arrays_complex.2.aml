@@ -1,0 +1,6 @@
+test: array items can have multiple keys
+result: {"array": [{"key": "value", "second": "value"}]}
+
+[array]
+key:value
+second:value

@@ -1,0 +1,8 @@
+test: bullets within a multi-line value do not break up the value
+result: {"array": [{"key": "value\n* value\nmore text"}]}
+
+[array]
+key:value
+* value
+more text
+:end

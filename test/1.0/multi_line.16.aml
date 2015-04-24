@@ -1,0 +1,6 @@
+test: does not allow escaping colons in keys
+result: {"key": "value\nkey2\\:value"}
+
+key:value
+key2\:value
+:end

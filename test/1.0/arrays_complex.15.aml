@@ -1,0 +1,6 @@
+test: complex ararys overwrite existing keys
+result: {"a": {"b": [{"key": "value"}]}}
+
+a.b:complex value
+[a.b]
+key:value

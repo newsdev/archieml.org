@@ -1,0 +1,6 @@
+test: ordinary text that starts with a colon is included
+result: {"key": "value\n:notacommand"}
+
+key:value
+:notacommand
+:end

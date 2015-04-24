@@ -1,0 +1,5 @@
+test: comments work in simple arrays
+result: {"array": ["Value"]}
+
+[array]
+* Val[comment]ue

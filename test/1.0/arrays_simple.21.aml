@@ -1,0 +1,6 @@
+test: simple arrays overwrite existing keys
+result: {"a": {"b": ["simple value"]}}
+
+a.b: complex value
+[a.b]
+* simple value

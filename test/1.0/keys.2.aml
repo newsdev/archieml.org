@@ -1,0 +1,4 @@
+test: spaces are not allowed in keys
+result: {}
+
+k ey:value

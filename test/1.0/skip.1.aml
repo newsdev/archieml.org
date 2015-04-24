@@ -1,0 +1,6 @@
+test: ignores tabs on either side of :skip
+result: {}
+
+		:skip		
+key:value
+:endskip

@@ -1,0 +1,8 @@
+test: arrays within a multi-line value breaks up the value
+result: {"array1": ["value"], "array2": []}
+
+[array1]
+* value
+[array2]
+more text
+:end

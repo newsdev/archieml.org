@@ -1,0 +1,5 @@
+test: ignores all content on line after :ignore + tab
+result: {}
+
+:ignore	the below
+key:value

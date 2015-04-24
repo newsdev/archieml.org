@@ -1,0 +1,5 @@
+test: parses :ignore as a special command even if more is appended to word
+result: {}
+
+:ignorethis
+key:value

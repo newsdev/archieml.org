@@ -1,0 +1,7 @@
+test: parses key:values normally after an end-array
+result: {"array": ["Value 1"], "key": "value"}
+
+[array]
+* Value 1
+[]
+key:value

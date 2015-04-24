@@ -1,0 +1,5 @@
+test: text before :ignore should be included
+result: {"key": "value"}
+
+key:value
+:ignore

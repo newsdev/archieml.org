@@ -1,0 +1,6 @@
+test: does not parse :endskip as an :end
+result: {"key": "value"}
+
+key:value
+extra
+:endskip

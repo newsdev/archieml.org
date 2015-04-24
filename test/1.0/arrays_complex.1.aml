@@ -1,0 +1,5 @@
+test: keys after an [array] are included as items in the array
+result: {"array": [{"key": "value"}]}
+
+[array]
+key:value

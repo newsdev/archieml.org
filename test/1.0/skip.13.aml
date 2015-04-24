@@ -1,0 +1,10 @@
+test: ignores keys within a skip block
+result: {"key1": "value1", "key2": "value2"}
+
+key1:value1
+:skip
+other:value
+
+:endskip
+
+key2:value2

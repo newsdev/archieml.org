@@ -1,0 +1,5 @@
+test: ignores spaces on either side of *
+result: {"array": ["Value"]}
+
+[array]
+  *  Value

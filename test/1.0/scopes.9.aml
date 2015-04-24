@@ -1,0 +1,5 @@
+test: scopes can be nested using dot-notaion
+result: {"scope": {"scope": {"key": "value"}}}
+
+{scope.scope}
+key:value

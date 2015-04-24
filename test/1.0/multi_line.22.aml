@@ -1,0 +1,6 @@
+test: escapes * within multi-line values when not in a simple array
+result: {"key": "value\n* value"}
+
+key:value
+\* value
+:end

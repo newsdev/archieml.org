@@ -1,0 +1,4 @@
+test: keys can be nested using dot-notation
+result: {"scope": {"key": "value"}}
+
+scope.key:value

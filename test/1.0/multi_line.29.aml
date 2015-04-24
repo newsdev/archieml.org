@@ -1,0 +1,9 @@
+test: skips within a multi-line value break up the value
+result: {"key": "value"}
+
+key:value
+text
+:skip
+:endskip
+more text
+:end

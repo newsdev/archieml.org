@@ -1,0 +1,6 @@
+test: when a duplicate key is countered, a new item in the array is started
+result: {"array": [{"scope": {"key": "first"}}, {"scope": {"key": "second"}}]}
+
+[array]
+scope.key:first
+scope.key:second

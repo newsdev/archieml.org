@@ -1,0 +1,4 @@
+test: ignores tabs on either side of the value
+result: {"key": "value"}
+
+key:		value		

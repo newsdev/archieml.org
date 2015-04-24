@@ -1,0 +1,4 @@
+test: [array] creates an empty array at array
+result: {"array": []}
+
+[array]

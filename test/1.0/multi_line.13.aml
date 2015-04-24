@@ -1,0 +1,6 @@
+test: ignores all content on line after :end + tab
+result: {"key": "value\nextra"}
+
+key:value
+extra
+:end	this

@@ -1,0 +1,5 @@
+test: duplicate keys are assigned to the last given value
+result: {"key": "newvalue"}
+
+key:value
+key:newvalue

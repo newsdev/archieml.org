@@ -1,0 +1,6 @@
+test: allows escaping [comments] at the beginning of lines
+result: {"key": "value"}
+
+key:value
+\[comment]
+:end

@@ -1,0 +1,6 @@
+test: preserves whitespace at the end of the original line
+result: {"key": "value\t \nextra"}
+
+key:value	 
+extra
+:end

@@ -1,0 +1,6 @@
+test: allows escaping {scopes} at the beginning of lines
+result: {"key": "value\n{scope}"}
+
+key:value
+\{scope}
+:end

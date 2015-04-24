@@ -1,0 +1,6 @@
+test: escapes only one initial backslash
+result: {"key": "value\n\\\\:end"}
+
+key:value
+\\\:end
+:end

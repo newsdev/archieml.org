@@ -1,0 +1,6 @@
+test: array values can be nested using dot-notaion
+result: {"array": [{"scope": {"key": "value"}}, {"scope": {"key": "value"}}]}
+
+[array]
+scope.key: value
+scope.key: value

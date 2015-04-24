@@ -1,0 +1,6 @@
+test: allows simple array style lines
+result: {"key": "value\n* value"}
+
+key:value
+* value
+:end

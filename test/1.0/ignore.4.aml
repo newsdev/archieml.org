@@ -1,0 +1,5 @@
+test: ignores spaces on either side of :ignore
+result: {}
+
+  :ignore  
+key:value

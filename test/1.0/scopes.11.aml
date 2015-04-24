@@ -1,0 +1,7 @@
+test: scopes do not overwrite existing values
+result: {"scope": {"scope": {"key": "value"}, "otherscope": {"key": "value"}}}
+
+{scope.scope}
+key:value
+{scope.otherscope}
+key:value

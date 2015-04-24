@@ -1,0 +1,6 @@
+test: does not escape colons after beginning of lines
+result: {"key": "value\nLorem key2\\\\:value"}
+
+key:value
+Lorem key2\\:value
+:end

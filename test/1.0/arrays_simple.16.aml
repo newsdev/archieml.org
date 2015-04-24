@@ -1,0 +1,8 @@
+test: key/values within a multi-line value do not break up the value
+result: {"array": ["value\nkey: value\nmore text"]}
+
+[array]
+* value
+key: value
+more text
+:end

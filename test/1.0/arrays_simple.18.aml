@@ -1,0 +1,9 @@
+test: skips within a multi-line value break up the value
+result: {"array": ["value"]}
+
+[array]
+* value
+:skip
+:endskip
+more text
+:end

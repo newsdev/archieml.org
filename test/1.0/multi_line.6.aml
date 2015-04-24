@@ -1,0 +1,8 @@
+test: ignores whitespace and newlines before the :end
+result: {"key": "value\nextra"}
+
+key:value
+extra
+ 
+	
+:end

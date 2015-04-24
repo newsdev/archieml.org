@@ -1,0 +1,8 @@
+test: values are converted between objects and strings as necessary
+result: {"string_to_object": {"scope": {"scope": "value"}}, "object_to_string": {"scope": "value"}}
+
+string_to_object.scope: value
+string_to_object.scope.scope: value
+
+object_to_string.scope.scope: value
+object_to_string.scope: value

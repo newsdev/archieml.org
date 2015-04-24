@@ -1,0 +1,6 @@
+test: ignores all content on line after :endskip + tab
+result: {"key": "value"}
+
+:skip
+:endskip	the above
+key:value

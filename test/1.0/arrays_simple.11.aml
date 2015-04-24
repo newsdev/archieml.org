@@ -1,0 +1,7 @@
+test: does not allow escaping of keys within multi-line values
+result: {"array": ["Value1\nkey\\:value"]}
+
+[array]
+*Value1
+key\:value
+:end

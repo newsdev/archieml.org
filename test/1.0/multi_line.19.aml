@@ -1,0 +1,6 @@
+test: allows escaping commands with extra text at the beginning of lines
+result: {"key": "value\n:endthis"}
+
+key:value
+\:endthis
+:end

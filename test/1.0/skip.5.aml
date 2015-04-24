@@ -1,0 +1,6 @@
+test: :skip and :endskip are case insensitive
+result: {}
+
+:sKiP
+key:value
+:eNdSkIp

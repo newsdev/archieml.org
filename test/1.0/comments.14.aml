@@ -1,0 +1,4 @@
+test: text inside [[double brackets]] is included within [single brackets]
+result: {"key": "value [brackets] value"}
+
+key:value [[brackets]] value

@@ -1,0 +1,4 @@
+test: letters, numbers, dashes and underscores are valid key components
+result: {"a-_1": "value"}
+
+a-_1: value

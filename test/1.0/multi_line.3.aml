@@ -1,0 +1,8 @@
+test: preserves blank lines and whitespace lines in the middle of content
+result: {"key": "value\n\n\t \nextra"}
+
+key:value
+
+	 
+extra
+:end

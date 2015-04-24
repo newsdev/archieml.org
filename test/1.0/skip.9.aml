@@ -1,0 +1,6 @@
+test: parse :endskip as a special command even if more is appended to word
+result: {"key": "value"}
+
+:skip
+:endskiptheabove
+key:value

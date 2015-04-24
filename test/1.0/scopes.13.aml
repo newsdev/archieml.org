@@ -1,0 +1,6 @@
+test: ignore spaces inside {}
+result: {"scope": {}, "key": "value"}
+
+{scope}
+{  }
+key:value

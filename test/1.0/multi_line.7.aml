@@ -1,0 +1,6 @@
+test: ignores spaces on either side of :end
+result: {"key": "value\nextra"}
+
+key:value
+extra
+  :end  

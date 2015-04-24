@@ -1,0 +1,4 @@
+test: ignore comments inside of [single brackets]
+result: {"key": "value  value"}
+
+key: value [inline comments] value

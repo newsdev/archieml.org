@@ -1,0 +1,4 @@
+test: unmatched double brackets are preserved
+result: {"key": "value ]][[ value"}
+
+key:value ]][[ value

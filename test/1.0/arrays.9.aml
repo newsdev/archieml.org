@@ -1,0 +1,6 @@
+test: [] resets to the global scope
+result: {"array": [], "key": "value"}
+
+[array]
+[]
+key:value

@@ -1,0 +1,6 @@
+test: parse :skip as a special command even if more is appended to word
+result: {}
+
+:skipthis
+key:value
+:endskip

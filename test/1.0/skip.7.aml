@@ -1,0 +1,6 @@
+test: ignores all content on line after :skip + space
+result: {}
+
+:skip this text  
+key:value
+:endskip

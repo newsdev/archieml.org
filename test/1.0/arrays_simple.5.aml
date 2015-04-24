@@ -1,0 +1,7 @@
+test: ignores all other text between elements
+result: {"array": ["Value 1", "Value 2"]}
+
+[array]
+* Value 1
+Non-element
+* Value 2

@@ -1,0 +1,7 @@
+test: allows escaping of * within multi-line values in simple arrays
+result: {"array": ["Value 1\n* extra"]}
+
+[array]
+* Value 1
+\* extra
+:end

@@ -1,0 +1,4 @@
+test: {scope} creates an empty object at scope
+result: {"scope": {}}
+
+{scope}

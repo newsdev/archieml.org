@@ -1,0 +1,7 @@
+test: allows escaping key lines with a leading backslash
+result: {"array": ["Value\nkey:value"]}
+
+[array]
+*Value
+\key:value
+:end

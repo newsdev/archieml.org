@@ -1,0 +1,6 @@
+test: :end is case insensitive
+result: {"key": "value\nextra"}
+
+key:value
+extra
+:EnD

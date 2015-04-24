@@ -1,0 +1,8 @@
+test: objects within a multi-line value breaks up the value
+result: {"array": [{"key": "value"}], "scope": {}}
+
+[array]
+key:value
+{scope}
+more text
+:end

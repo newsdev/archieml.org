@@ -1,0 +1,8 @@
+test: bullets within a multi-line value break up the value
+result: {"array": ["value", "value\nmore text"]}
+
+[array]
+* value
+* value
+more text
+:end

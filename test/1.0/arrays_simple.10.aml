@@ -1,0 +1,7 @@
+test: allows escaping of command keys within multi-line values
+result: {"array": ["Value1\n:end"]}
+
+[array]
+*Value1
+\:end
+:end

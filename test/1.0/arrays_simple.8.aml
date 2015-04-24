@@ -1,0 +1,7 @@
+test: multi-line values are allowed
+result: {"array": ["Value 1\nextra"]}
+
+[array]
+* Value 1
+extra
+:end

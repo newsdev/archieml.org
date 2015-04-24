@@ -1,0 +1,6 @@
+test: ignores spaces on either side of :skip
+result: {}
+
+  :skip  
+key:value
+:endskip

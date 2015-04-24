@@ -1,0 +1,5 @@
+test: earlier keys within scopes aren't deleted when using dot-notation
+result: {"scope": {"key": "value", "otherkey": "value"}}
+
+scope.key:value
+scope.otherkey:value
