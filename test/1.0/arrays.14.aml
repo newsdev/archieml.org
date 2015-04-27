@@ -1,0 +1,6 @@
+test: arrays can be closed with an empty object {}
+result: {"array": [], "topkey": "value"}
+
+[array]
+{}
+topkey: value
