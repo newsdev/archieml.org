@@ -1,0 +1,1014 @@
+test: combined test
+result: {"001array":[],"002array":[],"002key":"value","003array":[],"003key":"value","004array":[],"004key":"value","005array":[],"005key":"value","006array":[],"006topkey":"value","007array":[],"008array":[],"009array":[],"010array":[],"011array":[],"012scope":{"array":[]},"013array":[{"013scope":{"key":"value"}},{"013scope":{"key":"value"}}],"014array":[],"014key":"value","015array":[{"015key":"value"}],"016array":[{"016key":"value","016other":"value\nmore text"}],"017array":[{"017key":"value\n* value\nmore text"}],"018array":[{"018key":"value"}],"019array":[{"019key":"value 2"}],"020array":["Value"],"021a":{"b":[{"021key":"value"}]},"022array":[{"022key":"value","022second":"value"}],"023array":[{"023key":"value","023second":"value"},{"023key":"value"}],"024array":[{"024key":"first"},{"024key":"second"}],"025array":[{"025scope":{"key":"first"}},{"025scope":{"key":"second"}}],"026array":[{"026key":"value","026scope":{"key":"value"}}],"027array":[{"027scope":{"key":"value"},"027key":"value","027otherscope":{"key":"value"}}],"028array1":[{"028key":"value"}],"028array2":[],"029array":[{"029key":"value"}],"029scope":{},"030array":["Value"],"031array":["Value1\n:end"],"032array":["Value1\nkey\\:value"],"033array":["Value\nkey:value"],"034array":["Value 1\nword key\\:value"],"035array1":["value"],"035array2":[],"036array":["value"],"036scope":{},"037array":["value\n037key: value\nmore text"],"038array":["value","value\nmore text"],"039array":["value"],"040array":["Value 2"],"041array":["Value"],"042array":[{"042key":"value"}],"043a":{"b":["simple value"]},"044array":["Value"],"045array":["Value 1","Value 2"],"046array":["Value 1","Value 2"],"047array":["Value 1","Value 2"],"048array":["Value 1"],"048key":"value","049array":["Value 1\nextra"],"050array":["Value 1\n* extra"],"051key":"value  value","052key":"value\nmultiline","053key":"value  \n multiline","054key":"value [inline\ncomments] value","055key":"value \n[inline\ncomments] value","056key":"value [brackets] value","057key":"value ]][[ value","058array":["Value"],"059array":["Val[real]ue"],"060key":"value  value  value","061key":"value   value","062key":"value  value","063key":"value","064key":"value","065key":"value  value","066key":"value ][ value","067key":"value  on\nmultiline","076a-_1":"value","079scope":{"key":"value"},"080scope":{"key":"value","otherkey":"value"},"081string_to_object":{"scope":{"scope":"value"}},"081object_to_string":{"scope":"value"},"082key":"value\nextra","083key":"value","084key":"value\n:notacommand","085key":"value\nextra","086key":"value\nextra","087key":":value","088key":"\\:value","089key":"value\nkey2\\:value","090key":"value\nkey2:value","091key":"value\n:end","092key":"value\n:endthis","093key":"value\nextra","094key":"value\n:notacommand","095key":"value\n* value","096key":"value\n* value","097key":"value\n{scope}","098key":"value","099key":"value\n[array]","100key":"value","100array":[],"101key":"value","101scope":{},"102key":"value\ntext\n* value\nmore text","103key":"value","104key":"value\n\t \nextra","105key":"value\n\\:end","106key":"value\n\\\\:end","107key":"value\n:end\n:ignore\n:endskip\n:skip","108key":"value\nLorem key2\\\\:value","109key":"value\nextra","110key":"value\t \nextra","111key":"value\nextra","112key":"value\nextra","113key":"value\nextra","114key":"value\nextra","115scope":{},"116scope":{"116key":"value","116other":"value"},"117scope":{"scope":{"117key":"value"},"otherscope":{"117key":"value"}},"118scope":{},"118key":"value","119scope":{},"119key":"value","120scope":{},"120key":"value","121scope":{},"121key":"value","122scope":{},"122key":"value","123key":{"123subkey":"subvalue"},"124scope":{},"125scope":{},"126scope":{},"127scope":{},"128scope":{},"129key":"value","129scope":{},"130scope":{"130key":"value"},"131scope":{"scope":{"131key":"value"}},"134key":"value","135key":"value","137key1":"value1","137key2":"value2","140key":"value","145key":"value","146key":"value","147key":"<strong>value</strong>","148key":"value","149key":"value","150key":"value","151key":"value","152key":"newvalue","153key":":value","154key":"value","154Key":"Value","155key":"value"}
+
+=== Test arrays.1
+[001array]
+===
+:endskip
+{}
+=== Test arrays.10
+[002array]
+[  ]
+002key:value
+===
+:endskip
+{}
+=== Test arrays.11
+[003array]
+[		]
+003key:value
+===
+:endskip
+{}
+=== Test arrays.12
+[004array]
+  []  
+004key:value
+===
+:endskip
+{}
+=== Test arrays.13
+[005array]
+		[]		
+005key:value
+===
+:endskip
+{}
+=== Test arrays.14
+[006array]
+{}
+006topkey: value
+===
+:endskip
+{}
+=== Test arrays.2
+  [007array]  
+===
+:endskip
+{}
+=== Test arrays.3
+		[008array]		
+===
+:endskip
+{}
+=== Test arrays.4
+[  009array  ]
+===
+:endskip
+{}
+=== Test arrays.5
+[		010array		]
+===
+:endskip
+{}
+=== Test arrays.6
+[011array]a
+===
+:endskip
+{}
+=== Test arrays.7
+[012scope.array]
+===
+:endskip
+{}
+=== Test arrays.8
+[013array]
+013scope.key: value
+013scope.key: value
+===
+:endskip
+{}
+=== Test arrays.9
+[014array]
+[]
+014key:value
+===
+:endskip
+{}
+=== Test arrays_complex.1
+[015array]
+015key:value
+===
+:endskip
+{}
+=== Test arrays_complex.10
+[016array]
+016key:value
+016other: value
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_complex.11
+[017array]
+017key:value
+* value
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_complex.12
+[018array]
+018key:value
+:skip
+:endskip
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_complex.13
+[019array]
+019key:value 1
+[]
+[019array]
+019key:value 2
+===
+:endskip
+{}
+=== Test arrays_complex.14
+[020array]
+020key:value
+[]
+[020array]
+*Value
+===
+:endskip
+{}
+=== Test arrays_complex.15
+021a.b:complex value
+[021a.b]
+021key:value
+===
+:endskip
+{}
+=== Test arrays_complex.2
+[022array]
+022key:value
+022second:value
+===
+:endskip
+{}
+=== Test arrays_complex.3
+[023array]
+023key:value
+023second:value
+023key:value
+===
+:endskip
+{}
+=== Test arrays_complex.4
+[024array]
+024key:first
+024key:second
+===
+:endskip
+{}
+=== Test arrays_complex.5
+[025array]
+025scope.key:first
+025scope.key:second
+===
+:endskip
+{}
+=== Test arrays_complex.6
+[026array]
+026key:value
+026scope.key:value
+===
+:endskip
+{}
+=== Test arrays_complex.7
+[027array]
+027scope.key:value
+027key:value
+027otherscope.key:value
+===
+:endskip
+{}
+=== Test arrays_complex.8
+[028array1]
+028key:value
+[028array2]
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_complex.9
+[029array]
+029key:value
+{029scope}
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.1
+[030array]
+*Value
+===
+:endskip
+{}
+=== Test arrays_simple.10
+[031array]
+*Value1
+\:end
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.11
+[032array]
+*Value1
+key\:value
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.12
+[033array]
+*Value
+\key:value
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.13
+[034array]
+* Value 1
+word key\:value
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.14
+[035array1]
+* value
+[035array2]
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.15
+[036array]
+* value
+{036scope}
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.16
+[037array]
+* value
+037key: value
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.17
+[038array]
+* value
+* value
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.18
+[039array]
+* value
+:skip
+:endskip
+more text
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.19
+[040array]
+* Value 1
+[]
+[040array]
+* Value 2
+[]
+===
+:endskip
+{}
+=== Test arrays_simple.2
+[041array]
+  *  Value
+===
+:endskip
+{}
+=== Test arrays_simple.20
+[042array]
+*Value
+[]
+[042array]
+042key:value
+===
+:endskip
+{}
+=== Test arrays_simple.21
+043a.b: complex value
+[043a.b]
+* simple value
+===
+:endskip
+{}
+=== Test arrays_simple.3
+[044array]
+		*		Value
+===
+:endskip
+{}
+=== Test arrays_simple.4
+[045array]
+* Value 1
+* Value 2
+===
+:endskip
+{}
+=== Test arrays_simple.5
+[046array]
+* Value 1
+Non-element
+* Value 2
+===
+:endskip
+{}
+=== Test arrays_simple.6
+[047array]
+* Value 1
+047key:value
+* Value 2
+===
+:endskip
+{}
+=== Test arrays_simple.7
+[048array]
+* Value 1
+[]
+048key:value
+===
+:endskip
+{}
+=== Test arrays_simple.8
+[049array]
+* Value 1
+extra
+:end
+===
+:endskip
+{}
+=== Test arrays_simple.9
+[050array]
+* Value 1
+\* extra
+:end
+===
+:endskip
+{}
+=== Test comments.1
+051key: value [inline comments] value
+===
+:endskip
+{}
+=== Test comments.10
+052key:value
+multiline [inline comments]
+:end
+===
+:endskip
+{}
+=== Test comments.11
+053key: [] value [] 
+ multiline [] 
+:end
+===
+:endskip
+{}
+=== Test comments.12
+054key:value [inline
+comments] value
+:end
+===
+:endskip
+{}
+=== Test comments.13
+055key:value 
+[inline
+comments] value
+:end
+===
+:endskip
+{}
+=== Test comments.14
+056key:value [[brackets]] value
+===
+:endskip
+{}
+=== Test comments.15
+057key:value ]][[ value
+===
+:endskip
+{}
+=== Test comments.16
+[058array]
+* Val[comment]ue
+===
+:endskip
+{}
+=== Test comments.17
+[059array]
+* Val[[real]]ue
+===
+:endskip
+{}
+=== Test comments.2
+060key:value [inline comments] value [inline comments] value
+===
+:endskip
+{}
+=== Test comments.3
+061key:value [inline comments] [inline comments] value
+===
+:endskip
+{}
+=== Test comments.4
+062key:value [inline comments][inline comments] value
+===
+:endskip
+{}
+=== Test comments.5
+063key:[inline comments] value
+===
+:endskip
+{}
+=== Test comments.6
+064key:value [inline comments]
+===
+:endskip
+{}
+=== Test comments.7
+065key:value [inline comments] value [inline comments]
+===
+:endskip
+{}
+=== Test comments.8
+066key: value ][ value
+===
+:endskip
+{}
+=== Test comments.9
+067key:value [inline comments] on
+multiline
+:end
+===
+:endskip
+{}
+=== Test keys.1
+076a-_1: value
+===
+:endskip
+{}
+=== Test keys.2
+k ey:value
+===
+:endskip
+{}
+=== Test keys.3
+k&ey:value
+===
+:endskip
+{}
+=== Test keys.4
+079scope.key:value
+===
+:endskip
+{}
+=== Test keys.5
+080scope.key:value
+080scope.otherkey:value
+===
+:endskip
+{}
+=== Test keys.6
+081string_to_object.scope: value
+081string_to_object.scope.scope: value
+081object_to_string.scope.scope: value
+081object_to_string.scope: value
+===
+:endskip
+{}
+=== Test multi_line.1
+082key:value
+extra
+:end
+===
+:endskip
+{}
+=== Test multi_line.10
+083key:value
+extra
+:endskip
+===
+:endskip
+{}
+=== Test multi_line.11
+084key:value
+:notacommand
+:end
+===
+:endskip
+{}
+=== Test multi_line.12
+085key:value
+extra
+:end this
+===
+:endskip
+{}
+=== Test multi_line.13
+086key:value
+extra
+:end	this
+===
+:endskip
+{}
+=== Test multi_line.14
+087key::value
+:end
+===
+:endskip
+{}
+=== Test multi_line.15
+088key:\:value
+:end
+===
+:endskip
+{}
+=== Test multi_line.16
+089key:value
+key2\:value
+:end
+===
+:endskip
+{}
+=== Test multi_line.17
+090key:value
+\key2:value
+:end
+===
+:endskip
+{}
+=== Test multi_line.18
+091key:value
+\:end
+:end
+===
+:endskip
+{}
+=== Test multi_line.19
+092key:value
+\:endthis
+:end
+===
+:endskip
+{}
+=== Test multi_line.2
+093key:value
+extra
+:EnD
+===
+:endskip
+{}
+=== Test multi_line.20
+094key:value
+\:notacommand
+:end
+===
+:endskip
+{}
+=== Test multi_line.21
+095key:value
+* value
+:end
+===
+:endskip
+{}
+=== Test multi_line.22
+096key:value
+\* value
+:end
+===
+:endskip
+{}
+=== Test multi_line.23
+097key:value
+\{scope}
+:end
+===
+:endskip
+{}
+=== Test multi_line.24
+098key:value
+\[comment]
+:end
+===
+:endskip
+{}
+=== Test multi_line.25
+099key:value
+\[[array]]
+:end
+===
+:endskip
+{}
+=== Test multi_line.26
+100key:value
+text
+[100array]
+more text
+:end
+===
+:endskip
+{}
+=== Test multi_line.27
+101key:value
+text
+{101scope}
+more text
+:end
+===
+:endskip
+{}
+=== Test multi_line.28
+102key:value
+text
+* value
+more text
+:end
+===
+:endskip
+{}
+=== Test multi_line.29
+103key:value
+text
+:skip
+:endskip
+more text
+:end
+===
+:endskip
+{}
+=== Test multi_line.3
+104key:value
+	 
+extra
+:end
+===
+:endskip
+{}
+=== Test multi_line.30
+105key:value
+\\:end
+:end
+===
+:endskip
+{}
+=== Test multi_line.31
+106key:value
+\\\:end
+:end
+===
+:endskip
+{}
+=== Test multi_line.32
+107key:value
+\:end
+\:ignore
+\:endskip
+\:skip
+:end
+===
+:endskip
+{}
+=== Test multi_line.33
+108key:value
+Lorem key2\\:value
+:end
+===
+:endskip
+{}
+=== Test multi_line.4
+109key:value
+extra	 
+:end
+===
+:endskip
+{}
+=== Test multi_line.5
+110key:value	 
+extra
+:end
+===
+:endskip
+{}
+=== Test multi_line.6
+111key:value
+extra
+ 
+	
+:end
+===
+:endskip
+{}
+=== Test multi_line.7
+112key:value
+extra
+  :end  
+===
+:endskip
+{}
+=== Test multi_line.8
+113key:value
+extra
+		:end		
+===
+:endskip
+{}
+=== Test multi_line.9
+114key:value
+extra
+:endthis
+===
+:endskip
+{}
+=== Test scopes.1
+{115scope}
+===
+:endskip
+{}
+=== Test scopes.10
+{116scope}
+116key:value
+{}
+{116scope}
+116other:value
+===
+:endskip
+{}
+=== Test scopes.11
+{117scope.scope}
+117key:value
+{117scope.otherscope}
+117key:value
+===
+:endskip
+{}
+=== Test scopes.12
+{118scope}
+{}
+118key:value
+===
+:endskip
+{}
+=== Test scopes.13
+{119scope}
+{  }
+119key:value
+===
+:endskip
+{}
+=== Test scopes.14
+{120scope}
+{		}
+120key:value
+===
+:endskip
+{}
+=== Test scopes.15
+{121scope}
+  {}  
+121key:value
+===
+:endskip
+{}
+=== Test scopes.16
+{122scope}
+		{}		
+122key:value
+===
+:endskip
+{}
+=== Test scopes.17
+123key: value
+{123key}
+123subkey: subvalue
+===
+:endskip
+{}
+=== Test scopes.2
+  {124scope}  
+===
+:endskip
+{}
+=== Test scopes.3
+		{125scope}		
+===
+:endskip
+{}
+=== Test scopes.4
+{  126scope  }
+===
+:endskip
+{}
+=== Test scopes.5
+{		127scope		}
+===
+:endskip
+{}
+=== Test scopes.6
+{128scope}a
+===
+:endskip
+{}
+=== Test scopes.7
+129key:value
+{129scope}
+===
+:endskip
+{}
+=== Test scopes.8
+{130scope}
+130key:value
+===
+:endskip
+{}
+=== Test scopes.9
+{131scope.scope}
+131key:value
+===
+:endskip
+{}
+=== Test skip.0
+  :skip  
+132key:value
+:endskip
+===
+:endskip
+{}
+=== Test skip.1
+		:skip		
+133key:value
+:endskip
+===
+:endskip
+{}
+=== Test skip.10
+:skip
+:endskip the above
+134key:value
+===
+:endskip
+{}
+=== Test skip.11
+:skip
+:endskip	the above
+135key:value
+===
+:endskip
+{}
+=== Test skip.12
+:skip
+:end	the above
+136key:value
+===
+:endskip
+{}
+=== Test skip.13
+137key1:value1
+:skip
+137other:value
+:endskip
+137key2:value2
+===
+:endskip
+{}
+=== Test skip.2
+:skip
+138key:value
+  :endskip  
+===
+:endskip
+{}
+=== Test skip.3
+:skip
+139key:value
+		:endskip		
+===
+:endskip
+{}
+=== Test skip.4
+:skip
+:endskip
+140key:value
+===
+:endskip
+{}
+=== Test skip.5
+:sKiP
+141key:value
+:eNdSkIp
+===
+:endskip
+{}
+=== Test skip.6
+:skipthis
+142key:value
+:endskip
+===
+:endskip
+{}
+=== Test skip.7
+:skip this text  
+143key:value
+:endskip
+===
+:endskip
+{}
+=== Test skip.8
+:skip	this text		
+144key:value
+:endskip
+===
+:endskip
+{}
+=== Test skip.9
+:skip
+:endskiptheabove
+145key:value
+===
+:endskip
+{}
+=== Test values.1
+146key:value
+===
+:endskip
+{}
+=== Test values.10
+147key: <strong>value</strong>
+===
+:endskip
+{}
+=== Test values.2
+  148key  :value
+===
+:endskip
+{}
+=== Test values.3
+		149key		:value
+===
+:endskip
+{}
+=== Test values.4
+150key:  value  
+===
+:endskip
+{}
+=== Test values.5
+151key:		value		
+===
+:endskip
+{}
+=== Test values.6
+152key:value
+152key:newvalue
+===
+:endskip
+{}
+=== Test values.7
+153key::value
+===
+:endskip
+{}
+=== Test values.8
+154key: value
+154Key: Value
+===
+:endskip
+{}
+=== Test values.9
+other stuff
+155key: value
+other stuff
+===
+:endskip
+{}
