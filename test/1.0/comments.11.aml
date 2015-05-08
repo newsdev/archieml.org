@@ -1,6 +1,0 @@
-test: whitespace around comments is preserved, except at the beinning and end of a value
-result: {"key": "value  \n multiline"}
-
-key: [] value [] 
- multiline [] 
-:end

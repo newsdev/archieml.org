@@ -1,6 +1,0 @@
-test: inline comments are supported on the first of multi-line values
-result: {"key": "value  on\nmultiline"}
-
-key:value [inline comments] on
-multiline
-:end

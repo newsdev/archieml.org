@@ -1,4 +1,0 @@
-test: supports no-space adjacent comments
-result: {"key": "value  value"}
-
-key:value [inline comments][inline comments] value

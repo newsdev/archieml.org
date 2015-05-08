@@ -1,6 +1,0 @@
-test: inline comments are supported on subsequent lines of multi-line values
-result: {"key": "value\nmultiline"}
-
-key:value
-multiline [inline comments]
-:end

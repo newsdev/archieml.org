@@ -1,4 +1,0 @@
-test: unmatched single brackets are preserved
-result: {"key": "value ][ value"}
-
-key: value ][ value

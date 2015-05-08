@@ -1,4 +1,0 @@
-test: supports comments at beginning of string
-result: {"key": "value"}
-
-key:[inline comments] value

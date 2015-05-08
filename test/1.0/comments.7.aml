@@ -1,4 +1,0 @@
-test: whitespace before a comment that appears at end of line is ignored
-result: {"key": "value  value"}
-
-key:value [inline comments] value [inline comments]

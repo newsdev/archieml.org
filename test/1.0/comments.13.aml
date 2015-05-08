@@ -1,7 +1,0 @@
-test: inline comments cannot span multiple lines
-result: {"key": "value \n[inline\ncomments] value"}
-
-key:value 
-[inline
-comments] value
-:end

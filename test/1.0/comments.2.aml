@@ -1,4 +1,0 @@
-test: supports multiple inline comments on a single line
-result: {"key": "value  value  value"}
-
-key:value [inline comments] value [inline comments] value
