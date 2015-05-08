@@ -1,5 +1,5 @@
 test: subarrays act as top-level arrays when not already inside an array
-result: {"subarray": {"key": "value"}}
+result: {"subarray": [{"key": "value"}]}
 
 [.subarray]
 key: value
