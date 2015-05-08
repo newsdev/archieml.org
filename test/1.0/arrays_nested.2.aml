@@ -1,0 +1,7 @@
+test: array keys beginning with [.dots] create simple subarrays
+result: {"array": [{"subarray": ["Value 1", "Value 2"]}]}
+
+[array]
+[.subarray]
+* Value 1
+* Value 2

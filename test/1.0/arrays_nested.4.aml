@@ -1,0 +1,9 @@
+test: subarrays can contain objects with multiple keys
+result: {"array": [{"subarray": [{"key1": "value", "key2": "value"}, {"key1": "value", "key2": "value"}]}]}
+
+[array]
+[.subarray]
+key1: value
+key2: value
+key1: value
+key2: value

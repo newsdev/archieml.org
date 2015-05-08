@@ -1,0 +1,9 @@
+test: subarrays do not affect the parent keeping track of the item delimiter key
+result: {"array": [{"key": "value", "subarray": [{"subkey": "value"}]}, {"key": "value"}]}
+
+[array]
+key: value
+[.subarray]
+subkey: value
+[]
+key: value

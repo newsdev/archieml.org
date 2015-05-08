@@ -1,0 +1,10 @@
+test: subarrays can contain simple subarrays
+result: {"array": [{"subarray": [{"subsubarray": ["Value 1", "Value 2"]}]}]}
+
+[array]
+[.subarray]
+[.subsubarray]
+* Value 1
+* Value 2
+[]
+[]

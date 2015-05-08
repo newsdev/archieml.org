@@ -1,0 +1,10 @@
+test: subarrays can contain complex subarrays
+result: {"array": [{"subarray": [{"subsubarray": [{"key1": "Value 1", "key2": "Value 2"}]}]}]}
+
+[array]
+[.subarray]
+[.subsubarray]
+key1: Value 1
+key2: Value 2
+[]
+[]

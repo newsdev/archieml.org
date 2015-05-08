@@ -1,0 +1,8 @@
+test: subarrays can server as the item delimiter key
+result: {"array": [{"subarray": []}, {"subarray": []}]}
+
+[array]
+[.subarray]
+[]
+[.subarray]
+[]
