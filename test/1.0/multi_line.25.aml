@@ -1,6 +1,0 @@
-test: allows escaping [[arrays]] at the beginning of lines
-result: {"key": "value\n[array]"}
-
-key:value
-\[[array]]
-:end
