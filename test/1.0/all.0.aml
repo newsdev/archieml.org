@@ -1,665 +1,1089 @@
 test: combined test
-result: {"001array":[],"002array":[],"002key":"value","003array":[],"003key":"value","004array":[],"004key":"value","005array":[],"005key":"value","006array":[],"006topkey":"value","007array":[],"008array":[],"009array":[],"010array":[],"011array":[],"012scope":{"array":[]},"013array":[{"013scope":{"key":"value"}},{"013scope":{"key":"value"}}],"014array":[],"014key":"value","015array":[{"015key":"value"}],"016array":[{"016key":"value","016other":"value\nmore text"}],"017array":[{"017key":"value\n* value\nmore text"}],"018array":[{"018key":"value"}],"019array":[{"019key":"value 2"}],"020array":["Value"],"021a":{"b":[{"021key":"value"}]},"022array":[{"022key":"value","022second":"value"}],"023array":[{"023key":"value","023second":"value"},{"023key":"value"}],"024array":[{"024key":"first"},{"024key":"second"}],"025array":[{"025scope":{"key":"first"}},{"025scope":{"key":"second"}}],"026array":[{"026key":"value","026scope":{"key":"value"}}],"027array":[{"027scope":{"key":"value"},"027key":"value","027otherscope":{"key":"value"}}],"028array1":[{"028key":"value"}],"028array2":[],"029array":[{"029key":"value"}],"029scope":{},"030array":["Value"],"031array":["Value1\n:end"],"032array":["Value1\nkey\\:value"],"033array":["Value\nkey:value"],"034array":["Value 1\nword key\\:value"],"035array1":["value"],"035array2":[],"036array":["value"],"036scope":{},"037array":["value\n037key: value\nmore text"],"038array":["value","value\nmore text"],"039array":["value"],"040array":["Value 2"],"041array":["Value"],"042array":[{"042key":"value"}],"043a":{"b":["simple value"]},"044array":["Value"],"045array":["Value 1","Value 2"],"046array":["Value 1","Value 2"],"047array":["Value 1","Value 2"],"048array":["Value 1"],"048key":"value","049array":["Value 1\nextra"],"050array":["Value 1\n* extra"],"051key":"value  value","052key":"value\nmultiline","053key":"value  \n multiline","054key":"value [inline\ncomments] value","055key":"value \n[inline\ncomments] value","056key":"value [brackets] value","057key":"value ]][[ value","058array":["Value"],"059array":["Val[real]ue"],"060key":"value  value  value","061key":"value   value","062key":"value  value","063key":"value","064key":"value","065key":"value  value","066key":"value ][ value","067key":"value  on\nmultiline","076a-_1":"value","079scope":{"key":"value"},"080scope":{"key":"value","otherkey":"value"},"081string_to_object":{"scope":{"scope":"value"}},"081object_to_string":{"scope":"value"},"082key":"value\nextra","083key":"value","084key":"value\n:notacommand","085key":"value\nextra","086key":"value\nextra","087key":":value","088key":"\\:value","089key":"value\nkey2\\:value","090key":"value\nkey2:value","091key":"value\n:end","092key":"value\n:endthis","093key":"value\nextra","094key":"value\n:notacommand","095key":"value\n* value","096key":"value\n* value","097key":"value\n{scope}","098key":"value","099key":"value\n[array]","100key":"value","100array":[],"101key":"value","101scope":{},"102key":"value\ntext\n* value\nmore text","103key":"value","104key":"value\n\t \nextra","105key":"value\n\\:end","106key":"value\n\\\\:end","107key":"value\n:end\n:ignore\n:endskip\n:skip","108key":"value\nLorem key2\\\\:value","109key":"value\nextra","110key":"value\t \nextra","111key":"value\nextra","112key":"value\nextra","113key":"value\nextra","114key":"value\nextra","115scope":{},"116scope":{"116key":"value","116other":"value"},"117scope":{"scope":{"117key":"value"},"otherscope":{"117key":"value"}},"118scope":{},"118key":"value","119scope":{},"119key":"value","120scope":{},"120key":"value","121scope":{},"121key":"value","122scope":{},"122key":"value","123key":{"123subkey":"subvalue"},"124scope":{},"125scope":{},"126scope":{},"127scope":{},"128scope":{},"129key":"value","129scope":{},"130scope":{"130key":"value"},"131scope":{"scope":{"131key":"value"}},"134key":"value","135key":"value","137key1":"value1","137key2":"value2","140key":"value","145key":"value","146key":"value","147key":"<strong>value</strong>","148key":"value","149key":"value","150key":"value","151key":"value","152key":"newvalue","153key":":value","154key":"value","154Key":"Value","155key":"value"}
+result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005array":[],"00006array":[],"00007scope":{"array":[]},"00008array":[{"00008scope":{"key":"value"}},{"00008scope":{"key":"value"}}],"00009array":[],"00009key":"value","00010array":[],"00010key":"value","00011array":[],"00011key":"value","00012array":[],"00012key":"value","00013array":[],"00013key":"value","00014array":[],"00014topkey":"value","00015array":[{"00015key":"value"}],"00016array":[{"00016key":"value","00016second":"value"}],"00017array":[{"00017key":"value","00017second":"value"},{"00017key":"value"}],"00018array":[{"00018key":"first"},{"00018key":"second"}],"00019array":[{"00019scope":{"key":"first"}},{"00019scope":{"key":"second"}}],"00020array":[{"00020key":"value","00020scope":{"key":"value"}}],"00021array":[{"00021scope":{"key":"value"},"00021key":"value","00021otherscope":{"key":"value"}}],"00022array1":[{"00022key":"value"}],"00022array2":[],"00023array":[{"00023key":"value"}],"00023scope":{},"00024array":[{"00024key":"value","00024other":"value\nmore text"}],"00025array":[{"00025key":"value\n* value\nmore text"}],"00026array":[{"00026key":"value"}],"00027array":[{"00027key":"value 2"}],"00028array":["Value"],"00029a":{"b":[{"00029key":"value"}]},"00030array":[],"00030":{"subarray":[{"00030key":"value"}]},"00031array":[],"00031":{"subarray":["Value 1","Value 2"]},"00032array":[],"00032":{"subarray":[{"00032key":"value"},{"00032key":"value"}]},"00033array":[],"00033":{"subarray":[{"00033key1":"value","00033key2":"value"},{"00033key1":"value","00033key2":"value"}]},"00034array":[],"00034":{"subarray":[{"00034subkey":"value"}]},"00034parentkey":"value","00035array":[{"00035parentkey":"value"}],"00035":{"subarray":[{"00035subkey":"value"}]},"00036array":[{"00036key":"value"}],"00036":{"subarray":[{"00036subkey":"value"}]},"00037array":[{"00037key":"value"}],"00037":{"subarray":[{"00037subkey":"value"}]},"00038array":[],"00038":{"subarray":[]},"00039array":[],"00039":{"subarray":[],"subsubarray":[{"00039key1":"Value 1","00039key2":"Value 2"}]},"00040array":[],"00040":{"subarray":[],"subsubarray":["Value 1","Value 2"]},"00041":{"subarray":[{"00041key":"value"}]},"00042array":["Value"],"00043array":["Value"],"00044array":["Value"],"00045array":["Value 1","Value 2"],"00046array":["Value 1","Value 2"],"00047array":["Value 1","Value 2"],"00048array":["Value 1"],"00048key":"value","00049array":["Value 1\nextra"],"00050array":["Value 1\n* extra"],"00051array":["Value1\n:end"],"00052array":["Value1\nkey\\:value"],"00053array":["Value\nkey:value"],"00054array":["Value 1\nword key\\:value"],"00055array1":["value"],"00055array2":[],"00056array":["value"],"00056scope":{},"00057array":["value\n00057key: value\nmore text"],"00058array":["value","value\nmore text"],"00059array":["value"],"00060array":["Value 2"],"00061array":[{"00061key":"value"}],"00062a":{"b":["simple value"]},"00063a-_1":"value","00066scope":{"key":"value"},"00067scope":{"key":"value","otherkey":"value"},"00068string_to_object":{"scope":{"scope":"value"}},"00068object_to_string":{"scope":"value"},"00069key":"value\nextra","00070key":"value\nextra","00071key":"value\n\t \nextra","00072key":"value\nextra","00073key":"value\t \nextra","00074key":"value\nextra","00075key":"value\nextra","00076key":"value\nextra","00077key":"value\nextra","00078key":"value","00079key":"value\n:notacommand","00080key":"value\nextra","00081key":"value\nextra","00082key":":value","00083key":"\\:value","00084key":"value\nkey2\\:value","00085key":"value\nkey2:value","00086key":"value\n:end","00087key":"value\n:endthis","00088key":"value\n:notacommand","00089key":"value\n* value","00090key":"value\n* value","00091key":"value\n{scope}","00092key":"value","00092array":[],"00093key":"value","00093scope":{},"00094key":"value\ntext\n* value\nmore text","00095key":"value","00096key":"value\n\\:end","00097key":"value\n\\\\:end","00098key":"value\n:end\n:ignore\n:endskip\n:skip","00099key":"value\nLorem key2\\\\:value","00100scope":{},"00101scope":{},"00102scope":{},"00103scope":{},"00104scope":{},"00105scope":{},"00106key":"value","00106scope":{},"00107scope":{"00107key":"value"},"00108scope":{"scope":{"00108key":"value"}},"00109scope":{"00109key":"value","00109other":"value"},"00110scope":{"scope":{"00110key":"value"},"otherscope":{"00110key":"value"}},"00111scope":{},"00111key":"value","00112scope":{},"00112key":"value","00113scope":{},"00113key":"value","00114scope":{},"00114key":"value","00115scope":{},"00115key":"value","00116key":{"00116subkey":"subvalue"},"00121key":"value","00126key":"value","00127key":"value","00128key":"value","00130key1":"value1","00130key2":"value2","00131key":"value","00132key":"value","00133key":"value","00134key":"value","00135key":"value","00136key":"newvalue","00137key":":value","00138key":"value","00138Key":"Value","00139key":"value","00140key":"<strong>value</strong>"}
 
 === Test arrays.1
-[001array]
+[00001array]
 ===
 :endskip
-{}
-=== Test arrays.10
-[002array]
-[  ]
-002key:value
-===
-:endskip
-{}
-=== Test arrays.11
-[003array]
-[		]
-003key:value
-===
-:endskip
-{}
-=== Test arrays.12
-[004array]
-  []  
-004key:value
-===
-:endskip
-{}
-=== Test arrays.13
-[005array]
-		[]		
-005key:value
-===
-:endskip
-{}
-=== Test arrays.14
-[006array]
-{}
-006topkey: value
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.2
-  [007array]  
+  [00002array]  
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.3
-		[008array]		
+		[00003array]		
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.4
-[  009array  ]
+[  00004array  ]
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.5
-[		010array		]
+[		00005array		]
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.6
-[011array]a
+[00006array]a
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.7
-[012scope.array]
+[00007scope.array]
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.8
-[013array]
-013scope.key: value
-013scope.key: value
+[00008array]
+00008scope.key: value
+00008scope.key: value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays.9
-[014array]
+[00009array]
 []
-014key:value
+00009key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays.10
+[00010array]
+[  ]
+00010key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays.11
+[00011array]
+[		]
+00011key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays.12
+[00012array]
+  []  
+00012key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays.13
+[00013array]
+		[]		
+00013key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays.14
+[00014array]
+{}
+00014topkey: value
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.1
-[015array]
-015key:value
+[00015array]
+00015key:value
 ===
 :endskip
-{}
-=== Test arrays_complex.10
-[016array]
-016key:value
-016other: value
-more text
-:end
-===
-:endskip
-{}
-=== Test arrays_complex.11
-[017array]
-017key:value
-* value
-more text
-:end
-===
-:endskip
-{}
-=== Test arrays_complex.12
-[018array]
-018key:value
-:skip
-:endskip
-more text
-:end
-===
-:endskip
-{}
-=== Test arrays_complex.13
-[019array]
-019key:value 1
 []
-[019array]
-019key:value 2
-===
-:endskip
-{}
-=== Test arrays_complex.14
-[020array]
-020key:value
 []
-[020array]
-*Value
-===
-:endskip
-{}
-=== Test arrays_complex.15
-021a.b:complex value
-[021a.b]
-021key:value
-===
-:endskip
+[]
+[]
 {}
 === Test arrays_complex.2
-[022array]
-022key:value
-022second:value
+[00016array]
+00016key:value
+00016second:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.3
-[023array]
-023key:value
-023second:value
-023key:value
+[00017array]
+00017key:value
+00017second:value
+00017key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.4
-[024array]
-024key:first
-024key:second
+[00018array]
+00018key:first
+00018key:second
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.5
-[025array]
-025scope.key:first
-025scope.key:second
+[00019array]
+00019scope.key:first
+00019scope.key:second
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.6
-[026array]
-026key:value
-026scope.key:value
+[00020array]
+00020key:value
+00020scope.key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.7
-[027array]
-027scope.key:value
-027key:value
-027otherscope.key:value
+[00021array]
+00021scope.key:value
+00021key:value
+00021otherscope.key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.8
-[028array1]
-028key:value
-[028array2]
+[00022array1]
+00022key:value
+[00022array2]
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_complex.9
-[029array]
-029key:value
-{029scope}
+[00023array]
+00023key:value
+{00023scope}
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test arrays_simple.1
-[030array]
-*Value
-===
-:endskip
-{}
-=== Test arrays_simple.10
-[031array]
-*Value1
-\:end
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.11
-[032array]
-*Value1
-key\:value
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.12
-[033array]
-*Value
-\key:value
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.13
-[034array]
-* Value 1
-word key\:value
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.14
-[035array1]
-* value
-[035array2]
+=== Test arrays_complex.10
+[00024array]
+00024key:value
+00024other: value
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test arrays_simple.15
-[036array]
-* value
-{036scope}
-more text
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.16
-[037array]
-* value
-037key: value
-more text
-:end
-===
-:endskip
-{}
-=== Test arrays_simple.17
-[038array]
-* value
+=== Test arrays_complex.11
+[00025array]
+00025key:value
 * value
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test arrays_simple.18
-[039array]
-* value
+=== Test arrays_complex.12
+[00026array]
+00026key:value
 :skip
 :endskip
 more text
 :end
 ===
 :endskip
-{}
-=== Test arrays_simple.19
-[040array]
-* Value 1
 []
-[040array]
+[]
+[]
+[]
+{}
+=== Test arrays_complex.13
+[00027array]
+00027key:value 1
+[]
+[00027array]
+00027key:value 2
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_complex.14
+[00028array]
+00028key:value
+[]
+[00028array]
+*Value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_complex.15
+00029a.b:complex value
+[00029a.b]
+00029key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.1
+[00030array]
+[00030.subarray]
+00030key: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.2
+[00031array]
+[00031.subarray]
+* Value 1
 * Value 2
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.3
+[00032array]
+[00032.subarray]
+00032key: value
+00032key: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.4
+[00033array]
+[00033.subarray]
+00033key1: value
+00033key2: value
+00033key1: value
+00033key2: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.5
+[00034array]
+[00034.subarray]
+00034subkey: value
+[]
+00034parentkey: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.6
+[00035array]
+00035parentkey: value
+[00035.subarray]
+00035subkey: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.7
+[00036array]
+00036key: value
+[00036.subarray]
+00036subkey: value
+[]
+00036key: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.8
+[00037array]
+00037key: value
+[00037.subarray]
+00037subkey: value
+[]
+00037key: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.9
+[00038array]
+[00038.subarray]
+[]
+[00038.subarray]
 []
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.10
+[00039array]
+[00039.subarray]
+[00039.subsubarray]
+00039key1: Value 1
+00039key2: Value 2
+[]
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.11
+[00040array]
+[00040.subarray]
+[00040.subsubarray]
+* Value 1
+* Value 2
+[]
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_nested.12
+[00041.subarray]
+00041key: value
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.1
+[00042array]
+*Value
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.2
-[041array]
+[00043array]
   *  Value
 ===
 :endskip
-{}
-=== Test arrays_simple.20
-[042array]
-*Value
 []
-[042array]
-042key:value
-===
-:endskip
-{}
-=== Test arrays_simple.21
-043a.b: complex value
-[043a.b]
-* simple value
-===
-:endskip
+[]
+[]
+[]
 {}
 === Test arrays_simple.3
-[044array]
+[00044array]
 		*		Value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.4
-[045array]
+[00045array]
 * Value 1
 * Value 2
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.5
-[046array]
+[00046array]
 * Value 1
 Non-element
 * Value 2
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.6
-[047array]
+[00047array]
 * Value 1
-047key:value
+00047key:value
 * Value 2
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.7
-[048array]
+[00048array]
 * Value 1
 []
-048key:value
+00048key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.8
-[049array]
+[00049array]
 * Value 1
 extra
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test arrays_simple.9
-[050array]
+[00050array]
 * Value 1
 \* extra
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test comments.1
-051key: value [inline comments] value
-===
-:endskip
-{}
-=== Test comments.10
-052key:value
-multiline [inline comments]
+=== Test arrays_simple.10
+[00051array]
+*Value1
+\:end
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test comments.11
-053key: [] value [] 
- multiline [] 
+=== Test arrays_simple.11
+[00052array]
+*Value1
+key\:value
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test comments.12
-054key:value [inline
-comments] value
+=== Test arrays_simple.12
+[00053array]
+*Value
+\key:value
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test comments.13
-055key:value 
-[inline
-comments] value
+=== Test arrays_simple.13
+[00054array]
+* Value 1
+word key\:value
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
-=== Test comments.14
-056key:value [[brackets]] value
-===
-:endskip
-{}
-=== Test comments.15
-057key:value ]][[ value
-===
-:endskip
-{}
-=== Test comments.16
-[058array]
-* Val[comment]ue
-===
-:endskip
-{}
-=== Test comments.17
-[059array]
-* Val[[real]]ue
-===
-:endskip
-{}
-=== Test comments.2
-060key:value [inline comments] value [inline comments] value
-===
-:endskip
-{}
-=== Test comments.3
-061key:value [inline comments] [inline comments] value
-===
-:endskip
-{}
-=== Test comments.4
-062key:value [inline comments][inline comments] value
-===
-:endskip
-{}
-=== Test comments.5
-063key:[inline comments] value
-===
-:endskip
-{}
-=== Test comments.6
-064key:value [inline comments]
-===
-:endskip
-{}
-=== Test comments.7
-065key:value [inline comments] value [inline comments]
-===
-:endskip
-{}
-=== Test comments.8
-066key: value ][ value
-===
-:endskip
-{}
-=== Test comments.9
-067key:value [inline comments] on
-multiline
+=== Test arrays_simple.14
+[00055array1]
+* value
+[00055array2]
+more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.15
+[00056array]
+* value
+{00056scope}
+more text
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.16
+[00057array]
+* value
+00057key: value
+more text
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.17
+[00058array]
+* value
+* value
+more text
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.18
+[00059array]
+* value
+:skip
+:endskip
+more text
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.19
+[00060array]
+* Value 1
+[]
+[00060array]
+* Value 2
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.20
+[00061array]
+*Value
+[]
+[00061array]
+00061key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test arrays_simple.21
+00062a.b: complex value
+[00062a.b]
+* simple value
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.1
-076a-_1: value
+00063a-_1: value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.2
 k ey:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.3
 k&ey:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.4
-079scope.key:value
+00066scope.key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.5
-080scope.key:value
-080scope.otherkey:value
+00067scope.key:value
+00067scope.otherkey:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test keys.6
-081string_to_object.scope: value
-081string_to_object.scope.scope: value
-081object_to_string.scope.scope: value
-081object_to_string.scope: value
+00068string_to_object.scope: value
+00068string_to_object.scope.scope: value
+00068object_to_string.scope.scope: value
+00068object_to_string.scope: value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.1
-082key:value
+00069key:value
 extra
 :end
 ===
 :endskip
-{}
-=== Test multi_line.10
-083key:value
-extra
-:endskip
-===
-:endskip
-{}
-=== Test multi_line.11
-084key:value
-:notacommand
-:end
-===
-:endskip
-{}
-=== Test multi_line.12
-085key:value
-extra
-:end this
-===
-:endskip
-{}
-=== Test multi_line.13
-086key:value
-extra
-:end	this
-===
-:endskip
-{}
-=== Test multi_line.14
-087key::value
-:end
-===
-:endskip
-{}
-=== Test multi_line.15
-088key:\:value
-:end
-===
-:endskip
-{}
-=== Test multi_line.16
-089key:value
-key2\:value
-:end
-===
-:endskip
-{}
-=== Test multi_line.17
-090key:value
-\key2:value
-:end
-===
-:endskip
-{}
-=== Test multi_line.18
-091key:value
-\:end
-:end
-===
-:endskip
-{}
-=== Test multi_line.19
-092key:value
-\:endthis
-:end
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.2
-093key:value
+00070key:value
 extra
 :EnD
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.3
+00071key:value
+	 
+extra
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.4
+00072key:value
+extra	 
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.5
+00073key:value	 
+extra
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.6
+00074key:value
+extra
+ 
+	
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.7
+00075key:value
+extra
+  :end  
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.8
+00076key:value
+extra
+		:end		
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.9
+00077key:value
+extra
+:endthis
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.10
+00078key:value
+extra
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.11
+00079key:value
+:notacommand
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.12
+00080key:value
+extra
+:end this
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.13
+00081key:value
+extra
+:end	this
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.14
+00082key::value
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.15
+00083key:\:value
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.16
+00084key:value
+key2\:value
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.17
+00085key:value
+\key2:value
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.18
+00086key:value
+\:end
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test multi_line.19
+00087key:value
+\:endthis
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.20
-094key:value
+00088key:value
 \:notacommand
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.21
-095key:value
+00089key:value
 * value
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.22
-096key:value
+00090key:value
 \* value
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.23
-097key:value
+00091key:value
 \{scope}
 :end
 ===
 :endskip
-{}
-=== Test multi_line.24
-098key:value
-\[comment]
-:end
-===
-:endskip
-{}
-=== Test multi_line.25
-099key:value
-\[[array]]
-:end
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.26
-100key:value
+00092key:value
 text
-[100array]
+[00092array]
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.27
-101key:value
+00093key:value
 text
-{101scope}
+{00093scope}
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.28
-102key:value
+00094key:value
 text
 * value
 more text
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.29
-103key:value
+00095key:value
 text
 :skip
 :endskip
@@ -667,31 +1091,35 @@ more text
 :end
 ===
 :endskip
-{}
-=== Test multi_line.3
-104key:value
-	 
-extra
-:end
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.30
-105key:value
+00096key:value
 \\:end
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.31
-106key:value
+00097key:value
 \\\:end
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.32
-107key:value
+00098key:value
 \:end
 \:ignore
 \:endskip
@@ -699,316 +1127,444 @@ extra
 :end
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test multi_line.33
-108key:value
+00099key:value
 Lorem key2\\:value
 :end
 ===
 :endskip
-{}
-=== Test multi_line.4
-109key:value
-extra	 
-:end
-===
-:endskip
-{}
-=== Test multi_line.5
-110key:value	 
-extra
-:end
-===
-:endskip
-{}
-=== Test multi_line.6
-111key:value
-extra
- 
-	
-:end
-===
-:endskip
-{}
-=== Test multi_line.7
-112key:value
-extra
-  :end  
-===
-:endskip
-{}
-=== Test multi_line.8
-113key:value
-extra
-		:end		
-===
-:endskip
-{}
-=== Test multi_line.9
-114key:value
-extra
-:endthis
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.1
-{115scope}
+{00100scope}
 ===
 :endskip
-{}
-=== Test scopes.10
-{116scope}
-116key:value
-{}
-{116scope}
-116other:value
-===
-:endskip
-{}
-=== Test scopes.11
-{117scope.scope}
-117key:value
-{117scope.otherscope}
-117key:value
-===
-:endskip
-{}
-=== Test scopes.12
-{118scope}
-{}
-118key:value
-===
-:endskip
-{}
-=== Test scopes.13
-{119scope}
-{  }
-119key:value
-===
-:endskip
-{}
-=== Test scopes.14
-{120scope}
-{		}
-120key:value
-===
-:endskip
-{}
-=== Test scopes.15
-{121scope}
-  {}  
-121key:value
-===
-:endskip
-{}
-=== Test scopes.16
-{122scope}
-		{}		
-122key:value
-===
-:endskip
-{}
-=== Test scopes.17
-123key: value
-{123key}
-123subkey: subvalue
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.2
-  {124scope}  
+  {00101scope}  
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.3
-		{125scope}		
+		{00102scope}		
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.4
-{  126scope  }
+{  00103scope  }
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.5
-{		127scope		}
+{		00104scope		}
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.6
-{128scope}a
+{00105scope}a
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.7
-129key:value
-{129scope}
+00106key:value
+{00106scope}
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.8
-{130scope}
-130key:value
+{00107scope}
+00107key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test scopes.9
-{131scope.scope}
-131key:value
+{00108scope.scope}
+00108key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.10
+{00109scope}
+00109key:value
+{}
+{00109scope}
+00109other:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.11
+{00110scope.scope}
+00110key:value
+{00110scope.otherscope}
+00110key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.12
+{00111scope}
+{}
+00111key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.13
+{00112scope}
+{  }
+00112key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.14
+{00113scope}
+{		}
+00113key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.15
+{00114scope}
+  {}  
+00114key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.16
+{00115scope}
+		{}		
+00115key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test scopes.17
+00116key: value
+{00116key}
+00116subkey: subvalue
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.0
   :skip  
-132key:value
+00117key:value
 :endskip
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.1
 		:skip		
-133key:value
+00118key:value
 :endskip
 ===
 :endskip
-{}
-=== Test skip.10
-:skip
-:endskip the above
-134key:value
-===
-:endskip
-{}
-=== Test skip.11
-:skip
-:endskip	the above
-135key:value
-===
-:endskip
-{}
-=== Test skip.12
-:skip
-:end	the above
-136key:value
-===
-:endskip
-{}
-=== Test skip.13
-137key1:value1
-:skip
-137other:value
-:endskip
-137key2:value2
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.2
 :skip
-138key:value
+00119key:value
   :endskip  
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.3
 :skip
-139key:value
+00120key:value
 		:endskip		
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.4
 :skip
 :endskip
-140key:value
+00121key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.5
 :sKiP
-141key:value
+00122key:value
 :eNdSkIp
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.6
 :skipthis
-142key:value
+00123key:value
 :endskip
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.7
 :skip this text  
-143key:value
+00124key:value
 :endskip
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.8
 :skip	this text		
-144key:value
+00125key:value
 :endskip
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test skip.9
 :skip
 :endskiptheabove
-145key:value
+00126key:value
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test skip.10
+:skip
+:endskip the above
+00127key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test skip.11
+:skip
+:endskip	the above
+00128key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test skip.12
+:skip
+:end	the above
+00129key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+=== Test skip.13
+00130key1:value1
+:skip
+00130other:value
+:endskip
+00130key2:value2
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.1
-146key:value
+00131key:value
 ===
 :endskip
-{}
-=== Test values.10
-147key: <strong>value</strong>
-===
-:endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.2
-  148key  :value
+  00132key  :value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.3
-		149key		:value
+		00133key		:value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.4
-150key:  value  
+00134key:  value  
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.5
-151key:		value		
+00135key:		value		
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.6
-152key:value
-152key:newvalue
+00136key:value
+00136key:newvalue
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.7
-153key::value
+00137key::value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.8
-154key: value
-154Key: Value
+00138key: value
+00138Key: Value
 ===
 :endskip
+[]
+[]
+[]
+[]
 {}
 === Test values.9
 other stuff
-155key: value
+00139key: value
 other stuff
 ===
 :endskip
+[]
+[]
+[]
+[]
+{}
+=== Test values.10
+00140key: <strong>value</strong>
+===
+:endskip
+[]
+[]
+[]
+[]
 {}
