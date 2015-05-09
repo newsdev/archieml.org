@@ -41,7 +41,8 @@
       <li class="sidebar-nav-item sidebar-nav-hash"><a href="#resources">Resources</a></li>
       <li class="sidebar-nav-item sidebar-nav-hash"><a href="#demo">Demo</a></li>
       <li class="sidebar-nav-item sidebar-nav-hash"><a href="#usage">Usage</a></li>
-      <li class="sidebar-nav-item"><a href="/spec/1.0/CR-20150423.html">Spec</a></li>
+      <li class="sidebar-nav-item"><a href="/sandbox.html">Sandbox</a></li>
+      <li class="sidebar-nav-item"><a href="/spec/1.0/CR-20150509.html">Spec</a></li>
     </ul>
     <p class="rear">Structured text,<br>for an unstructured world.</p>
   </div>
@@ -73,14 +74,14 @@
       <p>
         <strong>Unstructured text is ignored; there is no such thing as a parsing error</strong>
         <br>
-        AML was designed so that writers could work in a freeform environment. They should be able to add inline comments to text or entire paragraphs as scratch work that do not appear in the output. JSON and YAML have strict schemas that forbid text deviating from a pattern. AML doesn't assume text follows any pattern. If it finds text that looks like data, it treats it as data. Otherwise, it moves on.
+        AML was designed so that writers could work in a freeform environment. They should be able to add entire paragraphs as scratch work that do not appear in the output. JSON and YAML have strict schemas that forbid text deviating from a pattern. AML doesn't assume text follows any pattern. If it finds text that looks like data, it treats it as data. Otherwise, it moves on.
       </p>
     </li>
     <li>
       <p>
         <strong>The notation makes sense to non-programmers</strong>
         <br>
-        Lists of values are noted with bullet points / asterisks, not hyphens or quoted strings that must be separated with commas. Comments are written [INLINE INSIDE BRACKETS? THIS WORK, RACHEL?]. An overriding goal was to have a intuitive format that could be passed to a non-technical user  — a reporter, an assigning editor or a copy editor — to edit, and to have the format be clear enough that they could make changes without breaking the parsing of the document. If we were using another format, we'd have to explain indentation rules in YAML, or how to match curly braces or properly escape quotation marks in JSON, and so forth.
+        Lists of values are noted with bullet points / asterisks, not hyphens or quoted strings that must be separated with commas. An overriding goal was to have a intuitive format that could be passed to a non-technical user  — a reporter, an assigning editor or a copy editor — to edit, and to have the format be clear enough that they could make changes without breaking the parsing of the document. If we were using another format, we'd have to explain indentation rules in YAML, or how to match curly braces or properly escape quotation marks in JSON, and so forth.
       </p>
     </li>
   </ul>
@@ -282,6 +283,34 @@ Friday!
 []
 </aml>
 
+  <h3>Nested arrays</h3>
+
+  <p>Array elements can contain arrays of their own. To begin an array while inside an array element, prepend its name with a period.</p>
+
+<aml>
+[array]
+[.subarray]
+[.subsubarray]
+key: value
+</aml>
+
+  <p>Unlike top-level arrays, nested arrays must be "closed" with empty brackets in order to move up to the parent level.</p>
+
+<aml>
+[days]
+
+name: Monday
+[.tasks]
+* Clean dishes
+* Pick up room
+[]
+
+name: Tuesday
+[.tasks]
+* Buy milk
+[]
+</aml>
+
   <h3>Multi-line values</h3>
 
   <p>Values automatically end when a newline is encountered. But all subsequent text is read into a buffer that can be added to that key. Anchor the end of a multi-line value by following the value with a line beginning with ":end". All whitespace within the block is preserved.</p>
@@ -329,7 +358,7 @@ key: value
 
 <aml>
 key: value
-[escaping *s is not necessary if we're not inside an array, but will still be removed]
+[escaping * is not necessary if we're not inside an array, but will still be removed]
 \* value
 :end
 </aml>
@@ -340,20 +369,6 @@ key: value
 \:skip
 \:endskip
 :end
-</aml>
-
-  <h3>Inline comments</h3>
-
-  <p>Anything within a complete set of single brackets on one line will be ignored.</p>
-
-<aml>
-title: Lorem ipsum [IGNORED] dolor sit amet
-</aml>
-
-  <p>Double up the brackets to preserve a single set.</p>
-
-<aml>
-title: Lorem ipsum [[PRESERVED]] dolor sit amet
 </aml>
 
   <h3>Block comments</h3>
