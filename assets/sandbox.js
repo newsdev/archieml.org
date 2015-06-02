@@ -1,5 +1,13 @@
 +function() {
   'use strict';
+
+  var branch;
+  if (branch = location.search.match(/(?:&|\?)branch=([-_\w\/]+)(?:&|$)/)) {
+    var my_awesome_script = document.createElement('script');
+    my_awesome_script.setAttribute('src','/assets/branches/' + branch[1] + '.js');
+    document.head.appendChild(my_awesome_script);
+  }
+
   var amls = Array.prototype.slice.call(document.getElementsByTagName('aml'));
   amls.forEach(function(aml) {
     var div = document.createElement('div');
