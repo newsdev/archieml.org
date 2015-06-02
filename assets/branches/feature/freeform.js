@@ -139,18 +139,18 @@ function load(input, options) {
 
     if (scopeKey == '') {
 
-      if (scopeType === '{') {
-        // Reset scope to global data object
-        scope = data;
-        stackScope = undefined;
-        stack = [];
+      // if (scopeType === '{') {
+      //   // Reset scope to global data object
+      //   scope = data;
+      //   stackScope = undefined;
+      //   stack = [];
 
-      } else if (scopeType === '[') {
+      // } else if (scopeType === '[') {
         // Move up a level
         var lastStackItem = stack.pop();
-        if (lastStackItem) scope = lastStackItem.scope || data;
+        scope = (lastStackItem ? lastStackItem.scope : data) || data
         stackScope = stack[stack.length - 1];
-      }
+      // }
 
     } else if (scopeType === '[' || scopeType === '{') {
       var nesting = false;
@@ -188,11 +188,12 @@ function load(input, options) {
 
       } else if (scopeType == '{') {
         if (nesting) {
-          stack.push(stackScopeItem)
-          stackScope = stack[stack.length - 1];
+          stack.push(stackScopeItem);
         } else {
           scope = keyScope[lastBit] = (typeof keyScope[lastBit] === 'object') ? keyScope[lastBit] : {};
+          stack = [stackScopeItem];
         }
+        stackScope = stack[stack.length - 1];
       }
     }
   }
