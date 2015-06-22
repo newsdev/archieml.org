@@ -311,6 +311,55 @@ name: Tuesday
 []
 </aml>
 
+  <h3 id="freeform-arrays">Freeform arrays</h3>
+
+  <p>Freeforms are a third type of array that was created to have better <strong>control over presentation</strong> from within ArchieML.</p>
+
+  <p>Unlike regular arrays, which group lines into objects whose values have no order, <strong>freeforms preserve the order of each of its lines</strong>. Clients that use ArchieML's output can then use that order to render the values, allowing you to vary the presentation for each array item.</p>
+
+<aml>
+[+books]
+kicker: Books you should read
+
+score: ★★★★★!!!
+title: Wuthering Heights
+author: Emily Brontë
+
+title: Middlemarch
+author: George Eliot
+score: ★★★★☆
+[]
+</aml>
+
+  <p><strong>Each line becomes its own object</strong>, with a <strong>type</strong> and <strong>value</strong>. ArchieML splits these two words into separate objects to make it easier to deal with different type of information; rendering logic can always be based on the content of the <strong>type</strong> attribute.</p>
+
+  <p>Freeforms also allow you to type unstructured lines of text, which are included as items in the array with a type of <strong>text</strong>. Note that this means that comments do not work within freeforms.</p>
+
+<aml>
+[+text]
+I can type words here...
+
+And separate them into different paragraphs without tags.
+[]
+</aml>
+
+<p>Having full control over order is useful when arrays need to be <strong>mixed with other types of data</strong>. For example, showing a list of events interspersed with general artwork.</p>
+
+<aml>
+[+events]
+header: My Birthday
+date: August 20th, 1990
+
+{.image}
+src: http://example.com/photo.png
+alt: Family Photo
+{}
+
+header: High School Graduation
+date: June 4th, 2008
+[]
+</aml>
+
   <h3>Multi-line values</h3>
 
   <p>Values automatically end when a newline is encountered. But all subsequent text is read into a buffer that can be added to that key. Anchor the end of a multi-line value by following the value with a line beginning with ":end". All whitespace within the block is preserved.</p>
@@ -407,7 +456,7 @@ other-key: other value
 
   <hr>
 
-  <p style="font-size:.8em;opacity:0.5;">Created by <a href="https://twitter.com/moriogawa">Michael Strickland</a>, <a href="https://twitter.com/archietse">Archie Tse</a> and <a href="https://twitter.com/mericson">Matthew Ericson</a> / <a href="https://github.com/newsdev">The New York Times</a></p>
+  <p style="font-size:.8em;opacity:0.5;">Created by <a href="https://twitter.com/moriogawa">Michael Strickland</a>, <a href="https://twitter.com/archietse">Archie Tse</a>, <a href="https://twitter.com/mericson">Matthew Ericson</a> and <a href="https://github.com/giratikanon">Tom Giratikanon</a> / <a href="https://github.com/newsdev">The New York Times</a></p>
   <p style="font-size:.8em;opacity:0.5;">Copyright (c) 2015 The New York Times Company</p>
 
 </div>
