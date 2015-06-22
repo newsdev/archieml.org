@@ -1,0 +1,9 @@
+test: Text and key-value pairs can be combined
+result: {"freeform": [{"type": "text", "value": "Value"}, {"type": "name", "value": "value"}, {"type": "text", "value": "Value"}, {"type": "name", "value": "value"}]}
+
+[+freeform]
+Value
+name: value
+Value
+name: value
+[]

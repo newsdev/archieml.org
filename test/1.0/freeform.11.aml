@@ -1,0 +1,8 @@
+test: Freeforms nested in freeforms
+result: {"freeform": [{"type": "freeform", "value": [{"type": "text", "value": "Text"}]}]}
+
+[+freeform]
+[.+freeform]
+Text
+[]
+[]

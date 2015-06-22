@@ -1,0 +1,8 @@
+test: Don't parse whitespace lines
+result: {"freeform": [{"type": "text", "value": "one"}, {"type": "text", "value": "two"}]}
+
+[+freeform]
+one
+  
+two
+[]

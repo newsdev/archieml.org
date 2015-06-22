@@ -1,0 +1,8 @@
+test: Freeforms. nested in scopes
+result: {"scope": {"freeform": [{"type": "text", "value": "Value"}]}}
+
+{scope}
+[.+freeform]
+Value
+[]
+{}

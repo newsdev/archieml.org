@@ -1,0 +1,6 @@
+test: Strings are converted to objects with key=text
+result: {"freeform": [{"type": "text", "value": "Value"}]}
+
+[+freeform]
+Value
+[]

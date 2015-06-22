@@ -1,5 +1,5 @@
 test: combined test
-result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005array":[],"00006array":[],"00007scope":{"array":[]},"00008array":[{"00008scope":{"key":"value"}},{"00008scope":{"key":"value"}}],"00009array":[],"00009key":"value","00010array":[],"00010key":"value","00011array":[],"00011key":"value","00012array":[],"00012key":"value","00013array":[],"00013key":"value","00014array":[],"00014topkey":"value","00015array":[{"00015key":"value"}],"00016array":[{"00016key":"value","00016second":"value"}],"00017array":[{"00017key":"value","00017second":"value"},{"00017key":"value"}],"00018array":[{"00018key":"first"},{"00018key":"second"}],"00019array":[{"00019scope":{"key":"first"}},{"00019scope":{"key":"second"}}],"00020array":[{"00020key":"value","00020scope":{"key":"value"}}],"00021array":[{"00021scope":{"key":"value"},"00021key":"value","00021otherscope":{"key":"value"}}],"00022array1":[{"00022key":"value"}],"00022array2":[],"00023array":[{"00023key":"value"}],"00023scope":{},"00024array":[{"00024key":"value","00024other":"value\nmore text"}],"00025array":[{"00025key":"value\n* value\nmore text"}],"00026array":[{"00026key":"value"}],"00027array":[{"00027key":"value 2"}],"00028array":["Value"],"00029a":{"b":[{"00029key":"value"}]},"00030array":[],"00030":{"subarray":[{"00030key":"value"}]},"00031array":[],"00031":{"subarray":["Value 1","Value 2"]},"00032array":[],"00032":{"subarray":[{"00032key":"value"},{"00032key":"value"}]},"00033array":[],"00033":{"subarray":[{"00033key1":"value","00033key2":"value"},{"00033key1":"value","00033key2":"value"}]},"00034array":[],"00034":{"subarray":[{"00034subkey":"value"}]},"00034parentkey":"value","00035array":[{"00035parentkey":"value"}],"00035":{"subarray":[{"00035subkey":"value"}]},"00036array":[{"00036key":"value"}],"00036":{"subarray":[{"00036subkey":"value"}]},"00037array":[{"00037key":"value"}],"00037":{"subarray":[{"00037subkey":"value"}]},"00038array":[],"00038":{"subarray":[]},"00039array":[],"00039":{"subarray":[],"subsubarray":[{"00039key1":"Value 1","00039key2":"Value 2"}]},"00040array":[],"00040":{"subarray":[],"subsubarray":["Value 1","Value 2"]},"00041":{"subarray":[{"00041key":"value"}]},"00042array":["Value"],"00043array":["Value"],"00044array":["Value"],"00045array":["Value 1","Value 2"],"00046array":["Value 1","Value 2"],"00047array":["Value 1","Value 2"],"00048array":["Value 1"],"00048key":"value","00049array":["Value 1\nextra"],"00050array":["Value 1\n* extra"],"00051array":["Value1\n:end"],"00052array":["Value1\nkey\\:value"],"00053array":["Value\nkey:value"],"00054array":["Value 1\nword key\\:value"],"00055array1":["value"],"00055array2":[],"00056array":["value"],"00056scope":{},"00057array":["value\n00057key: value\nmore text"],"00058array":["value","value\nmore text"],"00059array":["value"],"00060array":["Value 2"],"00061array":[{"00061key":"value"}],"00062a":{"b":["simple value"]},"00063a-_1":"value","00066scope":{"key":"value"},"00067scope":{"key":"value","otherkey":"value"},"00068string_to_object":{"scope":{"scope":"value"}},"00068object_to_string":{"scope":"value"},"00069key":"value\nextra","00070key":"value\nextra","00071key":"value\n\t \nextra","00072key":"value\nextra","00073key":"value\t \nextra","00074key":"value\nextra","00075key":"value\nextra","00076key":"value\nextra","00077key":"value\nextra","00078key":"value","00079key":"value\n:notacommand","00080key":"value\nextra","00081key":"value\nextra","00082key":":value","00083key":"\\:value","00084key":"value\nkey2\\:value","00085key":"value\nkey2:value","00086key":"value\n:end","00087key":"value\n:endthis","00088key":"value\n:notacommand","00089key":"value\n* value","00090key":"value\n* value","00091key":"value\n{scope}","00092key":"value","00092array":[],"00093key":"value","00093scope":{},"00094key":"value\ntext\n* value\nmore text","00095key":"value","00096key":"value\n\\:end","00097key":"value\n\\\\:end","00098key":"value\n:end\n:ignore\n:endskip\n:skip","00099key":"value\nLorem key2\\\\:value","00100scope":{},"00101scope":{},"00102scope":{},"00103scope":{},"00104scope":{},"00105scope":{},"00106key":"value","00106scope":{},"00107scope":{"00107key":"value"},"00108scope":{"scope":{"00108key":"value"}},"00109scope":{"00109key":"value","00109other":"value"},"00110scope":{"scope":{"00110key":"value"},"otherscope":{"00110key":"value"}},"00111scope":{},"00111key":"value","00112scope":{},"00112key":"value","00113scope":{},"00113key":"value","00114scope":{},"00114key":"value","00115scope":{},"00115key":"value","00116key":{"00116subkey":"subvalue"},"00121key":"value","00126key":"value","00127key":"value","00128key":"value","00130key1":"value1","00130key2":"value2","00131key":"value","00132key":"value","00133key":"value","00134key":"value","00135key":"value","00136key":"newvalue","00137key":":value","00138key":"value","00138Key":"Value","00139key":"value","00140key":"<strong>value</strong>"}
+result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005array":[],"00006array":[],"00007scope":{"array":[]},"00008array":[{"00008scope":{"key":"value"}},{"00008scope":{"key":"value"}}],"00009array":[],"00009key":"value","00010array":[],"00010key":"value","00011array":[],"00011key":"value","00012array":[],"00012key":"value","00013array":[],"00013key":"value","00014array":[],"00014topkey":"value","00015array":[{"00015key":"value"}],"00016array":[{"00016key":"value","00016second":"value"}],"00017array":[{"00017key":"value","00017second":"value"},{"00017key":"value"}],"00018array":[{"00018key":"first"},{"00018key":"second"}],"00019array":[{"00019scope":{"key":"first"}},{"00019scope":{"key":"second"}}],"00020array":[{"00020key":"value","00020scope":{"key":"value"}}],"00021array":[{"00021scope":{"key":"value"},"00021key":"value","00021otherscope":{"key":"value"}}],"00022array1":[{"00022key":"value"}],"00022array2":[],"00023array":[{"00023key":"value"}],"00023scope":{},"00024array":[{"00024key":"value","00024other":"value\nmore text"}],"00025array":[{"00025key":"value\n* value\nmore text"}],"00026array":[{"00026key":"value"}],"00027array":[{"00027key":"value 2"}],"00028array":["Value"],"00029a":{"b":[{"00029key":"value"}]},"00030array":[],"00030":{"subarray":[{"00030key":"value"}]},"00031array":[],"00031":{"subarray":["Value 1","Value 2"]},"00032array":[],"00032":{"subarray":[{"00032key":"value"},{"00032key":"value"}]},"00033array":[],"00033":{"subarray":[{"00033key1":"value","00033key2":"value"},{"00033key1":"value","00033key2":"value"}]},"00034array":[],"00034":{"subarray":[{"00034subkey":"value"}]},"00034parentkey":"value","00035array":[{"00035parentkey":"value"}],"00035":{"subarray":[{"00035subkey":"value"}]},"00036array":[{"00036key":"value"}],"00036":{"subarray":[{"00036subkey":"value"}]},"00037array":[{"00037key":"value"}],"00037":{"subarray":[{"00037subkey":"value"}]},"00038array":[],"00038":{"subarray":[]},"00039array":[],"00039":{"subarray":[],"subsubarray":[{"00039key1":"Value 1","00039key2":"Value 2"}]},"00040array":[],"00040":{"subarray":[],"subsubarray":["Value 1","Value 2"]},"00041":{"subarray":[{"00041key":"value"}]},"00042array":["Value"],"00043array":["Value"],"00044array":["Value"],"00045array":["Value 1","Value 2"],"00046array":["Value 1","Value 2"],"00047array":["Value 1","Value 2"],"00048array":["Value 1"],"00048key":"value","00049array":["Value 1\nextra"],"00050array":["Value 1\n* extra"],"00051array":["Value1\n:end"],"00052array":["Value1\nkey\\:value"],"00053array":["Value\nkey:value"],"00054array":["Value 1\nword key\\:value"],"00055array1":["value"],"00055array2":[],"00056array":["value"],"00056scope":{},"00057array":["value\n00057key: value\nmore text"],"00058array":["value","value\nmore text"],"00059array":["value"],"00060array":["Value 2"],"00061array":[{"00061key":"value"}],"00062a":{"b":["simple value"]},"freeform":[{"type":"freeform","value":[{"type":"text","value":"Text"}]}],"00067":{"image":{"00067name":"map.jpg","00067credit":"Photographer"}},"00068":{"array":["Value 1","Value 2"]},"00069array":[{"00069name":"value","freeform":[{"type":"00069name","value":"value"},{"type":"text","value":"Text"}]}],"00072scope":{"freeform":[{"type":"text","value":"Value"}]},"00074a-_1":"value","00077scope":{"key":"value"},"00078scope":{"key":"value","otherkey":"value"},"00079string_to_object":{"scope":{"scope":"value"}},"00079object_to_string":{"scope":"value"},"00080key":"value\nextra","00081key":"value\nextra","00082key":"value\n\t \nextra","00083key":"value\nextra","00084key":"value\t \nextra","00085key":"value\nextra","00086key":"value\nextra","00087key":"value\nextra","00088key":"value\nextra","00089key":"value","00090key":"value\n:notacommand","00091key":"value\nextra","00092key":"value\nextra","00093key":":value","00094key":"\\:value","00095key":"value\nkey2\\:value","00096key":"value\nkey2:value","00097key":"value\n:end","00098key":"value\n:endthis","00099key":"value\n:notacommand","00100key":"value\n* value","00101key":"value\n* value","00102key":"value\n{scope}","00103key":"value","00103array":[],"00104key":"value","00104scope":{},"00105key":"value\ntext\n* value\nmore text","00106key":"value","00107key":"value\n\\:end","00108key":"value\n\\\\:end","00109key":"value\n:end\n:ignore\n:endskip\n:skip","00110key":"value\nLorem key2\\\\:value","00111scope":{},"00112scope":{},"00113scope":{},"00114scope":{},"00115scope":{},"00116scope":{},"00117key":"value","00117scope":{},"00118scope":{"00118key":"value"},"00119scope":{"scope":{"00119key":"value"}},"00120scope":{"00120key":"value","00120other":"value"},"00121scope":{"scope":{"00121key":"value"},"otherscope":{"00121key":"value"}},"00122scope":{},"00122key":"value","00123scope":{},"00123key":"value","00124scope":{},"00124key":"value","00125scope":{},"00125key":"value","00126scope":{},"00126key":"value","00127key":{"00127subkey":"subvalue"},"00132key":"value","00137key":"value","00138key":"value","00139key":"value","00141key1":"value1","00141key2":"value2","00142key":"value","00143key":"value","00144key":"value","00145key":"value","00146key":"value","00147key":"newvalue","00148key":":value","00149key":"value","00149Key":"Value","00150key":"value","00151key":"<strong>value</strong>"}
 
 === Test arrays.1
 [00001array]
@@ -10,6 +10,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.2
   [00002array]  
 ===
@@ -18,6 +22,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.3
 		[00003array]		
@@ -28,6 +36,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.4
 [  00004array  ]
 ===
@@ -36,6 +48,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.5
 [		00005array		]
@@ -46,6 +62,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.6
 [00006array]a
 ===
@@ -55,6 +75,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.7
 [00007scope.array]
 ===
@@ -63,6 +87,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.8
 [00008array]
@@ -75,6 +103,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.9
 [00009array]
 []
@@ -85,6 +117,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.10
 [00010array]
@@ -97,6 +133,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.11
 [00011array]
 [		]
@@ -107,6 +147,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.12
 [00012array]
@@ -119,6 +163,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays.13
 [00013array]
 		[]		
@@ -129,6 +177,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays.14
 [00014array]
@@ -141,6 +193,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.1
 [00015array]
 00015key:value
@@ -150,6 +206,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.2
 [00016array]
@@ -161,6 +221,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.3
 [00017array]
@@ -174,6 +238,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.4
 [00018array]
 00018key:first
@@ -184,6 +252,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.5
 [00019array]
@@ -196,6 +268,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.6
 [00020array]
 00020key:value
@@ -206,6 +282,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.7
 [00021array]
@@ -218,6 +298,10 @@ result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005a
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.8
 [00022array1]
@@ -232,6 +316,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.9
 [00023array]
 00023key:value
@@ -244,6 +332,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.10
 [00024array]
@@ -258,6 +350,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.11
 [00025array]
 00025key:value
@@ -270,6 +366,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.12
 [00026array]
@@ -285,6 +385,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.13
 [00027array]
 00027key:value 1
@@ -297,6 +401,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_complex.14
 [00028array]
@@ -311,6 +419,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_complex.15
 00029a.b:complex value
 [00029a.b]
@@ -322,6 +434,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.1
 [00030array]
 [00030.subarray]
@@ -332,6 +448,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_nested.2
 [00031array]
@@ -345,6 +465,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.3
 [00032array]
 [00032.subarray]
@@ -356,6 +480,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_nested.4
 [00033array]
@@ -371,6 +499,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.5
 [00034array]
 [00034.subarray]
@@ -384,6 +516,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.6
 [00035array]
 00035parentkey: value
@@ -395,6 +531,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_nested.7
 [00036array]
@@ -410,6 +550,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.8
 [00037array]
 00037key: value
@@ -424,6 +568,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.9
 [00038array]
 [00038.subarray]
@@ -436,6 +584,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_nested.10
 [00039array]
@@ -452,6 +604,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.11
 [00040array]
 [00040.subarray]
@@ -467,6 +623,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_nested.12
 [00041.subarray]
 00041key: value
@@ -478,6 +638,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.1
 [00042array]
 *Value
@@ -487,6 +651,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.2
 [00043array]
@@ -498,6 +666,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.3
 [00044array]
 		*		Value
@@ -507,6 +679,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.4
 [00045array]
@@ -518,6 +694,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.5
 [00046array]
@@ -531,6 +711,10 @@ Non-element
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.6
 [00047array]
 * Value 1
@@ -542,6 +726,10 @@ Non-element
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.7
 [00048array]
@@ -555,6 +743,10 @@ Non-element
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.8
 [00049array]
 * Value 1
@@ -566,6 +758,10 @@ extra
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.9
 [00050array]
@@ -579,6 +775,10 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.10
 [00051array]
 *Value1
@@ -590,6 +790,10 @@ extra
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.11
 [00052array]
@@ -603,6 +807,10 @@ key\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.12
 [00053array]
 *Value
@@ -615,6 +823,10 @@ key\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.13
 [00054array]
 * Value 1
@@ -626,6 +838,10 @@ word key\:value
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.14
 [00055array1]
@@ -640,6 +856,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.15
 [00056array]
 * value
@@ -652,6 +872,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.16
 [00057array]
@@ -666,6 +890,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.17
 [00058array]
 * value
@@ -678,6 +906,10 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test arrays_simple.18
 [00059array]
@@ -693,6 +925,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.19
 [00060array]
 * Value 1
@@ -707,6 +943,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.20
 [00061array]
 *Value
@@ -720,6 +960,10 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test arrays_simple.21
 00062a.b: complex value
 [00062a.b]
@@ -731,14 +975,214 @@ more text
 []
 []
 {}
-=== Test keys.1
-00063a-_1: value
+{}
+{}
+{}
+{}
+=== Test freeform.1
+[+freeform]
+Value
+[]
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.2
+[+freeform]
+00064name: value
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.3
+[+freeform]
+Value
+00065name: value
+Value
+00065name: value
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.4
+[+freeform]
+Value
+Value
+00066name: value
+00066name: value
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.5
+[+freeform]
+00067type: value
+Text
+{00067.image}
+00067name: map.jpg
+00067credit: Photographer
+{}
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.6
+[+freeform]
+00068name: value
+Text
+[00068.array]
+* Value 1
+* Value 2
+[]
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.7
+[00069array]
+00069name: value
+[.+freeform]
+00069name: value
+Text
+[]
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.8
+[+freeform]
+one
+  
+two
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.9
+[+freeform]
+  one  
+  two  
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.10
+{00072scope}
+[.+freeform]
+Value
+[]
+{}
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test freeform.11
+[+freeform]
+[.+freeform]
+Text
+[]
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test keys.1
+00074a-_1: value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
 {}
 === Test keys.2
 k ey:value
@@ -749,6 +1193,10 @@ k ey:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test keys.3
 k&ey:value
 ===
@@ -758,30 +1206,42 @@ k&ey:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test keys.4
-00066scope.key:value
+00077scope.key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test keys.5
-00067scope.key:value
-00067scope.otherkey:value
+00078scope.key:value
+00078scope.otherkey:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test keys.6
-00068string_to_object.scope: value
-00068string_to_object.scope.scope: value
-00068object_to_string.scope.scope: value
-00068object_to_string.scope: value
+00079string_to_object.scope: value
+00079string_to_object.scope.scope: value
+00079object_to_string.scope.scope: value
+00079object_to_string.scope: value
 ===
 :endskip
 []
@@ -789,8 +1249,12 @@ k&ey:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.1
-00069key:value
+00080key:value
 extra
 :end
 ===
@@ -800,8 +1264,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.2
-00070key:value
+00081key:value
 extra
 :EnD
 ===
@@ -811,8 +1279,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.3
-00071key:value
+00082key:value
 	 
 extra
 :end
@@ -823,8 +1295,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.4
-00072key:value
+00083key:value
 extra	 
 :end
 ===
@@ -834,8 +1310,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.5
-00073key:value	 
+00084key:value	 
 extra
 :end
 ===
@@ -845,8 +1325,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.6
-00074key:value
+00085key:value
 extra
  
 	
@@ -858,8 +1342,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.7
-00075key:value
+00086key:value
 extra
   :end  
 ===
@@ -869,8 +1357,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.8
-00076key:value
+00087key:value
 extra
 		:end		
 ===
@@ -880,8 +1372,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.9
-00077key:value
+00088key:value
 extra
 :endthis
 ===
@@ -891,8 +1387,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.10
-00078key:value
+00089key:value
 extra
 :endskip
 ===
@@ -902,8 +1402,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.11
-00079key:value
+00090key:value
 :notacommand
 :end
 ===
@@ -913,8 +1417,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.12
-00080key:value
+00091key:value
 extra
 :end this
 ===
@@ -924,8 +1432,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.13
-00081key:value
+00092key:value
 extra
 :end	this
 ===
@@ -935,8 +1447,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.14
-00082key::value
+00093key::value
 :end
 ===
 :endskip
@@ -944,9 +1460,13 @@ extra
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test multi_line.15
-00083key:\:value
+00094key:\:value
 :end
 ===
 :endskip
@@ -955,8 +1475,12 @@ extra
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.16
-00084key:value
+00095key:value
 key2\:value
 :end
 ===
@@ -966,8 +1490,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.17
-00085key:value
+00096key:value
 \key2:value
 :end
 ===
@@ -977,8 +1505,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.18
-00086key:value
+00097key:value
 \:end
 :end
 ===
@@ -988,8 +1520,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.19
-00087key:value
+00098key:value
 \:endthis
 :end
 ===
@@ -999,8 +1535,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.20
-00088key:value
+00099key:value
 \:notacommand
 :end
 ===
@@ -1010,8 +1550,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.21
-00089key:value
+00100key:value
 * value
 :end
 ===
@@ -1021,8 +1565,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.22
-00090key:value
+00101key:value
 \* value
 :end
 ===
@@ -1032,8 +1580,12 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.23
-00091key:value
+00102key:value
 \{scope}
 :end
 ===
@@ -1043,10 +1595,14 @@ key2\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.26
-00092key:value
+00103key:value
 text
-[00092array]
+[00103array]
 more text
 :end
 ===
@@ -1055,11 +1611,15 @@ more text
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test multi_line.27
-00093key:value
+00104key:value
 text
-{00093scope}
+{00104scope}
 more text
 :end
 ===
@@ -1069,8 +1629,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.28
-00094key:value
+00105key:value
 text
 * value
 more text
@@ -1082,8 +1646,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.29
-00095key:value
+00106key:value
 text
 :skip
 :endskip
@@ -1096,8 +1664,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.30
-00096key:value
+00107key:value
 \\:end
 :end
 ===
@@ -1107,8 +1679,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.31
-00097key:value
+00108key:value
 \\\:end
 :end
 ===
@@ -1118,8 +1694,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.32
-00098key:value
+00109key:value
 \:end
 \:ignore
 \:endskip
@@ -1132,8 +1712,12 @@ more text
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test multi_line.33
-00099key:value
+00110key:value
 Lorem key2\\:value
 :end
 ===
@@ -1143,228 +1727,151 @@ Lorem key2\\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test scopes.1
-{00100scope}
+{00111scope}
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.2
-  {00101scope}  
+  {00112scope}  
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.3
-		{00102scope}		
+		{00113scope}		
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.4
-{  00103scope  }
+{  00114scope  }
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.5
-{		00104scope		}
+{		00115scope		}
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.6
-{00105scope}a
+{00116scope}a
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.7
-00106key:value
-{00106scope}
+00117key:value
+{00117scope}
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.8
-{00107scope}
-00107key:value
+{00118scope}
+00118key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.9
-{00108scope.scope}
-00108key:value
+{00119scope.scope}
+00119key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.10
-{00109scope}
-00109key:value
+{00120scope}
+00120key:value
 {}
-{00109scope}
-00109other:value
+{00120scope}
+00120other:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test scopes.11
-{00110scope.scope}
-00110key:value
-{00110scope.otherscope}
-00110key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.12
-{00111scope}
-{}
-00111key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.13
-{00112scope}
-{  }
-00112key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.14
-{00113scope}
-{		}
-00113key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.15
-{00114scope}
-  {}  
-00114key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.16
-{00115scope}
-		{}		
-00115key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test scopes.17
-00116key: value
-{00116key}
-00116subkey: subvalue
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test skip.0
-  :skip  
-00117key:value
-:endskip
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test skip.1
-		:skip		
-00118key:value
-:endskip
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test skip.2
-:skip
-00119key:value
-  :endskip  
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test skip.3
-:skip
-00120key:value
-		:endskip		
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-=== Test skip.4
-:skip
-:endskip
+{00121scope.scope}
+00121key:value
+{00121scope.otherscope}
 00121key:value
 ===
 :endskip
@@ -1373,10 +1880,14 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.5
-:sKiP
+{}
+{}
+{}
+{}
+=== Test scopes.12
+{00122scope}
+{}
 00122key:value
-:eNdSkIp
 ===
 :endskip
 []
@@ -1384,10 +1895,14 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.6
-:skipthis
+{}
+{}
+{}
+{}
+=== Test scopes.13
+{00123scope}
+{  }
 00123key:value
-:endskip
 ===
 :endskip
 []
@@ -1395,10 +1910,14 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.7
-:skip this text  
+{}
+{}
+{}
+{}
+=== Test scopes.14
+{00124scope}
+{		}
 00124key:value
-:endskip
 ===
 :endskip
 []
@@ -1406,10 +1925,14 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.8
-:skip	this text		
+{}
+{}
+{}
+{}
+=== Test scopes.15
+{00125scope}
+  {}  
 00125key:value
-:endskip
 ===
 :endskip
 []
@@ -1417,9 +1940,13 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.9
-:skip
-:endskiptheabove
+{}
+{}
+{}
+{}
+=== Test scopes.16
+{00126scope}
+		{}		
 00126key:value
 ===
 :endskip
@@ -1428,109 +1955,318 @@ Lorem key2\\:value
 []
 []
 {}
-=== Test skip.10
-:skip
-:endskip the above
-00127key:value
+{}
+{}
+{}
+{}
+=== Test scopes.17
+00127key: value
+{00127key}
+00127subkey: subvalue
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
+{}
+=== Test skip.0
+  :skip  
+00128key:value
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.1
+		:skip		
+00129key:value
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.2
+:skip
+00130key:value
+  :endskip  
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.3
+:skip
+00131key:value
+		:endskip		
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.4
+:skip
+:endskip
+00132key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.5
+:sKiP
+00133key:value
+:eNdSkIp
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.6
+:skipthis
+00134key:value
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.7
+:skip this text  
+00135key:value
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.8
+:skip	this text		
+00136key:value
+:endskip
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.9
+:skip
+:endskiptheabove
+00137key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test skip.10
+:skip
+:endskip the above
+00138key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
 {}
 === Test skip.11
 :skip
 :endskip	the above
-00128key:value
+00139key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test skip.12
 :skip
 :end	the above
-00129key:value
+00140key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test skip.13
-00130key1:value1
+00141key1:value1
 :skip
-00130other:value
+00141other:value
 :endskip
-00130key2:value2
+00141key2:value2
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.1
-00131key:value
+00142key:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.2
-  00132key  :value
+  00143key  :value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.3
-		00133key		:value
+		00144key		:value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.4
-00134key:  value  
+00145key:  value  
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.5
-00135key:		value		
+00146key:		value		
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.6
-00136key:value
-00136key:newvalue
+00147key:value
+00147key:newvalue
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.7
-00137key::value
+00148key::value
 ===
 :endskip
 []
@@ -1538,19 +2274,27 @@ Lorem key2\\:value
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test values.8
-00138key: value
-00138Key: Value
+00149key: value
+00149Key: Value
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}
 === Test values.9
 other stuff
-00139key: value
+00150key: value
 other stuff
 ===
 :endskip
@@ -1559,12 +2303,20 @@ other stuff
 []
 []
 {}
+{}
+{}
+{}
+{}
 === Test values.10
-00140key: <strong>value</strong>
+00151key: <strong>value</strong>
 ===
 :endskip
 []
 []
 []
 []
+{}
+{}
+{}
+{}
 {}

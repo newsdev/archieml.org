@@ -1,0 +1,11 @@
+test: Objects nested in freeforms
+result: {"freeform": [{"type": "type", "value": "value"}, {"type": "text", "value": "Text"}, {"type": "image", "value": {"name": "map.jpg", "credit": "Photographer"}}]}
+
+[+freeform]
+type: value
+Text
+{.image}
+name: map.jpg
+credit: Photographer
+{}
+[]

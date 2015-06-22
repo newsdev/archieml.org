@@ -56,7 +56,7 @@
             aml = aml.replace(replacement, "$1" + prefix + "$2$3");
           });
 
-          combined += ['=== Test ' + slug + '.' + idx, aml, '===', ':endskip', "[]\n[]\n[]\n[]\n{}", ''].join("\n");
+          combined += ['=== Test ' + slug + '.' + idx, aml, '===', ':endskip', "[]\n[]\n[]\n[]\n{}\n{}\n{}\n{}\n{}", ''].join("\n");
         });
       });
 

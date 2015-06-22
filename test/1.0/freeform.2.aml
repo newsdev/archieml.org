@@ -1,0 +1,6 @@
+test: Key-value pairs are turned into key-value objects
+result: {"freeform": [{"type": "name", "value": "value"}]}
+
+[+freeform]
+name: value
+[]

@@ -1,0 +1,7 @@
+test: Ignore whitespace on either side of text
+result: {"freeform": [{"type": "text", "value": "one"}, {"type": "text", "value": "two"}]}
+
+[+freeform]
+  one  
+  two  
+[]

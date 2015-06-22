@@ -1,0 +1,11 @@
+test: Arrays nested in freeforms
+result: {"freeform": [{"type": "name", "value": "value"}, {"type": "text", "value": "Text"}, {"type": "array", "value": ["Value 1", "Value 2"]}]}
+
+[+freeform]
+name: value
+Text
+[.array]
+* Value 1
+* Value 2
+[]
+[]
