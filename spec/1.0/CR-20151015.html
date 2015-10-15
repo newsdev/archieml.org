@@ -1,35 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head><meta lang="" property="dc:language" content="en">
     <title>Archie Markup Language (ArchieML) 1.0</title>
-    <meta charset='utf-8'>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
-            async class='remove'></script>
-    <script class='remove'>
-      var respecConfig = {
-          specStatus:           "unofficial",
-          shortName:            "archieml",
-          publishDate:          "2015-10-15",
-          logos: [{}],
-          editors: [
-                {   name:       "Michael Strickland",
-                    company:    "The New York Times",
-                    companyUrl: "http://www.nytimes.com",
-                    mailto:     "michael.strickland@nytimes.com" },
-          ],
-          authors: [
-                {   name:       "Jeremy Ashkenas",
-                    mailto:     "jeremy.ashkenas@nytimes.com"},
-                {   name:       "Matthew Ericson",
-                    mailto:     "matte@nytimes.com"},
-                {   name:       "Tom Giratikanon",
-                    mailto:     "tom.giratikanon@nytimes.com"},
-                {   name:       "Archie Tse",
-                    mailto:     "tse@nytimes.com"},
-          ],
-          additionalCopyrightHolders: "Copyright © 2015 The New York Times"
-      };
-    </script>
+    <meta charset="utf-8">
+    
+    
 
     <style>
       body {
@@ -37,15 +12,211 @@
         padding: 0em 1em 2em 2em !important;
       }
     </style>
-  </head>
-  <body>
-    <section id='abstract'>
+  <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><link rel="stylesheet" href="w3c-unofficial.css"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--><script id="initialUserConfig" type="application/json">{
+  "specStatus": "unofficial",
+  "shortName": "archieml",
+  "publishDate": "2015-10-15",
+  "logos": [
+    {}
+  ],
+  "editors": [
+    {
+      "name": "Michael Strickland",
+      "company": "The New York Times",
+      "companyUrl": "http://www.nytimes.com",
+      "mailto": "michael.strickland@nytimes.com"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Jeremy Ashkenas",
+      "mailto": "jeremy.ashkenas@nytimes.com"
+    },
+    {
+      "name": "Matthew Ericson",
+      "mailto": "matte@nytimes.com"
+    },
+    {
+      "name": "Tom Giratikanon",
+      "mailto": "tom.giratikanon@nytimes.com"
+    },
+    {
+      "name": "Archie Tse",
+      "mailto": "tse@nytimes.com"
+    }
+  ],
+  "additionalCopyrightHolders": "Copyright © 2015 The New York Times"
+}</script></head>
+  <body class="h-entry" role="document" id="respecDocument"><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+      
+        </p><p></p>
+      
+  <p></p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Archie Markup Language (ArchieML) 1.0</h1>
+  
+  <h2 id="unofficial-draft-15-october-2015">Candidate Recommendation <time property="dcterms:issued" class="dt-published" datetime="2015-10-15">15 October 2015</time></h2>
+  <dl>
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt>Editor:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Michael Strickland</span>, The New York Times, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:michael.strickland@nytimes.com">michael.strickland@nytimes.com</a></span></span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+    
+      <dt>Authors:</dt>
+      <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Jeremy Ashkenas</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:jeremy.ashkenas@nytimes.com">jeremy.ashkenas@nytimes.com</a></span></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Matthew Ericson</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:matte@nytimes.com">matte@nytimes.com</a></span></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Tom Giratikanon</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:tom.giratikanon@nytimes.com">tom.giratikanon@nytimes.com</a></span></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Archie Tse</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:tse@nytimes.com">tse@nytimes.com</a></span></span>
+</dd>
+
+    
+    
+  </dl>
+  
+  
+  
+  
+    
+      <p class="copyright">Copyright © 2015 The New York Times</p>
+    
+  
+  <hr>
+</div>
+    <section id="abstract" class="introductory" property="dc:abstract"><h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
       <p>
         ArchieML is a text format optimized for human writability. It was designed for users unfamiliar with existing serialization formats, and defines a forgiving, incremental parser that does not throw syntax errors.
       </p>
-    </section>
-
-    <section id='sotd'>
+    </section><section id="sotd" class="introductory"><h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+  
+    
+    
       <p>
         This is the first candidate recommendation of the Archie Markup Language specification. It is a pre-release draft of the spec. As such, it can implemented in parsers, however this candidate should not be considered the definition of ArchieML 1.0.
       </p>
@@ -62,36 +233,40 @@
         Until the release of version 1.0, parsers should note the version of the candidate spec they are following.
       </p>
 
-      <section>
-        <h2>Changelog</h2>
+      <section typeof="bibo:Chapter" resource="#changelog" property="bibo:hasPart">
+        <h3 id="changelog" resource="#changelog"><span property="xhv:role" resource="xhv:heading">Changelog</span></h3>
 
-        <section>
-          <h3>15 October 2015</h3>
+        <section typeof="bibo:Chapter" resource="#x15-october-2015" property="bibo:hasPart">
+          <h4 id="x15-october-2015" resource="#x15-october-2015"><span property="xhv:role" resource="xhv:heading">15 October 2015</span></h4>
           <ul>
             <li>Added <a href="#freeform-arrays">freeform arrays</a> as a required feature.</li>
             <li>Clarified how parsers should treat leading backslashes with regards to <a href="#escaping">escaping lines</a>.</li>
           </ul>
         </section>
-        <section>
-          <h3>9 May 2015</h3>
+        <section typeof="bibo:Chapter" resource="#x9-may-2015" property="bibo:hasPart">
+          <h4 id="x9-may-2015" resource="#x9-may-2015"><span property="xhv:role" resource="xhv:heading">9 May 2015</span></h4>
           <ul>
             <li>Marked <a href="#inline-comments-deprecated">inline comments</a> as deprecated, pending removal in v1.0.</li>
             <li>Added <a href="#nested-arrays">nested arrays</a> as a required feature.</li>
           </ul>
         </section>
-        <section>
-          <h3>23 April 2015</h3>
+        <section typeof="bibo:Chapter" resource="#x23-april-2015" property="bibo:hasPart">
+          <h4 id="x23-april-2015" resource="#x23-april-2015"><span property="xhv:role" resource="xhv:heading">23 April 2015</span></h4>
           <ul>
             <li>Clarification to note <code>:skip</code> blocks, when placed inside a multi-line value, should break up the value, causing only the first line of the value to be stored.</li>
             <li>Change to how arrays that are defined multiple times are handled. Instead of "reopening" the original array, secondary definitions should replace previous definitions, making duplicate-key behavior of arrays match that of key/value pairs.</li>
           </ul>
         </section>
       </section>
-    </section>
+    
+  
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#parsing-overview" class="tocxref"><span class="secno">1. </span>Parsing overview</a><ul class="toc"><li class="tocline"><a href="#special-tokens" class="tocxref"><span class="secno">1.1 </span>Special tokens</a></li><li class="tocline"><a href="#conflict-resolution" class="tocxref"><span class="secno">1.2 </span>Conflict resolution</a></li><li class="tocline"><a href="#parser-options" class="tocxref"><span class="secno">1.3 </span>Parser options</a></li></ul></li><li class="tocline"><a href="#keys" class="tocxref"><span class="secno">2. </span>Keys</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3. </span>Values</a><ul class="toc"><li class="tocline"><a href="#multi-line-values" class="tocxref"><span class="secno">3.1 </span>Multi-line values</a></li></ul></li><li class="tocline"><a href="#escaping" class="tocxref"><span class="secno">4. </span>Escaping</a></li><li class="tocline"><a href="#object-blocks" class="tocxref"><span class="secno">5. </span>Object blocks</a></li><li class="tocline"><a href="#arrays" class="tocxref"><span class="secno">6. </span>Arrays</a><ul class="toc"><li class="tocline"><a href="#object-arrays" class="tocxref"><span class="secno">6.1 </span>Object arrays</a></li><li class="tocline"><a href="#string-arrays" class="tocxref"><span class="secno">6.2 </span>String arrays</a></li><li class="tocline"><a href="#nested-arrays" class="tocxref"><span class="secno">6.3 </span>Nested arrays</a></li><li class="tocline"><a href="#freeform-arrays" class="tocxref"><span class="secno">6.4 </span>Freeform arrays</a></li></ul></li><li class="tocline"><a href="#inline-comments-deprecated" class="tocxref"><span class="secno">7. </span>Inline comments <small><em>Deprecated</em></small></a></li><li class="tocline"><a href="#command-keys" class="tocxref"><span class="secno">8. </span>Command keys</a><ul class="toc"><li class="tocline"><a href="#end-command" class="tocxref"><span class="secno">8.1 </span>End command</a></li><li class="tocline"><a href="#skip-blocks" class="tocxref"><span class="secno">8.2 </span>Skip blocks</a></li><li class="tocline"><a href="#ignore" class="tocxref"><span class="secno">8.3 </span>Ignore</a></li></ul></li></ul></section>
 
-    <section>
-      <section>
-        <h3>Goals</h3>
+    
+
+    <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
+      <section typeof="bibo:Chapter" resource="#goals" property="bibo:hasPart">
+        <h3 id="goals" resource="#goals"><span property="xhv:role" resource="xhv:heading">Goals</span></h3>
 
         <ul>
           <li>Whitespace should not be signifiant to the document structure.</li>
@@ -100,8 +275,8 @@
         </ul>
       </section>
 
-      <section>
-        <h3>Definitions</h3>
+      <section typeof="bibo:Chapter" resource="#definitions" property="bibo:hasPart">
+        <h3 id="definitions" resource="#definitions"><span property="xhv:role" resource="xhv:heading">Definitions</span></h3>
 
         <ul>
           <li>A <strong>token</strong> is defined as either a key, or a namespace for a key, either of which can use any of the following characeters: alphanumeric (upper- and lower-case), hyphens (-) and underscores (_). In addition, periods (.) may be used to specify nested keys or namespaces, but they may not appear at either end of a token.</li>
@@ -111,11 +286,11 @@
       </section>
     </section>
 
-    <section>
-      <h2>Parsing overview</h2>
+    <section id="parsing-overview" typeof="bibo:Chapter" resource="#parsing-overview" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-parsing-overview" resource="#h-parsing-overview"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Parsing overview</span></h2>
 
-      <section>
-        <h3>Special tokens</h3>
+      <section id="special-tokens" typeof="bibo:Chapter" resource="#special-tokens" property="bibo:hasPart">
+        <h3 id="h-special-tokens" resource="#h-special-tokens"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Special tokens</span></h3>
         <p>
           Parsers should implement a system by which whole lines are interpreted either as a <strong>command line</strong>, or a <strong>plain text line</strong> to be read into a buffer.
         </p>
@@ -152,8 +327,8 @@
         </p>
       </section>
 
-      <section>
-        <h3>Conflict resolution</h3>
+      <section id="conflict-resolution" typeof="bibo:Chapter" resource="#conflict-resolution" property="bibo:hasPart">
+        <h3 id="h-conflict-resolution" resource="#h-conflict-resolution"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Conflict resolution</span></h3>
 
         <p>
           ArchieML does not throw syntax errors. This is to make parsing of documents as simple as possible, but also to avoid requiring writers be directly aware of the parsing mechanism. Documents are parsed line by line, and any line that does not conform to one of the special line syntaxes above is interpreted as plain text. Syntax errors that cause a command line to be treated as plain text thus do not "break" the parsing of a document, but instead generally omit that line from the output.
@@ -192,8 +367,8 @@
         </code></pre>
       </section>
 
-      <section>
-        <h3>Parser options</h3>
+      <section id="parser-options" typeof="bibo:Chapter" resource="#parser-options" property="bibo:hasPart">
+        <h3 id="h-parser-options" resource="#h-parser-options"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>Parser options</span></h3>
 
         <p>
           Parsers should accept several options for modifying how documents are processed.
@@ -205,8 +380,8 @@
       </section>
     </section>
 
-    <section>
-      <h2>Keys</h2>
+    <section id="keys" typeof="bibo:Chapter" resource="#keys" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-keys" resource="#h-keys"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Keys</span></h2>
 
       <p>
         Keys, both at the top level of the output, and within nested objects, may contain only alphanumeric characters, hyphens and underscores, in any sequence. If other charactes are included, then the line should not be interpreted as a key/value pair, and instead treated as plain text.
@@ -235,8 +410,8 @@
       </code></pre>
     </section>
 
-    <section>
-      <h2>Values</h2>
+    <section id="values" typeof="bibo:Chapter" resource="#values" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-values" resource="#h-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Values</span></h2>
       <p>
         Values are the characters that are stored within the output's data structure. Special lines beginning with <code>token:</code> or <code>*</code> define values. Any characters that follow the special beginning of the line should be immediately stored as a value.
       </p>
@@ -244,8 +419,8 @@
         <strong>Values are always stored in the output as strings</strong>. Leading and trailing whitespace should be stripped away. A value ends when the parser encounters a newline.
       </p>
 
-      <section>
-        <h2>Multi-line values</h2>
+      <section id="multi-line-values" typeof="bibo:Chapter" resource="#multi-line-values" property="bibo:hasPart">
+        <h3 id="h-multi-line-values" resource="#h-multi-line-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Multi-line values</span></h3>
 
         <p>
           All plain-text lines should be stored into a buffer that is emptied whenever any command line is encountered. This is because values that span multiple lines are defined by including an "ending anchor tag", <code>:end</code>, to the line following the value. Thus the parser can not know ahead of time whether lines 2+ of a value need to be included, until the value has been defined in full.
@@ -268,8 +443,8 @@
       </section>
     </section>
 
-    <section>
-      <h2>Escaping</h2>
+    <section id="escaping" typeof="bibo:Chapter" resource="#escaping" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-escaping" resource="#h-escaping"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Escaping</span></h2>
 
       <p>
         If you wish to include a line within a multi-line value that would normally be interpreted as a command line, you can <strong>escape</strong> the line. This is accomplished by prepending the line with a backslash (<code>\</code>). Its presence should prevent the line from being treated as a command, and instead treated as plain text.
@@ -296,8 +471,8 @@
       </p>
     </section>
 
-    <section>
-      <h2>Object blocks</h2>
+    <section id="object-blocks" typeof="bibo:Chapter" resource="#object-blocks" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-object-blocks" resource="#h-object-blocks"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Object blocks</span></h2>
 
       <p>
         Object blocks are a shorthand way to avoid repeating a namespace for multiple keys. You can specify the start of an object block with a line that begins with <code>{token}</code>.
@@ -325,11 +500,11 @@
       </p>
     </section>
 
-    <section>
-      <h2>Arrays</h2>
+    <section id="arrays" typeof="bibo:Chapter" resource="#arrays" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-arrays" resource="#h-arrays"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Arrays</span></h2>
 
-      <section>
-        <h3>Object arrays</h3>
+      <section id="object-arrays" typeof="bibo:Chapter" resource="#object-arrays" property="bibo:hasPart">
+        <h3 id="h-object-arrays" resource="#h-object-arrays"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>Object arrays</span></h3>
 
         <p>
           Arrays of objects can be defined to create multiple instances of an object. They begin by declaring an array line, similar to an object block above; however, arrays use square brackets instead of curly brackets.
@@ -373,8 +548,8 @@
         </code></pre>
       </section>
 
-      <section>
-        <h3>String arrays</h3>
+      <section id="string-arrays" typeof="bibo:Chapter" resource="#string-arrays" property="bibo:hasPart">
+        <h3 id="h-string-arrays" resource="#h-string-arrays"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2 </span>String arrays</span></h3>
 
         <p>
           Arrays can also be created that contain simple strings instead of objects. They begin the same way as object arrays do, and the same rules apply around naming a string array. String arrays contain values defined by lines beginning with <code>*</code>. All characters following an <code>*</code>, minus surrounding whitespace, should be stored as a new value inside the array.
@@ -408,8 +583,8 @@
         </code></pre>
       </section>
 
-      <section>
-        <h3>Nested arrays</h3>
+      <section id="nested-arrays" typeof="bibo:Chapter" resource="#nested-arrays" property="bibo:hasPart">
+        <h3 id="h-nested-arrays" resource="#h-nested-arrays"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3 </span>Nested arrays</span></h3>
 
         <p>
           Array elements can also contain nested-arrays (i.e., sub-arrays). To open a nested array, add a <code>.</code> to the front of the array's key: <code>[.subarray]</code>. This signfies that <code>subarray</code> should be an array called <code>subarray</code> within the current array element, instead of closing the current array and opening a new one.
@@ -454,8 +629,8 @@
         </p>
       </section>
 
-      <section>
-        <h3>Freeform arrays</h3>
+      <section id="freeform-arrays" typeof="bibo:Chapter" resource="#freeform-arrays" property="bibo:hasPart">
+        <h3 id="h-freeform-arrays" resource="#h-freeform-arrays"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.4 </span>Freeform arrays</span></h3>
 
         <p>
           Where Object arrays build up data structures with multiple key/value pairs with no inherent ordering of keys, Freeform arrays preserve the order of every line. Every line within a Freeform array results in an individual object in the array. Sequential lines result in as many elements in the array; the values are not folded into the same object.
@@ -519,8 +694,8 @@
 
     </section>
 
-    <section>
-      <h2>Inline comments <small><em>Deprecated</em></small></h2>
+    <section id="inline-comments-deprecated" typeof="bibo:Chapter" resource="#inline-comments-deprecated" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-inline-comments-deprecated" resource="#h-inline-comments-deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>Inline comments <small><em>Deprecated</em></small></span></h2>
 
       <p>
         <strong>NOTE: Inline comments have been deprecated. This section will be removed in the 1.0 recommendation. If currently implemented as an option, it should default to off.</strong>
@@ -538,14 +713,14 @@
       </code></pre>
       <p>
         As with other punctuation, surrounding non-newline whitespace should not affect parsing.</p>
-      </p>
+      <p></p>
       <p>
         To avoid making assumptions about the end use of the output, whitespace on either side of inline comments is preserved, which may result in extra whitespace after comments have been removed.
       </p>
     </section>
 
-    <section>
-      <h2>Command keys</h2>
+    <section id="command-keys" typeof="bibo:Chapter" resource="#command-keys" property="bibo:hasPart">
+      <!--OddPage--><h2 id="h-command-keys" resource="#h-command-keys"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Command keys</span></h2>
       <p>
         Command keys are defined as any command line matching the <code>:token</code> pattern. Specifically, parsers should only treat this pattern of line as a command if the token begins with any of the following sequences:
       </p>
@@ -565,19 +740,19 @@
         Any unescaped command key should reset the buffer.
       </p>
 
-      <section>
-        <h3>End command</h3>
+      <section id="end-command" typeof="bibo:Chapter" resource="#end-command" property="bibo:hasPart">
+        <h3 id="h-end-command" resource="#h-end-command"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.1 </span>End command</span></h3>
 
         <p>
           The specifics of <code>:end</code> command keys are described above in "<a href="#multi-line-values">Multi-line values</a>."
         </p>
         <p>
           It should be noted that <code>:end</code> lines which do not occur after a key/value line or array element line (<code>*</code>) should have no effect on the output.</p>
-        </p>
+        <p></p>
       </section>
 
-      <section>
-        <h3>Skip blocks</h3>
+      <section id="skip-blocks" typeof="bibo:Chapter" resource="#skip-blocks" property="bibo:hasPart">
+        <h3 id="h-skip-blocks" resource="#h-skip-blocks"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.2 </span>Skip blocks</span></h3>
 
         <p>
           When a line beginning with <code>:skip</code> is encountered, the parser should begin to ignore all lines of text. Plain text lines should not be added to the buffer, and all command lines should be ignored. This is with the exception of two command keys which serve to end the skip block: <code>:endskip</code> (which closes the block and signals to resume normal parsing) or <code>:ignore</code> (which stops parsing altogether).
@@ -590,8 +765,8 @@
         </p>
       </section>
 
-      <section>
-        <h3>Ignore</h3>
+      <section id="ignore" typeof="bibo:Chapter" resource="#ignore" property="bibo:hasPart">
+        <h3 id="h-ignore" resource="#h-ignore"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.3 </span>Ignore</span></h3>
 
         <p>
           As soon as a line beginning with <code>:ignore</code> is encountered, parsing should stop immediately, and the output should be returned. This is a safety mechanism to allow for a safe comment / scratchpad area that has no chance of ending up in, or affecting, the output.
@@ -599,13 +774,8 @@
       </section>
     </section>
 
-    <script class='remove'>
-      setTimeout(function() {
-        $('link').attr('href', 'w3c-unofficial.css')
-        $('h2')[0].firstChild.data = "Candidate Recommendation ";
-        $('#sotd p')[0].remove();
-      }, 1000);
-    </script>
+    
 
-  </body>
-</html>
+  
+
+</body></html>
