@@ -1,0 +1,8 @@
+test: scoped objects in freeforms
+result: {"freeform": [{"type": "object.scope", "value": {"key1": "value1", "key2": "value2"}}]}
+
+[+freeform]
+{.object.scope}
+key1: value1
+key2: value2
+{}

@@ -1,0 +1,9 @@
+test: {} resets to the global scope
+result: {"scope1": {"key1": "value1"}, "scope2": {"key2": "value2"}, "key": "value"}
+
+{scope1}
+key1: value1
+{scope2}
+key2: value2
+{}
+key:value

@@ -1,0 +1,8 @@
+test: Scoped complex arrays nested in freeforms
+result: {"freeform": [{"type": "array.complex", "value": [{"key1": "value1", "key2": "value2"}]}]}
+
+[+freeform]
+[.array.complex]
+key1: value1
+key2: value2
+[]

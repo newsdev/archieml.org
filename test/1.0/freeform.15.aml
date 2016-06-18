@@ -1,0 +1,8 @@
+test: [] does not reset to global scope within freeforms
+result: {"freeform": [{"type": "array", "value": []}, {"type": "key", "value": "value"}]}
+
+[+freeform]
+[.array]
+[]
+key: value
+[]

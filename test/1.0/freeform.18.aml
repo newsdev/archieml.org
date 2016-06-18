@@ -1,0 +1,6 @@
+test: dot-notation should be become part of the type value within freeforms
+result: {"freeform": [{"type": "scope.key", "value": "value"}]}
+
+[+freeform]
+scope.key: value
+[]

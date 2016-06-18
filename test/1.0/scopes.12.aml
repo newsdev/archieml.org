@@ -1,4 +1,4 @@
-test: {} resets to the global scope
+test: {} closes the current scope
 result: {"scope": {}, "key": "value"}
 
 {scope}

@@ -1,0 +1,8 @@
+test: Scoped simple arrays nested in freeforms
+result: {"freeform": [{"type": "array.simple", "value": ["value1", "value2"]}]}
+
+[+freeform]
+[.array.simple]
+* value1
+* value2
+[]
