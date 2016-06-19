@@ -1,19 +1,23 @@
-'use strict';
+
 
 // Structure inspired by John Resig's HTML parser
 // http://ejohn.org/blog/pure-javascript-html-parser/
 
 (function() {
+  'use strict';
 
 // The load function takes a string of text as its only argument.
 // It then proceeds to match the text to one of several regular expressions
 // which match patterns for different types of commands in AML.
 function load(input, options) {
+  var whitespacePattern = '\\u0000\\u0009\\u000A\\u000B\\u000C\\u000D\\u0020\\u00A0\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u200B\\u2028\\u2029\\u202F\\u205F\\u3000\\uFEFF';
+  var slugBlacklist = whitespacePattern + '\\u005B\\u005C\\u005D\\u007B\\u007D\\u003A';
+
   var nextLine = new RegExp('.*((\r|\n)+)');
-  var startKey = new RegExp('^\\s*([A-Za-z0-9-_\.]+)[ \t\r]*:[ \t\r]*(.*(?:\n|\r|$))');
+  var startKey = new RegExp('^\\s*([^' + slugBlacklist + ']+)[ \t\r]*:[ \t\r]*(.*(?:\n|\r|$))');
   var commandKey = new RegExp('^\\s*:[ \t\r]*(endskip|ignore|skip|end).*?(\n|\r|$)', 'i');
   var arrayElement = new RegExp('^\\s*\\*[ \t\r]*(.*(?:\n|\r|$))');
-  var scopePattern = new RegExp('^\\s*(\\[|\\{)[ \t\r]*([\+\.]*)[ \t\r]*([A-Za-z0-9-_\.]*)[ \t\r]*(?:\\]|\\}).*?(\n|\r|$)');
+  var scopePattern = new RegExp('^\\s*(\\[|\\{)[ \t\r]*([\+\.]*)[ \t\r]*([^' + slugBlacklist + ']*)[ \t\r]*(?:\\]|\\}).*?(\n|\r|$)');
 
   var data = {},
       scope = data,
@@ -62,6 +66,7 @@ function load(input, options) {
 
     } else {
       // End of document reached
+      parseText(input);
       input = '';
     }
 
@@ -153,17 +158,30 @@ function load(input, options) {
         incrementArrayElement(scopeKey, flags);
         nesting = true;
         if (stackScope) keyScope = scope;
+
+      // Otherwise, make sure we reset to the global scope
+      } else {
+        scope = data;
+        stack = [];
       }
 
-      var keyBits = scopeKey.split('.');
-      for (var i=0; i<keyBits.length - 1; i++) {
-        keyScope = keyScope[keyBits[i]] = keyScope[keyBits[i]] || {};
+      // Within freeforms, the `type` of nested objects and arrays is taken
+      // verbatim from the `keyScope`.
+      if (stackScope && stackScope.flags.indexOf('+') > -1) {
+        var parsedScopeKey = scopeKey;
+
+      // Outside of freeforms, dot-notation interpreted as nested data.
+      } else {
+        var keyBits = scopeKey.split('.');
+        for (var i=0; i<keyBits.length - 1; i++) {
+          keyScope = keyScope[keyBits[i]] = keyScope[keyBits[i]] || {};
+        }
+        var parsedScopeKey = keyBits[keyBits.length - 1];
       }
-      var lastBit = keyBits[keyBits.length - 1];
 
       // Content of nested scopes within a freeform should be stored under "value."
       if (stackScope && stackScope.flags.indexOf('+') > -1 && flags.indexOf('.') > -1) {
-        if (scopeType === '[') lastBit = 'value';
+        if (scopeType === '[') parsedScopeKey = 'value';
         else if (scopeType === '{') scope = scope.value = {};
       }
 
@@ -175,7 +193,7 @@ function load(input, options) {
         scope: scope
       };
       if (scopeType == '[') {
-        stackScopeItem.array = keyScope[lastBit] = [];
+        stackScopeItem.array = keyScope[parsedScopeKey] = [];
         if (nesting) {
           stack.push(stackScopeItem);
         } else {
@@ -187,7 +205,7 @@ function load(input, options) {
         if (nesting) {
           stack.push(stackScopeItem);
         } else {
-          scope = keyScope[lastBit] = (typeof keyScope[lastBit] === 'object') ? keyScope[lastBit] : {};
+          scope = keyScope[parsedScopeKey] = (typeof keyScope[parsedScopeKey] === 'object') ? keyScope[parsedScopeKey] : {};
           stack = [stackScopeItem];
         }
         stackScope = stack[stack.length - 1];
@@ -302,4 +320,3 @@ if (typeof define === 'function' && define.amd) {
   });
 }
 }.call(this))
-
