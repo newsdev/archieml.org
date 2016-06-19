@@ -1,4 +1,0 @@
-test: symbols are not allowed in keys
-result: {}
-
-k&ey:value

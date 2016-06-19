@@ -1,0 +1,6 @@
+test: Arbitrary Unicode is allowed in keys
+result: {"π": "3.14159", "你好": "你好世界", "🐶🐮": "dogcow"}
+
+π: 3.14159
+你好: 你好世界
+🐶🐮: dogcow
