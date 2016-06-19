@@ -1,0 +1,6 @@
+test: Arbitrary Unicode is allowed in keys for arrays
+result: {"π": [{"value": "3.14159", "name": "Pi"}]}
+
+[π]
+value: 3.14159
+name: Pi

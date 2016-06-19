@@ -1,0 +1,4 @@
+test: Arbitrary Unicode can be used along with dot-notation
+result: {"🐶": {"🐮": "cow"}}
+
+🐶.🐮: cow

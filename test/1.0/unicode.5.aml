@@ -1,0 +1,5 @@
+test: Arbitrary Unicode can be used along with freeform arrays
+result: {"🐮": [{"type": "text", "value": "This text belongs to a cow."}]}
+
+[+🐮]
+This text belongs to a cow.
