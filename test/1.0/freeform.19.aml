@@ -1,0 +1,6 @@
+test: Bullet strings are converted to objects with key=text, and bullets are not stripped
+result: {"freeform": [{"type": "text", "value": "* value"}]}
+
+[+freeform]
+* value
+[]

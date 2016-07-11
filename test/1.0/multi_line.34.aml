@@ -1,0 +1,9 @@
+test: bullets within a scoped multi-line value do not break up the value
+result: {"scope": {"key": "value\ntext\n* value\nmore text"}}
+
+{scope}
+key:value
+text
+* value
+more text
+:end
