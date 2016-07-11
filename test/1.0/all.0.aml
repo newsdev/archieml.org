@@ -1,5 +1,5 @@
 test: combined test
-result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005array":[],"00006array":[],"00007scope":{"array":[]},"00008array":[{"00008scope":{"key":"value"}},{"00008scope":{"key":"value"}}],"00009array":[],"00009key":"value","00010array":[],"00010key":"value","00011array":[],"00011key":"value","00012array":[],"00012key":"value","00013array":[],"00013key":"value","00014array":[],"00014topkey":"value","00015array":[{"00015key":"value"}],"00016array":[{"00016key":"value","00016second":"value"}],"00017array":[{"00017key":"value","00017second":"value"},{"00017key":"value"}],"00018array":[{"00018key":"first"},{"00018key":"second"}],"00019array":[{"00019scope":{"key":"first"}},{"00019scope":{"key":"second"}}],"00020array":[{"00020key":"value","00020scope":{"key":"value"}}],"00021array":[{"00021scope":{"key":"value"},"00021key":"value","00021otherscope":{"key":"value"}}],"00022array1":[{"00022key":"value"}],"00022array2":[],"00023array":[{"00023key":"value"}],"00023scope":{},"00024array":[{"00024key":"value","00024other":"value\nmore text"}],"00025array":[{"00025key":"value\n* value\nmore text"}],"00026array":[{"00026key":"value"}],"00027array":[{"00027key":"value 2"}],"00028array":["Value"],"00029a":{"b":[{"00029key":"value"}]},"00030array":[],"00030":{"subarray":[{"00030key":"value"}]},"00031array":[],"00031":{"subarray":["Value 1","Value 2"]},"00032array":[],"00032":{"subarray":[{"00032key":"value"},{"00032key":"value"}]},"00033array":[],"00033":{"subarray":[{"00033key1":"value","00033key2":"value"},{"00033key1":"value","00033key2":"value"}]},"00034array":[],"00034":{"subarray":[{"00034subkey":"value"}]},"00034parentkey":"value","00035array":[{"00035parentkey":"value"}],"00035":{"subarray":[{"00035subkey":"value"}]},"00036array":[{"00036key":"value"}],"00036":{"subarray":[{"00036subkey":"value"}]},"00036key":"value","00037array":[{"00037key":"value"}],"00037":{"subarray":[{"00037subkey":"value"}]},"00037key":"value","00038array":[],"00038":{"subarray":[]},"00039array":[],"00039":{"subarray":[],"subsubarray":[{"00039key1":"Value 1","00039key2":"Value 2"}]},"00040array":[],"00040":{"subarray":[],"subsubarray":["Value 1","Value 2"]},"00041":{"subarray":[{"00041key":"value"}]},"00042array":["Value"],"00043array":["Value"],"00044array":["Value"],"00045array":["Value 1","Value 2"],"00046array":["Value 1","Value 2"],"00047array":["Value 1","Value 2"],"00048array":["Value 1"],"00048key":"value","00049array":["Value 1\nextra"],"00050array":["Value 1\n* extra"],"00051array":["Value1\n:end"],"00052array":["Value1\nkey\\:value"],"00053array":["Value\nkey:value"],"00054array":["Value 1\nword key\\:value"],"00055array1":["value"],"00055array2":[],"00056array":["value"],"00056scope":{},"00057array":["value\n00057key: value\nmore text"],"00058array":["value","value\nmore text"],"00059array":["value"],"00060array":["Value 2"],"00061array":[{"00061key":"value"}],"00062a":{"b":["simple value"]},"freeform":[{"type":"00080scope.key","value":"value"}],"00067.image":{"00067name":"map.jpg","00067credit":"Photographer"},"00068.simple":["Value 1","Value 2"],"00069array":[{"00069name":"value","freeform":[{"type":"00069name","value":"value"},{"type":"text","value":"Text"}]}],"00072scope":{"freeform":[{"type":"text","value":"Value"}]},"00074.array.complex":[{"00074key1":"value1","00074key2":"value2"}],"00075.complex":[{"00075key1":"value1","00075key2":"value2"}],"00076.scope":{},"00076key":"value","00077.array":[],"00077key":"value","00078.array.simple":["value1","value2"],"00079.object.scope":{"00079key1":"value1","00079key2":"value2"},"00081a-_1":"value","00083scope":{"key":"value"},"00084scope":{"key":"value","otherkey":"value"},"00085string_to_object":{"scope":{"scope":"value"}},"00085object_to_string":{"scope":"value"},"00086key":"value\nextra","00087key":"value\nextra","00088key":"value\n\t \nextra","00089key":"value\nextra","00090key":"value\t \nextra","00091key":"value\nextra","00092key":"value\nextra","00093key":"value\nextra","00094key":"value\nextra","00095key":"value","00096key":"value\n:notacommand","00097key":"value\nextra","00098key":"value\nextra","00099key":":value","00100key":"\\:value","00101key":"value\nkey2\\:value","00102key":"value\nkey2:value","00103key":"value\n:end","00104key":"value\n:endthis","00105key":"value\n:notacommand","00106key":"value\n* value","00107key":"value\n* value","00108key":"value\n{scope}","00109key":"value","00109array":[],"00110key":"value","00110scope":{},"00111key":"value\ntext\n* value\nmore text","00112key":"value","00113key":"value\n\\:end","00114key":"value\n\\\\:end","00115key":"value\n:end\n:ignore\n:endskip\n:skip","00116key":"value\nLorem key2\\\\:value","00117scope":{},"00118scope":{},"00119scope":{},"00120scope":{},"00121scope":{},"00122scope":{},"00123key":"value","00123scope":{},"00124scope":{"00124key":"value"},"00125scope":{"scope":{"00125key":"value"}},"00126scope":{"00126key":"value","00126other":"value"},"00127scope":{"scope":{"00127key":"value"},"otherscope":{"00127key":"value"}},"00128scope":{},"00128key":"value","00129scope":{},"00129key":"value","00130scope":{},"00130key":"value","00131scope":{},"00131key":"value","00132scope":{},"00132key":"value","00133key":{"00133subkey":"subvalue"},"00134scope1":{"00134key1":"value1"},"00134scope2":{"00134key2":"value2"},"00134key":"value","00139key":"value","00144key":"value","00145key":"value","00146key":"value","00148key1":"value1","00148key2":"value2","π":"3.14159","你好":"你好世界","🐶🐮":"dogcow","00150key":"value","00151key":"value","00152key":"value","00153key":"value","00154key":"value","00155key":"newvalue","00156key":":value","00157key":"value","00157Key":"Value","00158key":"value","00159key":"<strong>value</strong>"}
+result: {"00001array":[],"00002array":[],"00003array":[],"00004array":[],"00005array":[],"00006array":[],"00007scope":{"array":[]},"00008array":[{"00008scope":{"key":"value"}},{"00008scope":{"key":"value"}}],"00009array":[],"00009key":"value","00010array":[],"00010key":"value","00011array":[],"00011key":"value","00012array":[],"00012key":"value","00013array":[],"00013key":"value","00014array":[],"00014topkey":"value","00015array":[{"00015key":"value"}],"00016array":[{"00016key":"value","00016second":"value"}],"00017array":[{"00017key":"value","00017second":"value"},{"00017key":"value"}],"00018array":[{"00018key":"first"},{"00018key":"second"}],"00019array":[{"00019scope":{"key":"first"}},{"00019scope":{"key":"second"}}],"00020array":[{"00020key":"value","00020scope":{"key":"value"}}],"00021array":[{"00021scope":{"key":"value"},"00021key":"value","00021otherscope":{"key":"value"}}],"00022array1":[{"00022key":"value"}],"00022array2":[],"00023array":[{"00023key":"value"}],"00023scope":{},"00024array":[{"00024key":"value","00024other":"value\nmore text"}],"00025array":[{"00025key":"value\n* value\nmore text"}],"00026array":[{"00026key":"value"}],"00027array":[{"00027key":"value 2"}],"00028array":["Value"],"00029a":{"b":[{"00029key":"value"}]},"00030array":[],"00030":{"subarray":[{"00030key":"value"}]},"00031array":[],"00031":{"subarray":["Value 1","Value 2"]},"00032array":[],"00032":{"subarray":[{"00032key":"value"},{"00032key":"value"}]},"00033array":[],"00033":{"subarray":[{"00033key1":"value","00033key2":"value"},{"00033key1":"value","00033key2":"value"}]},"00034array":[],"00034":{"subarray":[{"00034subkey":"value"}]},"00034parentkey":"value","00035array":[{"00035parentkey":"value"}],"00035":{"subarray":[{"00035subkey":"value"}]},"00036array":[{"00036key":"value"}],"00036":{"subarray":[{"00036subkey":"value"}]},"00036key":"value","00037array":[{"00037key":"value"}],"00037":{"subarray":[{"00037subkey":"value"}]},"00037key":"value","00038array":[],"00038":{"subarray":[]},"00039array":[],"00039":{"subarray":[],"subsubarray":[{"00039key1":"Value 1","00039key2":"Value 2"}]},"00040array":[],"00040":{"subarray":[],"subsubarray":["Value 1","Value 2"]},"00041":{"subarray":[{"00041key":"value"}]},"00042array":["Value"],"00043array":["Value"],"00044array":["Value"],"00045array":["Value 1","Value 2"],"00046array":["Value 1","Value 2"],"00047array":["Value 1","Value 2"],"00048array":["Value 1"],"00048key":"value","00049array":["Value 1\nextra"],"00050array":["Value 1\n* extra"],"00051array":["Value1\n:end"],"00052array":["Value1\nkey\\:value"],"00053array":["Value\nkey:value"],"00054array":["Value 1\nword key\\:value"],"00055array1":["value"],"00055array2":[],"00056array":["value"],"00056scope":{},"00057array":["value\n00057key: value\nmore text"],"00058array":["value","value\nmore text"],"00059array":["value"],"00060array":["Value 2"],"00061array":[{"00061key":"value"}],"00062a":{"b":["simple value"]},"freeform":[{"type":"text","value":"* value"}],"00067.image":{"00067name":"map.jpg","00067credit":"Photographer"},"00068.simple":["Value 1","Value 2"],"00069array":[{"00069name":"value","freeform":[{"type":"00069name","value":"value"},{"type":"text","value":"Text"}]}],"00072scope":{"freeform":[{"type":"text","value":"Value"}]},"00074.array.complex":[{"00074key1":"value1","00074key2":"value2"}],"00075.complex":[{"00075key1":"value1","00075key2":"value2"}],"00076.scope":{},"00076key":"value","00077.array":[],"00077key":"value","00078.array.simple":["value1","value2"],"00079.object.scope":{"00079key1":"value1","00079key2":"value2"},"00082a-_1":"value","00084scope":{"key":"value"},"00085scope":{"key":"value","otherkey":"value"},"00086string_to_object":{"scope":{"scope":"value"}},"00086object_to_string":{"scope":"value"},"00087key":"value\nextra","00088key":"value\nextra","00089key":"value\n\t \nextra","00090key":"value\nextra","00091key":"value\t \nextra","00092key":"value\nextra","00093key":"value\nextra","00094key":"value\nextra","00095key":"value\nextra","00096key":"value","00097key":"value\n:notacommand","00098key":"value\nextra","00099key":"value\nextra","00100key":":value","00101key":"\\:value","00102key":"value\nkey2\\:value","00103key":"value\nkey2:value","00104key":"value\n:end","00105key":"value\n:endthis","00106key":"value\n:notacommand","00107key":"value\n* value","00108key":"value\n* value","00109key":"value\n{scope}","00110key":"value","00110array":[],"00111key":"value","00111scope":{},"00112key":"value\ntext\n* value\nmore text","00113key":"value","00114key":"value\n\\:end","00115key":"value\n\\\\:end","00116key":"value\n:end\n:ignore\n:endskip\n:skip","00117key":"value\nLorem key2\\\\:value","00118scope":{"00118key":"value\ntext\n* value\nmore text"},"00119scope":{},"00120scope":{},"00121scope":{},"00122scope":{},"00123scope":{},"00124scope":{},"00125key":"value","00125scope":{},"00126scope":{"00126key":"value"},"00127scope":{"scope":{"00127key":"value"}},"00128scope":{"00128key":"value","00128other":"value"},"00129scope":{"scope":{"00129key":"value"},"otherscope":{"00129key":"value"}},"00130scope":{},"00130key":"value","00131scope":{},"00131key":"value","00132scope":{},"00132key":"value","00133scope":{},"00133key":"value","00134scope":{},"00134key":"value","00135key":{"00135subkey":"subvalue"},"00136scope1":{"00136key1":"value1"},"00136scope2":{"00136key2":"value2"},"00136key":"value","00141key":"value","00146key":"value","00147key":"value","00148key":"value","00150key1":"value1","00150key2":"value2","π":[{"00153value":"3.14159","00153name":"Pi"}],"你好":"你好世界","🐶🐮":"dogcow","🐶":{"🐮":"cow"},"🐮":[{"type":"text","value":"This text belongs to a cow."},{"type":"text","value":"==="}],"00156key":"value","00157key":"value","00158key":"value","00159key":"value","00160key":"value","00161key":"newvalue","00162key":":value","00163key":"value","00163Key":"Value","00164key":"value","00165key":"<strong>value</strong>"}
 
 === Test arrays.1
 [00001array]
@@ -1285,8 +1285,23 @@ Text
 {}
 {}
 {}
+=== Test freeform.19
+[+freeform]
+* value
+[]
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
 === Test keys.1
-00081a-_1: value
+00082a-_1: value
 ===
 :endskip
 []
@@ -1312,7 +1327,7 @@ k ey:value
 {}
 {}
 === Test keys.4
-00083scope.key:value
+00084scope.key:value
 ===
 :endskip
 []
@@ -1325,8 +1340,8 @@ k ey:value
 {}
 {}
 === Test keys.5
-00084scope.key:value
-00084scope.otherkey:value
+00085scope.key:value
+00085scope.otherkey:value
 ===
 :endskip
 []
@@ -1339,10 +1354,10 @@ k ey:value
 {}
 {}
 === Test keys.6
-00085string_to_object.scope: value
-00085string_to_object.scope.scope: value
-00085object_to_string.scope.scope: value
-00085object_to_string.scope: value
+00086string_to_object.scope: value
+00086string_to_object.scope.scope: value
+00086object_to_string.scope.scope: value
+00086object_to_string.scope: value
 ===
 :endskip
 []
@@ -1355,7 +1370,7 @@ k ey:value
 {}
 {}
 === Test multi_line.1
-00086key:value
+00087key:value
 extra
 :end
 ===
@@ -1370,7 +1385,7 @@ extra
 {}
 {}
 === Test multi_line.2
-00087key:value
+00088key:value
 extra
 :EnD
 ===
@@ -1385,7 +1400,7 @@ extra
 {}
 {}
 === Test multi_line.3
-00088key:value
+00089key:value
 	 
 extra
 :end
@@ -1401,7 +1416,7 @@ extra
 {}
 {}
 === Test multi_line.4
-00089key:value
+00090key:value
 extra	 
 :end
 ===
@@ -1416,7 +1431,7 @@ extra
 {}
 {}
 === Test multi_line.5
-00090key:value	 
+00091key:value	 
 extra
 :end
 ===
@@ -1431,7 +1446,7 @@ extra
 {}
 {}
 === Test multi_line.6
-00091key:value
+00092key:value
 extra
  
 	
@@ -1448,7 +1463,7 @@ extra
 {}
 {}
 === Test multi_line.7
-00092key:value
+00093key:value
 extra
   :end  
 ===
@@ -1463,7 +1478,7 @@ extra
 {}
 {}
 === Test multi_line.8
-00093key:value
+00094key:value
 extra
 		:end		
 ===
@@ -1478,7 +1493,7 @@ extra
 {}
 {}
 === Test multi_line.9
-00094key:value
+00095key:value
 extra
 :endthis
 ===
@@ -1493,7 +1508,7 @@ extra
 {}
 {}
 === Test multi_line.10
-00095key:value
+00096key:value
 extra
 :endskip
 ===
@@ -1508,7 +1523,7 @@ extra
 {}
 {}
 === Test multi_line.11
-00096key:value
+00097key:value
 :notacommand
 :end
 ===
@@ -1523,7 +1538,7 @@ extra
 {}
 {}
 === Test multi_line.12
-00097key:value
+00098key:value
 extra
 :end this
 ===
@@ -1538,7 +1553,7 @@ extra
 {}
 {}
 === Test multi_line.13
-00098key:value
+00099key:value
 extra
 :end	this
 ===
@@ -1553,7 +1568,7 @@ extra
 {}
 {}
 === Test multi_line.14
-00099key::value
+00100key::value
 :end
 ===
 :endskip
@@ -1567,7 +1582,7 @@ extra
 {}
 {}
 === Test multi_line.15
-00100key:\:value
+00101key:\:value
 :end
 ===
 :endskip
@@ -1581,7 +1596,7 @@ extra
 {}
 {}
 === Test multi_line.16
-00101key:value
+00102key:value
 key2\:value
 :end
 ===
@@ -1596,7 +1611,7 @@ key2\:value
 {}
 {}
 === Test multi_line.17
-00102key:value
+00103key:value
 \key2:value
 :end
 ===
@@ -1611,7 +1626,7 @@ key2\:value
 {}
 {}
 === Test multi_line.18
-00103key:value
+00104key:value
 \:end
 :end
 ===
@@ -1626,7 +1641,7 @@ key2\:value
 {}
 {}
 === Test multi_line.19
-00104key:value
+00105key:value
 \:endthis
 :end
 ===
@@ -1641,7 +1656,7 @@ key2\:value
 {}
 {}
 === Test multi_line.20
-00105key:value
+00106key:value
 \:notacommand
 :end
 ===
@@ -1656,7 +1671,7 @@ key2\:value
 {}
 {}
 === Test multi_line.21
-00106key:value
+00107key:value
 * value
 :end
 ===
@@ -1671,7 +1686,7 @@ key2\:value
 {}
 {}
 === Test multi_line.22
-00107key:value
+00108key:value
 \* value
 :end
 ===
@@ -1686,7 +1701,7 @@ key2\:value
 {}
 {}
 === Test multi_line.23
-00108key:value
+00109key:value
 \{scope}
 :end
 ===
@@ -1701,9 +1716,9 @@ key2\:value
 {}
 {}
 === Test multi_line.26
-00109key:value
+00110key:value
 text
-[00109array]
+[00110array]
 more text
 :end
 ===
@@ -1718,9 +1733,9 @@ more text
 {}
 {}
 === Test multi_line.27
-00110key:value
+00111key:value
 text
-{00110scope}
+{00111scope}
 more text
 :end
 ===
@@ -1735,7 +1750,7 @@ more text
 {}
 {}
 === Test multi_line.28
-00111key:value
+00112key:value
 text
 * value
 more text
@@ -1752,7 +1767,7 @@ more text
 {}
 {}
 === Test multi_line.29
-00112key:value
+00113key:value
 text
 :skip
 :endskip
@@ -1770,7 +1785,7 @@ more text
 {}
 {}
 === Test multi_line.30
-00113key:value
+00114key:value
 \\:end
 :end
 ===
@@ -1785,7 +1800,7 @@ more text
 {}
 {}
 === Test multi_line.31
-00114key:value
+00115key:value
 \\\:end
 :end
 ===
@@ -1800,7 +1815,7 @@ more text
 {}
 {}
 === Test multi_line.32
-00115key:value
+00116key:value
 \:end
 \:ignore
 \:endskip
@@ -1818,7 +1833,7 @@ more text
 {}
 {}
 === Test multi_line.33
-00116key:value
+00117key:value
 Lorem key2\\:value
 :end
 ===
@@ -1832,8 +1847,26 @@ Lorem key2\\:value
 {}
 {}
 {}
+=== Test multi_line.34
+{00118scope}
+00118key:value
+text
+* value
+more text
+:end
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
 === Test scopes.1
-{00117scope}
+{00119scope}
 ===
 :endskip
 []
@@ -1846,7 +1879,7 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.2
-  {00118scope}  
+  {00120scope}  
 ===
 :endskip
 []
@@ -1859,7 +1892,7 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.3
-		{00119scope}		
+		{00121scope}		
 ===
 :endskip
 []
@@ -1872,7 +1905,7 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.4
-{  00120scope  }
+{  00122scope  }
 ===
 :endskip
 []
@@ -1885,7 +1918,7 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.5
-{		00121scope		}
+{		00123scope		}
 ===
 :endskip
 []
@@ -1898,7 +1931,7 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.6
-{00122scope}a
+{00124scope}a
 ===
 :endskip
 []
@@ -1911,8 +1944,8 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.7
-00123key:value
-{00123scope}
+00125key:value
+{00125scope}
 ===
 :endskip
 []
@@ -1925,8 +1958,8 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.8
-{00124scope}
-00124key:value
+{00126scope}
+00126key:value
 ===
 :endskip
 []
@@ -1939,8 +1972,8 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.9
-{00125scope.scope}
-00125key:value
+{00127scope.scope}
+00127key:value
 ===
 :endskip
 []
@@ -1953,11 +1986,11 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.10
-{00126scope}
-00126key:value
+{00128scope}
+00128key:value
 {}
-{00126scope}
-00126other:value
+{00128scope}
+00128other:value
 ===
 :endskip
 []
@@ -1970,39 +2003,9 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.11
-{00127scope.scope}
-00127key:value
-{00127scope.otherscope}
-00127key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-{}
-{}
-{}
-{}
-=== Test scopes.12
-{00128scope}
-{}
-00128key:value
-===
-:endskip
-[]
-[]
-[]
-[]
-{}
-{}
-{}
-{}
-{}
-=== Test scopes.13
-{00129scope}
-{  }
+{00129scope.scope}
+00129key:value
+{00129scope.otherscope}
 00129key:value
 ===
 :endskip
@@ -2015,9 +2018,9 @@ Lorem key2\\:value
 {}
 {}
 {}
-=== Test scopes.14
+=== Test scopes.12
 {00130scope}
-{		}
+{}
 00130key:value
 ===
 :endskip
@@ -2030,9 +2033,9 @@ Lorem key2\\:value
 {}
 {}
 {}
-=== Test scopes.15
+=== Test scopes.13
 {00131scope}
-  {}  
+{  }
 00131key:value
 ===
 :endskip
@@ -2045,9 +2048,9 @@ Lorem key2\\:value
 {}
 {}
 {}
-=== Test scopes.16
+=== Test scopes.14
 {00132scope}
-		{}		
+{		}
 00132key:value
 ===
 :endskip
@@ -2060,10 +2063,40 @@ Lorem key2\\:value
 {}
 {}
 {}
+=== Test scopes.15
+{00133scope}
+  {}  
+00133key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test scopes.16
+{00134scope}
+		{}		
+00134key:value
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
 === Test scopes.17
-00133key: value
-{00133key}
-00133subkey: subvalue
+00135key: value
+{00135key}
+00135subkey: subvalue
 ===
 :endskip
 []
@@ -2076,12 +2109,12 @@ Lorem key2\\:value
 {}
 {}
 === Test scopes.18
-{00134scope1}
-00134key1: value1
-{00134scope2}
-00134key2: value2
+{00136scope1}
+00136key1: value1
+{00136scope2}
+00136key2: value2
 {}
-00134key:value
+00136key:value
 ===
 :endskip
 []
@@ -2095,7 +2128,7 @@ Lorem key2\\:value
 {}
 === Test skip.0
   :skip  
-00135key:value
+00137key:value
 :endskip
 ===
 :endskip
@@ -2110,7 +2143,7 @@ Lorem key2\\:value
 {}
 === Test skip.1
 		:skip		
-00136key:value
+00138key:value
 :endskip
 ===
 :endskip
@@ -2125,7 +2158,7 @@ Lorem key2\\:value
 {}
 === Test skip.2
 :skip
-00137key:value
+00139key:value
   :endskip  
 ===
 :endskip
@@ -2140,7 +2173,7 @@ Lorem key2\\:value
 {}
 === Test skip.3
 :skip
-00138key:value
+00140key:value
 		:endskip		
 ===
 :endskip
@@ -2156,7 +2189,7 @@ Lorem key2\\:value
 === Test skip.4
 :skip
 :endskip
-00139key:value
+00141key:value
 ===
 :endskip
 []
@@ -2170,7 +2203,7 @@ Lorem key2\\:value
 {}
 === Test skip.5
 :sKiP
-00140key:value
+00142key:value
 :eNdSkIp
 ===
 :endskip
@@ -2185,7 +2218,7 @@ Lorem key2\\:value
 {}
 === Test skip.6
 :skipthis
-00141key:value
+00143key:value
 :endskip
 ===
 :endskip
@@ -2200,7 +2233,7 @@ Lorem key2\\:value
 {}
 === Test skip.7
 :skip this text  
-00142key:value
+00144key:value
 :endskip
 ===
 :endskip
@@ -2215,7 +2248,7 @@ Lorem key2\\:value
 {}
 === Test skip.8
 :skip	this text		
-00143key:value
+00145key:value
 :endskip
 ===
 :endskip
@@ -2231,7 +2264,7 @@ Lorem key2\\:value
 === Test skip.9
 :skip
 :endskiptheabove
-00144key:value
+00146key:value
 ===
 :endskip
 []
@@ -2246,7 +2279,7 @@ Lorem key2\\:value
 === Test skip.10
 :skip
 :endskip the above
-00145key:value
+00147key:value
 ===
 :endskip
 []
@@ -2261,7 +2294,7 @@ Lorem key2\\:value
 === Test skip.11
 :skip
 :endskip	the above
-00146key:value
+00148key:value
 ===
 :endskip
 []
@@ -2276,7 +2309,7 @@ Lorem key2\\:value
 === Test skip.12
 :skip
 :end	the above
-00147key:value
+00149key:value
 ===
 :endskip
 []
@@ -2289,11 +2322,11 @@ Lorem key2\\:value
 {}
 {}
 === Test skip.13
-00148key1:value1
+00150key1:value1
 :skip
-00148other:value
+00150other:value
 :endskip
-00148key2:value2
+00150key2:value2
 ===
 :endskip
 []
@@ -2320,8 +2353,65 @@ Lorem key2\\:value
 {}
 {}
 {}
+=== Test unicode.2
+{π}
+00152value: 3.14159
+00152name: Pi
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test unicode.3
+[π]
+00153value: 3.14159
+00153name: Pi
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test unicode.4
+🐶.🐮: cow
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
+=== Test unicode.5
+[+🐮]
+This text belongs to a cow.
+===
+:endskip
+[]
+[]
+[]
+[]
+{}
+{}
+{}
+{}
+{}
 === Test values.1
-00150key:value
+00156key:value
 ===
 :endskip
 []
@@ -2334,7 +2424,7 @@ Lorem key2\\:value
 {}
 {}
 === Test values.2
-  00151key  :value
+  00157key  :value
 ===
 :endskip
 []
@@ -2347,7 +2437,7 @@ Lorem key2\\:value
 {}
 {}
 === Test values.3
-		00152key		:value
+		00158key		:value
 ===
 :endskip
 []
@@ -2360,7 +2450,7 @@ Lorem key2\\:value
 {}
 {}
 === Test values.4
-00153key:  value  
+00159key:  value  
 ===
 :endskip
 []
@@ -2373,7 +2463,7 @@ Lorem key2\\:value
 {}
 {}
 === Test values.5
-00154key:		value		
+00160key:		value		
 ===
 :endskip
 []
@@ -2386,8 +2476,8 @@ Lorem key2\\:value
 {}
 {}
 === Test values.6
-00155key:value
-00155key:newvalue
+00161key:value
+00161key:newvalue
 ===
 :endskip
 []
@@ -2400,7 +2490,7 @@ Lorem key2\\:value
 {}
 {}
 === Test values.7
-00156key::value
+00162key::value
 ===
 :endskip
 []
@@ -2413,8 +2503,8 @@ Lorem key2\\:value
 {}
 {}
 === Test values.8
-00157key: value
-00157Key: Value
+00163key: value
+00163Key: Value
 ===
 :endskip
 []
@@ -2428,7 +2518,7 @@ Lorem key2\\:value
 {}
 === Test values.9
 other stuff
-00158key: value
+00164key: value
 other stuff
 ===
 :endskip
@@ -2442,7 +2532,7 @@ other stuff
 {}
 {}
 === Test values.10
-00159key: <strong>value</strong>
+00165key: <strong>value</strong>
 ===
 :endskip
 []
