@@ -1,6 +1,9 @@
 html {
   font-family: "nyt-franklin", arial, helvetica, sans-serif;
 }
+ul ul ul {
+  margin-bottom: 0;
+}
 .sidebar-about h1 {
   font-size: 3rem;
 }

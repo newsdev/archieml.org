@@ -101,24 +101,29 @@
 
   <h2 id="resources">Resources</h2>
 
-  <p>There are several parsers that implement the ArchieML spec.</p>
+  <p>Parsers and tools in (hopefully) your language of choice.</p>
 
   <ul>
     <li>
       <strong>JavaScript</strong> Both parsers can be used client-side in the browser, or using Asynchronous Module Definitions (AMD) such as RequireJS, and have test coverage.
       <ul>
         <li>
-          <strong>archieml-js</strong>
+          <strong><a href="https://github.com/newsdev/archieml-js">archieml-js</a></strong>
           <ul>
-            <li><a href="https://github.com/newsdev/archieml-js">Github</a></li>
-            <li><a href="https://www.npmjs.com/package/archieml">Node Package Manager</a></li>
+            <li><a href="https://www.npmjs.com/package/archieml">Node Package Manager (npm)</a></li>
           </ul>
         </li>
         <li>
-          <strong>archieml-peg</strong> (by <a href="http://dundalek.com/">Jakub Dundalek</a>)
-          <ul>
-            <li><a href="https://github.com/dundalek/archieml-peg">Github</a></li>
-          </ul>
+          <strong><a href="https://github.com/dundalek/archieml-peg">archieml-peg</a></strong> (by <a href="http://dundalek.com/">Jakub Dundalek</a>)
+        </li>
+        <li>
+          <strong><a href="https://github.com/newsdev/archieml-loader">archieml-loader</a></strong> is a Webpack loader for ArchieML files.
+        </li>
+        <li>
+          <strong><a href="https://github.com/achavez/grunt-archieml">grunt-archieml</a></strong> (by <a href="https://twitter.com/adchavez">Andrew Chavez</a>)
+        </li>
+        <li>
+          <strong><a href="https://github.com/dallasmorningnews/gulp-archieml">gulp-archieml</a></strong> (by <a href="https://twitter.com/adchavez">Andrew Chavez</a> / The Dallas Morning News)
         </li>
       </ul>
     </li>
@@ -126,11 +131,13 @@
       <strong>Ruby</strong>
       <ul>
         <li>
-          <strong>archieml-ruby</strong> is a Ruby parser for ArchieML. It is available through the RubyGems package manager, and has test coverage.
+          <strong><a href="https://github.com/newsdev/archieml-ruby">archieml-ruby</a></strong> is a Ruby parser for ArchieML. It is available through the RubyGems package manager, and has test coverage.
           <ul>
-            <li><a href="https://github.com/newsdev/archieml-ruby">Github</a></li>
             <li><a href="https://rubygems.org/gems/archieml">RubyGems</a></li>
           </ul>
+        </li>
+        <li>
+          <strong><a href="https://github.com/BBC-News-Labs/stream-cms">stream-cms</a></strong> is an elasticsearch backed archieml-to-json manager (by <a href="https://twitter.com/jacqui">Jacqui Maher</a> / BBC News Labs)
         </li>
       </ul>
     </li>
@@ -138,10 +145,23 @@
       <strong>R</strong>
       <ul>
         <li>
-          <strong>rchie</strong> (by <a href="https://twitter.com/noamross">Noam Ross</a>)
-          <ul>
-            <li><a href="https://github.com/noamross/rchie">Github</a></li>
-          </ul>
+          <strong><a href="https://github.com/noamross/rchie">rchie</a></strong> (by <a href="https://twitter.com/noamross">Noam Ross</a>)
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>.NET/C#</strong>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/partlyhuman/archieml-net">archieml-net</a></strong> (by <a href="https://twitter.com/partlyhuman">Roger Braunstein</a> / Partlyhuman)
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>PHP</strong>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/4d47/php-archieml">php-archieml</a></strong> (by <a href="https://twitter.com/4d47">Mathieu Gagnon</a>)
         </li>
       </ul>
     </li>
@@ -149,11 +169,29 @@
       <strong>Python</strong>
       <ul>
         <li>
-          <strong>archieml-python</strong> (by <a href="https://twitter.com/bravebriankim">Brian Kim</a>)
+          <strong><a href="https://github.com/brainkim/archieml-python">archieml-python</a></strong> (by <a href="https://twitter.com/bravebriankim">Brian Kim</a>)
           <ul>
-            <li><a href="https://github.com/brainkim/archieml-python">Github</a></li>
-            <li><a href="https://pypi.python.org/pypi/archieml/0.1.1">pip</a></li>
+            <li><a href="https://pypi.python.org/pypi/archieml">pip</a></li>
           </ul>
+        </li>
+        <li>
+          <strong><a href="https://github.com/kevinschaul/archieml-python">archieml-python</a></strong> (by <a href="https://twitter.com/kevinschaul">Kevin Schaul</a>)
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Scala</strong>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/maciej/sarchieml">SArchieML</a></strong> (by <a href="https://twitter.com/maciejb">Maciej Biłas</a>)
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>HTML</strong>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/pilgreen/archieml-element">archieml-element</a></strong> is a Polymer 1.0 component for parsing ArchieML content (by <a href="https://twitter.com/jaypilgreen">Jay Pilgreen</a>)
         </li>
       </ul>
     </li>
@@ -161,10 +199,32 @@
       <strong>Clojure</strong>
       <ul>
         <li>
-          <strong>archieclj</strong> (by <a href="https://twitter.com/mihi_tr">Michael Bauer</a>)
+          <strong><a href="https://github.com/mihi-tr/archieclj">archieclj</a></strong> (by <a href="https://twitter.com/mihi_tr">Michael Bauer</a>)
           <ul>
-            <li><a href="https://github.com/mihi-tr/archieclj">Github</a></li>
             <li><a href="https://clojars.org/archieclj">Clojars</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong id="google-docs-plugins">Google Docs Plugins</strong> tools for connecting to Google Drive and parsing documents as ArchieML
+      <ul>
+        <li>
+          <strong><a href="https://github.com/NewsappAJC/grunt-google-archieml">grunt-google-archieml</a></strong> (by <a href="https://twitter.com/ashlynstill">Ashlyn Still</a> / The Atlanta Journal-Constitution)
+          <ul>
+            <li><a href="https://www.npmjs.com/package/grunt-google-archieml">Node Package Manager (npm)</a></li>
+          </ul>
+        </li>
+        <li>
+          <strong><a href="https://github.com/fusioneng/interactive-template">Fusion Interactive Template</a></strong> (by <a href="https://twitter.com/kit__cross">Kit Cross</a> / Fusion)
+        </li>
+        <li>
+          <strong><a href="https://github.com/stuartathompson/node-archieml-boilerplate">node-archieml-boilerplate</a></strong> (by <a href="https://twitter.com/stuartathompson">Stuart Thompson</a> / The Wall Street Journal)
+        </li>
+        <li>
+          <strong><a href="https://github.com/bradoyler/googledoc-to-json">googledoc-to-json</a></strong> (by <a href="https://twitter.com/bradoyler">Brad Oyler</a>)
+          <ul>
+            <li><a href="https://www.npmjs.com/package/googledoc-to-json">Node Package Manager (npm)</a></li>
           </ul>
         </li>
       </ul>
@@ -180,6 +240,8 @@
     <li><a href="https://github.com/newsdev/archieml-js/tree/master#using-with-google-documents">JavaScript example</a></li>
     <li><a href="https://github.com/newsdev/archieml-ruby/tree/master#using-with-google-documents">Ruby example</a></li>
   </ul>
+
+  <p>For more fully-fledged integrations with Google Docs, use one of the <a href="#google-docs-plugins">plugins above</a>.</p>
 
   <hr>
 
