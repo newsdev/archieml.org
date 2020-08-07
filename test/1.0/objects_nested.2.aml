@@ -1,0 +1,7 @@
+test: nested objects can themselves contain nested objects
+result: { "obj": { "subobj": { "subsubobj": { "subsubsubobj": {} } } } }
+
+{obj}
+{.subobj}
+{.subsubobj}
+{.subsubsubobj}

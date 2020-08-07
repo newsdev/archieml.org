@@ -1,0 +1,10 @@
+test: nested objects can serve as the item delimiter key
+result: { "array": [ { "delimiter": { "key": "value" } }, { "delimiter": { "key": "value" } } ] }
+
+[array]
+{.delimiter}
+key: value
+{}
+{.delimiter}
+key: value
+{}

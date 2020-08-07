@@ -1,0 +1,6 @@
+test: object keys beginning with {.dots} create nested objects
+result: {"obj": {"subobj": {"key": "value"}}}
+
+{obj}
+{.subobj}
+key: value

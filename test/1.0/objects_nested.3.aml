@@ -1,0 +1,10 @@
+test: nested objects can contain multiple complex values
+result: { "obj": { "subobj": { "key": "value", "subarray": [ { "key": "value", "key2": "value2", "subsubobj": {} } ] } } }
+
+{obj}
+{.subobj}
+key: value
+[.subarray]
+key: value
+key2: value2
+{.subsubobj}
