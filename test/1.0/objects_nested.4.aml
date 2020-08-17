@@ -1,0 +1,13 @@
+test: objects can be closed to return to the parent level
+result: { "obj": { "parentkey": "value", "subobj": { "subkey": "value", "subsubobj": { "subsubkey": "value" }, "subkey2": "value" }, "parentkey2": "value" } }
+
+{obj}
+parentkey: value
+{.subobj}
+subkey: value
+{.subsubobj}
+subsubkey: value
+{}
+subkey2: value
+{}
+parentkey2: value

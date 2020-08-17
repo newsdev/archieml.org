@@ -1,0 +1,6 @@
+test: nested objects act as top-level objects when not already inside an object
+result: { "subobj": { "key": "value" } }
+
+{.subobj}
+key: value
+{}

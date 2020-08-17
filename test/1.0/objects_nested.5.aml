@@ -1,0 +1,12 @@
+test: nested objects do not affect parent arrays keeping track of the item delimiter key
+result: { "array": [ { "delimiter": "value", "obj": { "key": "value" } }, { "delimiter": "value", "obj": { "key": "value" } } ] }
+
+[array]
+delimiter: value
+{.obj}
+key: value
+{}
+
+delimiter: value
+{.obj}
+key: value
