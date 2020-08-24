@@ -9,7 +9,7 @@
       var respecConfig = {
           specStatus:           "unofficial",
           shortName:            "archieml",
-          publishDate:          "2015-10-15",
+          publishDate:          "2020-08-24",
           logos: [{}],
           editors: [
                 {   name:       "Michael Strickland",
@@ -26,8 +26,10 @@
                     mailto:     "tom.giratikanon@nytimes.com"},
                 {   name:       "Archie Tse",
                     mailto:     "tse@nytimes.com"},
+                {   name:       "John-Michael Murphy",
+                    mailto:     "john-michael.murphy@nytimes.com"},
           ],
-          additionalCopyrightHolders: "Copyright © 2015 The New York Times"
+          additionalCopyrightHolders: "Copyright © 2020 The New York Times"
       };
     </script>
 
@@ -327,7 +329,7 @@
       <section>
         <h3>Nested Object Blocks</h3>
         <p>
-          Nested object block notations removes the redundancies of dot notation.
+          Nested object block notation removes the redundancies of dot notation.
         </p>
   
         <p>
@@ -353,7 +355,7 @@
         </code></pre>
   
         <p>
-          Just like top-level object blocks, <code>{}</code> should end the object and return the parser to the scope the parser held before encountering the nested object. Declaration of any top level object <code>{} [] [+]</code> should close all nested objects and reset the parser back to the top-level scope.
+          Just like top-level object blocks, <code>{}</code> should end the object and return the parser to the scope held before encountering the nested object. Declaration of any top level object <code>{} [] [+]</code> should close all nested objects and reset the parser back to the top-level scope.
         </p>
   
         <pre><code>
