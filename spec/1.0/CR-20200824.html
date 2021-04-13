@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="ReSpec 25.6.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Archie Markup Language (ArchieML) 1.0</title>
+
+
+
+
+  <style>
+    body {
+      background-image: none !important;
+      padding: 0em 1em 2em 2em !important;
+    }
+  </style>
+  <style id="respec-mainstyle">
+    @keyframes pop {
+      0% {
+        transform: scale(1, 1)
+      }
+
+      25% {
+        transform: scale(1.25, 1.25);
+        opacity: .75
+      }
+
+      100% {
+        transform: scale(1, 1)
+      }
+    }
+
+    .hljs {
+      background: 0 0 !important
+    }
+
+    a abbr,
+    h1 abbr,
+    h2 abbr,
+    h3 abbr,
+    h4 abbr,
+    h5 abbr,
+    h6 abbr {
+      border: none
+    }
+
+    dfn {
+      font-weight: 700
+    }
+
+    a.internalDFN {
+      color: inherit;
+      border-bottom: 1px solid #99c;
+      text-decoration: none
+    }
+
+    a.externalDFN {
+      color: inherit;
+      border-bottom: 1px dotted #ccc;
+      text-decoration: none
+    }
+
+    a.bibref {
+      text-decoration: none
+    }
+
+    .respec-offending-element:target {
+      animation: pop .25s ease-in-out 0s 1
+    }
+
+    .respec-offending-element,
+    a[href].respec-offending-element {
+      text-decoration: red wavy underline
+    }
+
+    @supports not (text-decoration:red wavy underline) {
+      .respec-offending-element:not(pre) {
+        display: inline-block
+      }
+
+      .respec-offending-element {
+        background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x
+      }
+    }
+
+    #references :target {
+      background: #eaf3ff;
+      animation: pop .4s ease-in-out 0s 1
+    }
+
+    cite .bibref {
+      font-style: normal
+    }
+
+    code {
+      color: #c63501
+    }
+
+    th code {
+      color: inherit
+    }
+
+    a[href].orcid {
+      padding-left: 4px;
+      padding-right: 4px
+    }
+
+    a[href].orcid>svg {
+      margin-bottom: -2px
+    }
+
+    .toc a,
+    .tof a {
+      text-decoration: none
+    }
+
+    a .figno,
+    a .secno {
+      color: #000
+    }
+
+    ol.tof,
+    ul.tof {
+      list-style: none outside none
+    }
+
+    .caption {
+      margin-top: .5em;
+      font-style: italic
+    }
+
+    table.simple {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border-bottom: 3px solid #005a9c
+    }
+
+    .simple th {
+      background: #005a9c;
+      color: #fff;
+      padding: 3px 5px;
+      text-align: left
+    }
+
+    .simple th a {
+      color: #fff;
+      padding: 3px 5px;
+      text-align: left
+    }
+
+    .simple th[scope=row] {
+      background: inherit;
+      color: inherit;
+      border-top: 1px solid #ddd
+    }
+
+    .simple td {
+      padding: 3px 10px;
+      border-top: 1px solid #ddd
+    }
+
+    .simple tr:nth-child(even) {
+      background: #f0f6ff
+    }
+
+    .section dd>p:first-child {
+      margin-top: 0
+    }
+
+    .section dd>p:last-child {
+      margin-bottom: 0
+    }
+
+    .section dd {
+      margin-bottom: 1em
+    }
+
+    .section dl.attrs dd,
+    .section dl.eldef dd {
+      margin-bottom: 0
+    }
+
+    #issue-summary>ul,
+    .respec-dfn-list {
+      column-count: 2
+    }
+
+    #issue-summary li,
+    .respec-dfn-list li {
+      list-style: none
+    }
+
+    details.respec-tests-details {
+      margin-left: 1em;
+      display: inline-block;
+      vertical-align: top
+    }
+
+    details.respec-tests-details>* {
+      padding-right: 2em
+    }
+
+    details.respec-tests-details[open] {
+      z-index: 999999;
+      position: absolute;
+      border: thin solid #cad3e2;
+      border-radius: .3em;
+      background-color: #fff;
+      padding-bottom: .5em
+    }
+
+    details.respec-tests-details[open]>summary {
+      border-bottom: thin solid #cad3e2;
+      padding-left: 1em;
+      margin-bottom: 1em;
+      line-height: 2em
+    }
+
+    details.respec-tests-details>ul {
+      width: 100%;
+      margin-top: -.3em
+    }
+
+    details.respec-tests-details>li {
+      padding-left: 1em
+    }
+
+    a[href].self-link:hover {
+      opacity: 1;
+      text-decoration: none;
+      background-color: transparent
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      position: relative
+    }
+
+    aside.example .marker>a.self-link {
+      color: inherit
+    }
+
+    h2>a.self-link,
+    h3>a.self-link,
+    h4>a.self-link,
+    h5>a.self-link,
+    h6>a.self-link {
+      border: none;
+      color: inherit;
+      font-size: 83%;
+      height: 2em;
+      left: -1.6em;
+      opacity: .5;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: 0;
+      transition: opacity .2s;
+      width: 2em
+    }
+
+    h2>a.self-link::before,
+    h3>a.self-link::before,
+    h4>a.self-link::before,
+    h5>a.self-link::before,
+    h6>a.self-link::before {
+      content: "§";
+      display: block
+    }
+
+    @media (max-width:767px) {
+      dd {
+        margin-left: 0
+      }
+
+      h2>a.self-link,
+      h3>a.self-link,
+      h4>a.self-link,
+      h5>a.self-link,
+      h6>a.self-link {
+        left: auto;
+        top: auto
+      }
+    }
+
+    @media print {
+      .removeOnSave {
+        display: none
+      }
+    }
+  </style>
+  <meta name="description"
+    content="ArchieML is a text format optimized for human writability. It was designed for users unfamiliar with existing serialization formats, and defines a forgiving, incremental parser that does not throw syntax errors.">
+  <style>
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: .5em;
+      color: #383a42;
+      background: #fafafa
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #717277;
+      font-style: italic
+    }
+
+    .hljs-doctag,
+    .hljs-formula,
+    .hljs-keyword {
+      color: #a626a4
+    }
+
+    .hljs-deletion,
+    .hljs-name,
+    .hljs-section,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #ca4706;
+      font-weight: 700
+    }
+
+    .hljs-literal {
+      color: #0b76c5
+    }
+
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-meta-string,
+    .hljs-regexp,
+    .hljs-string {
+      color: #42803c
+    }
+
+    .hljs-built_in,
+    .hljs-class .hljs-title {
+      color: #9a6a01
+    }
+
+    .hljs-attr,
+    .hljs-number,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-pseudo,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable {
+      color: #986801
+    }
+
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-selector-id,
+    .hljs-symbol,
+    .hljs-title {
+      color: #336ae3
+    }
+
+    .hljs-emphasis {
+      font-style: italic
+    }
+
+    .hljs-strong {
+      font-weight: 700
+    }
+
+    .hljs-link {
+      text-decoration: underline
+    }
+  </style>
+  <style>
+    var {
+      position: relative;
+      cursor: pointer
+    }
+
+    var[data-type]::after,
+    var[data-type]::before {
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none
+    }
+
+    var[data-type]::before {
+      content: "";
+      transform: translateX(-50%);
+      border-width: 4px 6px 0 6px;
+      border-style: solid;
+      border-color: transparent;
+      border-top-color: #000
+    }
+
+    var[data-type]::after {
+      content: attr(data-type);
+      transform: translateX(-50%) translateY(-100%);
+      background: #000;
+      text-align: center;
+      font-family: "Dank Mono", "Fira Code", monospace;
+      font-style: normal;
+      padding: 6px;
+      border-radius: 3px;
+      color: #daca88;
+      text-indent: 0;
+      font-weight: 400
+    }
+
+    var[data-type]:hover::after,
+    var[data-type]:hover::before {
+      opacity: 1
+    }
+  </style>
+  <script id="initialUserConfig" type="application/json">{
+  "specStatus": "unofficial",
+  "shortName": "archieml",
+  "publishDate": "2020-08-24",
+  "logos": [
+    {}
+  ],
+  "editors": [
+    {
+      "name": "Michael Strickland",
+      "company": "The New York Times",
+      "companyUrl": "http://www.nytimes.com",
+      "mailto": "michael.strickland@nytimes.com"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Jeremy Ashkenas",
+      "mailto": "jeremy.ashkenas@nytimes.com"
+    },
+    {
+      "name": "Matthew Ericson",
+      "mailto": "matte@nytimes.com"
+    },
+    {
+      "name": "Tom Giratikanon",
+      "mailto": "tom.giratikanon@nytimes.com"
+    },
+    {
+      "name": "Archie Tse",
+      "mailto": "tse@nytimes.com"
+    },
+    {
+      "name": "John-Michael Murphy",
+      "mailto": "john-michael.murphy@nytimes.com"
+    }
+  ],
+  "additionalCopyrightHolders": "Copyright © 2020 The New York Times",
+  "publishISODate": "2020-08-24T00:00:00.000Z",
+  "generatedSubtitle": "Unofficial Draft 24 August 2020"
+}</script>
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-UD">
+</head>
+
+<body class="h-entry informative">
+  <div class="head">
+    <a class="logo respec-offending-element" href="" title="Found spec logo without an `alt` attribute"
+      id="respec-offender-found-spec-logo-without-an-alt-attribute"><img src="undefined"></a>
+    <h1 id="title" class="title">Archie Markup Language (ArchieML) 1.0</h1>
+
+    <h2>
+      Unofficial Draft
+      <time class="dt-published" datetime="2020-08-24">24 August 2020</time>
+    </h2>
+    <dl>
+
+
+
+
+
+
+
+      <dt>Editor:</dt>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name"
+          href="mailto:michael.strickland@nytimes.com">Michael Strickland</a> (The New York Times) </dd>
+
+      <dt>
+        Authors:
+      </dt>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name"
+          href="mailto:jeremy.ashkenas@nytimes.com">Jeremy Ashkenas</a></dd>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name"
+          href="mailto:matte@nytimes.com">Matthew Ericson</a></dd>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name"
+          href="mailto:tom.giratikanon@nytimes.com">Tom Giratikanon</a></dd>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:tse@nytimes.com">Archie
+          Tse</a></dd>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name"
+          href="mailto:john-michael.murphy@nytimes.com">John-Michael Murphy</a></dd>
+
+    </dl>
+
+
+
+    <p class="copyright">Copyright © 2020 The New York Times</p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory">
+    <h2>Abstract</h2>
+    <p>
+      ArchieML is a text format optimized for human writability. It was designed for users unfamiliar with existing
+      serialization formats, and defines a forgiving, incremental parser that does not throw syntax errors.
+    </p>
+  </section>
+
+  <section id="sotd" class="introductory">
+    <h2>Status of This Document</h2>
+    <p>
+      This document is draft of a potential specification. It has no official
+      standing of any kind and does not represent the support or consensus of
+      any standards organization.
+    </p>
+    <p>
+      This is the first candidate recommendation of the Archie Markup Language specification. It is a pre-release draft
+      of the spec. As such, it can implemented in parsers, however this candidate should not be considered the
+      definition of ArchieML 1.0.
+    </p>
+
+    <p>
+      The public is invited to provide feedback on this draft, either through the <a
+        href="https://github.com/newsdev/archieml.org/issues">Github Issues</a> page for <a
+        href="http://archieml.org">archieml.org</a>, or via email. The comment period on candidate recommendations for
+      the ArchieML 1.0 spec will remain open for at least four weeks following the most recent candidate recommendation.
+    </p>
+
+    <p>
+      At that time, this candidate will either be revised or promoted to a more final state, eventually reaching
+      recommendation status for the 1.0 release. That recommendation will then be considered the definition of ArchieML
+      1.0. Major changes to the spec at that point will not require implementation to be 1.0-compliant.
+    </p>
+
+    <p>
+      Until the release of version 1.0, parsers should note the version of the candidate spec they are following.
+    </p>
+
+    <section>
+      <h3 id="changelog">Changelog<a class="self-link" aria-label="§" href="#changelog"></a></h3>
+
+      <section>
+        <h4 id="x15-october-2015">15 October 2015<a class="self-link" aria-label="§" href="#x15-october-2015"></a></h4>
+        <ul>
+          <li>Added <a href="#freeform-arrays">freeform arrays</a> as a required feature.</li>
+          <li>Clarified how parsers should treat leading backslashes with regards to <a href="#escaping">escaping
+              lines</a>.</li>
+        </ul>
+      </section>
+      <section>
+        <h4 id="x9-may-2015">9 May 2015<a class="self-link" aria-label="§" href="#x9-may-2015"></a></h4>
+        <ul>
+          <li>Marked <a href="#inline-comments-deprecated">inline comments</a> as deprecated, pending removal in v1.0.
+          </li>
+          <li>Added <a href="#nested-arrays">nested arrays</a> as a required feature.</li>
+        </ul>
+      </section>
+      <section>
+        <h4 id="x23-april-2015">23 April 2015<a class="self-link" aria-label="§" href="#x23-april-2015"></a></h4>
+        <ul>
+          <li>Clarification to note <code>:skip</code> blocks, when placed inside a multi-line value, should break up
+            the value, causing only the first line of the value to be stored.</li>
+          <li>Change to how arrays that are defined multiple times are handled. Instead of "reopening" the original
+            array, secondary definitions should replace previous definitions, making duplicate-key behavior of arrays
+            match that of key/value pairs.</li>
+        </ul>
+      </section>
+    </section>
+  </section>
+  <nav id="toc">
+    <h2 class="introductory" id="table-of-contents">Table of Contents</h2>
+    <ol class="toc">
+      <li class="tocline"><a class="tocxref" href="#parsing-overview"><bdi class="secno">1. </bdi>Parsing overview</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#special-tokens"><bdi class="secno">1.1 </bdi>Special tokens</a>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#conflict-resolution"><bdi class="secno">1.2 </bdi>Conflict
+              resolution</a></li>
+          <li class="tocline"><a class="tocxref" href="#parser-options"><bdi class="secno">1.3 </bdi>Parser options</a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#keys"><bdi class="secno">2. </bdi>Keys</a></li>
+      <li class="tocline"><a class="tocxref" href="#values"><bdi class="secno">3. </bdi>Values</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#multi-line-values"><bdi class="secno">3.1 </bdi>Multi-line
+              values</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#escaping"><bdi class="secno">4. </bdi>Escaping</a></li>
+      <li class="tocline"><a class="tocxref" href="#object-blocks"><bdi class="secno">5. </bdi>Object blocks</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#nested-object-blocks"><bdi class="secno">5.1 </bdi>Nested object
+              blocks</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#arrays"><bdi class="secno">6. </bdi>Arrays</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#object-arrays"><bdi class="secno">6.1 </bdi>Object arrays</a>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#string-arrays"><bdi class="secno">6.2 </bdi>String arrays</a>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#nested-arrays"><bdi class="secno">6.3 </bdi>Nested arrays</a>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#freeform-arrays"><bdi class="secno">6.4 </bdi>Freeform
+              arrays</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#inline-comments-deprecated"><bdi class="secno">7. </bdi>Inline
+          comments <small><em>Deprecated</em></small></a></li>
+      <li class="tocline"><a class="tocxref" href="#command-keys"><bdi class="secno">8. </bdi>Command keys</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#end-command"><bdi class="secno">8.1 </bdi>End command</a></li>
+          <li class="tocline"><a class="tocxref" href="#skip-blocks"><bdi class="secno">8.2 </bdi>Skip blocks</a></li>
+          <li class="tocline"><a class="tocxref" href="#ignore"><bdi class="secno">8.3 </bdi>Ignore</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <section class="respec-offending-element"
+    title="Linter (no-headingless-sections): All sections must start with a `h2-6` element. Add a `h2-6` to the offending section or use a `<div>`. See developer console. Occured"
+    id="respec-offender-linter-no-headingless-sections-all-sections-must-start-with-a-h2-6-element-add-a-h2-6-to-the-offending-section-or-use-a-div-see-developer-console-occured">
+    <section>
+      <h3 id="goals">Goals<a class="self-link" aria-label="§" href="#goals"></a></h3>
+
+      <ul>
+        <li>Whitespace should not be signifiant to the document structure.</li>
+        <li>Unstructured text should be ignored, and should not cause parsing errors.</li>
+        <li>Data structures should be familiar to non-programmers, such as arrays denoted by bullet points / asterisks.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="definitions">Definitions<a class="self-link" aria-label="§" href="#definitions"></a></h3>
+
+      <ul>
+        <li>A <strong>token</strong> is defined as either a key, or a namespace for a key, either of which can use any
+          of the following characeters: alphanumeric (upper- and lower-case), hyphens (-) and underscores (_). In
+          addition, periods (.) may be used to specify nested keys or namespaces, but they may not appear at either end
+          of a token.</li>
+        <li>The <strong>output</strong> is an object-like hash of data that will be returned by the parser.</li>
+        <li><strong>Whitespace</strong>, in reference to invisible characters that may be symantically ignored by the
+          parser, can be either spaces or tabs.</li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="parsing-overview">
+    <h2 id="x1-parsing-overview"><bdi class="secno">1. </bdi>Parsing overview<a class="self-link" aria-label="§"
+        href="#parsing-overview"></a></h2>
+
+    <section id="special-tokens">
+      <h3 id="x1-1-special-tokens"><bdi class="secno">1.1 </bdi>Special tokens<a class="self-link" aria-label="§"
+          href="#special-tokens"></a></h3>
+      <p>
+        Parsers should implement a system by which whole lines are interpreted either as a <strong>command
+          line</strong>, or a <strong>plain text line</strong> to be read into a buffer.
+      </p>
+      <p>
+        "Command" lines are defined as those that begin with any of the following general patterns, with
+        <code>token</code> <a href="#definitions">defined as above</a>:
+      </p>
+      <ul>
+        <li><code>token:</code></li>
+        <li><code>:token</code></li>
+        <li><code>{token}</code></li>
+        <li><code>[token]</code></li>
+        <li><code>{}</code></li>
+        <li><code>[]</code></li>
+        <li><code>*</code></li>
+      </ul>
+      <p>
+        Any non-newline whitespace may appear at either end of a token or any of the punctuation used above without
+        affecing the parsing. Special lines should be recognized based on how they start; all text after the patterns
+        mentioned above are valid and should not affect the line's status. For example, each of the following is a valid
+        <code>:token</code> line:
+      </p>
+
+      <pre><code aria-busy="false" class="hljs javascript">
+          :end
+          :end <span class="hljs-built_in">this</span> line
+          :endthisline
+        </code></pre>
+
+      <p>
+        When a command line is found, logic should be executed that <strong>immediately affects the output</strong>. For
+        example, if a key/value pair is encountered, the value specified on that line should immediately be added to the
+        output. A document may end at any time, and the output object should always be in a state ready to be returned
+        by the parser.
+      </p>
+      <p>
+        Based on context, some lines that fit one of the above patterns may not be defined as special; for example,
+        bullet point lines ("* anything") are only special when the parser is inside an array. In these cases (<a
+          href="#string-arrays">defined below</a>), the line should be interpreted as a plain text line.
+      </p>
+      <p>
+        All lines that are not commands are interpreted as plain text. When they are encountered, they should not
+        immediately affect the output in any way. Instead, every plain text line should be incrementally added to a
+        buffer that is used during <a href="#multi-line-values">multi-line value parsing</a>, and emptied whenever a
+        special line is encountered.
+      </p>
+    </section>
+
+    <section id="conflict-resolution">
+      <h3 id="x1-2-conflict-resolution"><bdi class="secno">1.2 </bdi>Conflict resolution<a class="self-link"
+          aria-label="§" href="#conflict-resolution"></a></h3>
+
+      <p>
+        ArchieML does not throw syntax errors. This is to make parsing of documents as simple as possible, but also to
+        avoid requiring writers be directly aware of the parsing mechanism. Documents are parsed line by line, and any
+        line that does not conform to one of the special line syntaxes above is interpreted as plain text. Syntax errors
+        that cause a command line to be treated as plain text thus do not "break" the parsing of a document, but instead
+        generally omit that line from the output.
+      </p>
+      <p>
+        Many of the command lines are set up to "reset" to document to some state. This generally means that any
+        mistakes that occur in a document remain local, and do not harm the rest of the document.
+      </p>
+      <p>
+        If a key is encountered twice, the latter occurrence should take precedence. Arrays that are defined on top of
+        an existing value or array should also be replaced. Thus, no validation should be made as to whether a key is
+        already taken. In the following example, the <code>output</code> should contain <code>second value</code> as the
+        value for <code>key</code>.
+      </p>
+      <pre><code aria-busy="false" class="hljs">
+          key: first value
+          key: second value
+        </code></pre>
+      <p>
+        A partial exception to this is in defining <a href="#object-blocks">object blocks</a>: if an object already
+        exists as the definition key, the value should not be deleted. In the following example, both <code>first</code>
+        and <code>second</code> should remain defined.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          {scope}
+          first: <span class="hljs-number">1</span>
+          {}
+
+          {scope}
+          second: <span class="hljs-number">2</span>
+          {}
+        </code></pre>
+      <p>
+        When redefining a value, it's possible to change the data structure of the output. For example, a key can change
+        from holding a string to being an object namespace with keys underneath it. In these cases too, the latter
+        definition should take precedence, and parsers must override the existing data structure of the output as
+        necessary to accomodate the new data type (such as replacing a string value with an object). Here, the output
+        should define <code>key</code> as <code>{"subkey": "subvalue"}</code>
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          key: value
+
+          {key}
+          subkey: subvalue
+          {}
+        </code></pre>
+    </section>
+
+    <section id="parser-options">
+      <h3 id="x1-3-parser-options"><bdi class="secno">1.3 </bdi>Parser options<a class="self-link" aria-label="§"
+          href="#parser-options"></a></h3>
+
+      <p>
+        Parsers should accept several options for modifying how documents are processed.
+      </p>
+
+      <ul>
+        <li>Case-sensitivity. By default, keys must be case-sensitive, with the result that one should be able to use
+          the exact key from the AML definition when accessing the key's value from the output. When a key is used as an
+          array's element delimiter, only that precise casing of the key should be used to identify the delimiter. But
+          parsers may allow a case-insensitive mode, in which keys with any casing should overwrite each other if
+          re-encountered, and should be interchangable as element delimiter keys.</li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="keys">
+    <h2 id="x2-keys"><bdi class="secno">2. </bdi>Keys<a class="self-link" aria-label="§" href="#keys"></a></h2>
+
+    <p>
+      Keys, both at the top level of the output, and within nested objects, may contain only alphanumeric characters,
+      hyphens and underscores, in any sequence. If other charactes are included, then the line should not be interpreted
+      as a key/value pair, and instead treated as plain text.
+    </p>
+    <p>
+      Keys are defined wholly or in part within key/value lines, as well as lines defining <code>{objects}</code> and
+      <code>[arrays]</code>. The same rules apply in all cases, and should follow the definition of a <a
+        href="#definitions">token</a> above.
+    </p>
+    <p>
+      Any key may also include any number of periods (<code>.</code>) that function as dot-notation to define nested
+      values. At the time this key or object is defined, the output should conform to the data structure required by
+      that key. Any conflict resolution that needs to take place (such as replacing previous string values with objects)
+      should occur immediately.
+    </p>
+    <p>
+      The following lines are all valid. Successive lines in each group will end up overwriting the previous value with
+      an object, in order to hold the new key.
+    </p>
+    <pre><code aria-busy="false" class="hljs css">
+        key: value
+        key.key: value
+        key.key.key: value
+
+        [array]
+        [array.array]
+        [array.array.array]
+
+        {scope}
+        {scope<span class="hljs-selector-class">.scope</span>}
+        {scope<span class="hljs-selector-class">.scope</span><span class="hljs-selector-class">.scope</span>}
+      </code></pre>
+  </section>
+
+  <section id="values">
+    <h2 id="x3-values"><bdi class="secno">3. </bdi>Values<a class="self-link" aria-label="§" href="#values"></a></h2>
+    <p>
+      Values are the characters that are stored within the output's data structure. Special lines beginning with
+      <code>token:</code> or <code>*</code> define values. Any characters that follow the special beginning of the line
+      should be immediately stored as a value.
+    </p>
+    <p>
+      <strong>Values are always stored in the output as strings</strong>. Leading and trailing whitespace should be
+      stripped away. A value ends when the parser encounters a newline.
+    </p>
+
+    <section id="multi-line-values">
+      <h3 id="x3-1-multi-line-values"><bdi class="secno">3.1 </bdi>Multi-line values<a class="self-link" aria-label="§"
+          href="#multi-line-values"></a></h3>
+
+      <p>
+        All plain-text lines should be stored into a buffer that is emptied whenever any command line is encountered.
+        This is because values that span multiple lines are defined by including an "ending anchor tag",
+        <code>:end</code>, to the line following the value. Thus the parser can not know ahead of time whether lines 2+
+        of a value need to be included, until the value has been defined in full.
+      </p>
+      <pre><code aria-busy="false" class="hljs javascript">
+          <span class="hljs-attr">key</span>: This value should immediately be saved.
+          This will be read into a buffer.
+          So will <span class="hljs-built_in">this</span>.
+          :end Now the buffer should be emptied into <span class="hljs-string">"key"</span>, adding on two additional lines to the value.
+        </code></pre>
+      <p>
+        When a command line beginning with <code>:end</code> is encountered, the buffer should be emptied. If the
+        previous command that was parsed was either a <code>token:</code> or a <code>*</code> line (each of which
+        signals the start of a value), then the contents of the buffer should be appended to that value, which should
+        already contain the first line of the value.
+      </p>
+      <p>
+        Because the first line of a value is always inserted into the output immediately (before the rest of the value
+        is parsed), and surrounding whitespace around the initial values is discarded, care should be taken to preserve
+        newlines between the first and second line of a value. A simple way to accomplish this is to send any trailing
+        newline whitespace from the first line of a value into the buffer, so that it is included when you append the
+        buffer to the value's first line.
+      </p>
+      <p>
+        As characters are added to the buffer, all whitespace should be preserved, including newlines. The end effect
+        should be that leading whitespace on the first line, and trailing whitespace on the last line is discarded, and
+        nothing else.
+      </p>
+    </section>
+  </section>
+
+  <section id="escaping">
+    <h2 id="x4-escaping"><bdi class="secno">4. </bdi>Escaping<a class="self-link" aria-label="§" href="#escaping"></a>
+    </h2>
+
+    <p>
+      If you wish to include a line within a multi-line value that would normally be interpreted as a command line, you
+      can <strong>escape</strong> the line. This is accomplished by prepending the line with a backslash
+      (<code>\</code>). Its presence should prevent the line from being treated as a command, and instead treated as
+      plain text.
+    </p>
+    <p>
+      To accomodate this, leading backslashes must be removed when parsing multi-line values. All lines in a multi-line
+      value (but not the first line, since no escaping of characters is necessary there) should be post-processed to
+      remove these leading backslashes.
+    </p>
+    <p>
+      ArchieML purposefully does not treat escapes as applying to individual characters, but instead to entire lines.
+      Backslashes are treated as escape characters only when they appear at the beginning of a line. Backslashes that
+      appear inside a line must be preserved in the output. In short, leading backslashes should be removed only when
+      the backslash is the first non-whitespace character of a line within a multi-line value (but not the value's first
+      line).
+    </p>
+    <p>
+      Here, the value of <code>key</code> should be <code>value\n:end</code> (backslash removed):
+    </p>
+    <pre><code aria-busy="false" class="hljs">
+        key: value
+        \:end
+        :end
+      </code></pre>
+    <p>
+      Parsers should always remove leading backslashes in these cases, whether or not the line would have been treated
+      as a command without it. As with other commands, whitespace surrounding the leading backslash should not impact
+      whether the line is escaped, and that whitespace should be preserved in the resulting value.
+    </p>
+    <p>
+      Leading backslashes may, in turn, be escaped with an additional leading backslash, preserving the ability to
+      actually begin a line with one in the output.
+    </p>
+  </section>
+
+  <section id="object-blocks">
+    <h2 id="x5-object-blocks"><bdi class="secno">5. </bdi>Object blocks<a class="self-link" aria-label="§"
+        href="#object-blocks"></a></h2>
+
+    <p>
+      Object blocks are a shorthand way to avoid repeating a namespace for multiple keys. You can specify the start of
+      an object block with a line that begins with <code>{token}</code>.
+    </p>
+    <p>
+      All key-value pairs that are defined within this block should be added to the output within the namespace defined
+      by the object line. In other words, a key <code>key</code> within the object block <code>{object}</code> should be
+      parsed the same way as a key defined by <code>object.key</code>.
+    </p>
+    <pre><code aria-busy="false" class="hljs css">
+        These are equivalent:
+
+        {object}
+        key: value
+        {}
+
+        <span class="hljs-selector-tag">object</span><span class="hljs-selector-class">.key</span>: value
+      </code></pre>
+    <p>
+      The namespace defined by an object block should persist until either A) a new object block or array is defined, or
+      B) an empty object or array key (<code>{}</code> or <code>[]</code>) is encountered. This allows for both explicit
+      "closing" of a block, and implicit closing when a new object or array begins.
+    </p>
+    <p>
+      Keys within blocks should be treated exactly as they would if they had been defined naturally through dot
+      notation. Because of this, objects can be "reopened" if an object block is defined more than once (the second
+      definition of a block does not replace the original definition, as in arrays). This is to say, avoiding any
+      conflicts encountered from the <a href="#conflict-resolution">conflict resolution</a> section above, values should
+      always be merged into the output without deleting values unless necessary.
+    </p>
+    <p>
+      As soon as an object is initially opened, an empty object at that key should be added as its value.
+    </p>
+
+    <section id="nested-object-blocks">
+      <h3 id="x5-1-nested-object-blocks"><bdi class="secno">5.1 </bdi>Nested object blocks<a class="self-link"
+          aria-label="§" href="#nested-object-blocks"></a></h3>
+      <p>
+        Nested object block notation removes the redundancies of dot notation.
+      </p>
+
+      <p>
+        Object blocks with names prepended with a period should behave exactly as other object blocks, except their
+        declaration should not close opened objects. Instead, they should nest inside of opened object blocks. The
+        parser should not place any restrictions on nesting depth.
+      </p>
+
+      <pre><code aria-busy="false" class="hljs css">
+          These are equivalent:
+  
+          {scope}
+          key: value
+          {.scope}
+          key: value
+          {.scope}
+          key: value
+  
+          {scope}
+          key: value
+          {scope.scope}
+          key: value
+          {scope.scope.scope}
+          key: value
+        </code></pre>
+
+      <p>
+        Just like top-level object blocks, <code>{}</code> should end the object and return the parser to the scope held
+        before encountering the nested object. Declaration of any top level object <code>{} [] [+]</code> should close
+        all nested objects and reset the parser back to the top-level scope.
+      </p>
+
+      <pre><code aria-busy="false" class="hljs css">
+          {scope}
+          {<span class="hljs-selector-class">.scope</span>}
+          key: value
+          {}
+          key: value
+          {.scope}
+          key: value
+  
+          {newScope}
+          key: value
+        </code></pre>
+
+      <p>
+        This should produce the following structure:
+        <code>{"scope":{"scope":{"key":"value"},"key":"value"},"newScope":{"key":"value"}}</code>.
+      </p>
+
+    </section>
+  </section>
+
+  <section id="arrays">
+    <h2 id="x6-arrays"><bdi class="secno">6. </bdi>Arrays<a class="self-link" aria-label="§" href="#arrays"></a></h2>
+
+    <section id="object-arrays">
+      <h3 id="x6-1-object-arrays"><bdi class="secno">6.1 </bdi>Object arrays<a class="self-link" aria-label="§"
+          href="#object-arrays"></a></h3>
+
+      <p>
+        Arrays of objects can be defined to create multiple instances of an object. They begin by declaring an array
+        line, similar to an object block above; however, arrays use square brackets instead of curly brackets.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[array]</span>
+          item: <span class="hljs-number">1</span>
+          item: <span class="hljs-number">2</span>
+          item: <span class="hljs-number">3</span>
+          []
+        </code></pre>
+      <p>
+        When an array definition is encountered, the parser should immediately create an empty array at the given key.
+      </p>
+      <p>
+        When an array begins, the parser should <strong>take note of the first key</strong> that is defined. This is the
+        element delimiter key. Every time that key is encountered again, the parser should create a new element inside
+        the array, and that key's value, and subsequent values (until a later occurrence of the delimiter key), should
+        be added to that new object.
+      </p>
+      <p>
+        Keys within the array block should be assigned to an object within that array. All rules defined above relating
+        to keys still apply, but within the scope of a particular object inside the array. Keys containing dot-notation
+        are relative to individual items within the array.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[array]</span>
+          scope<span class="hljs-selector-class">.one</span>: <span class="hljs-number">1</span>
+          scope.two: <span class="hljs-number">1</span>
+
+          scope.one: <span class="hljs-number">1</span>
+          scope.two: <span class="hljs-number">1</span>
+          []
+        </code></pre>
+      <p>
+        This example would result in two items, each containing a top-level <code>scope</code> key. This is distinct
+        from the following array, where the resulting items would contain only the top-level keys <code>one</code> and
+        <code>two</code>:
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[array.scope]</span>
+          one: <span class="hljs-number">1</span>
+          two: <span class="hljs-number">1</span>
+
+          one: <span class="hljs-number">1</span>
+          two: <span class="hljs-number">1</span>
+          []
+        </code></pre>
+    </section>
+
+    <section id="string-arrays">
+      <h3 id="x6-2-string-arrays"><bdi class="secno">6.2 </bdi>String arrays<a class="self-link" aria-label="§"
+          href="#string-arrays"></a></h3>
+
+      <p>
+        Arrays can also be created that contain simple strings instead of objects. They begin the same way as object
+        arrays do, and the same rules apply around naming a string array. String arrays contain values defined by lines
+        beginning with <code>*</code>. All characters following an <code>*</code>, minus surrounding whitespace, should
+        be stored as a new value inside the array.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[array]</span>
+          * item <span class="hljs-number">1</span>
+          * item <span class="hljs-number">2</span>
+          * item <span class="hljs-number">3</span>
+          <span class="hljs-selector-attr">[]</span>
+        </code></pre>
+      <p>
+        When an array is opened, the parser should take note of which command line is defined first: either a key/value
+        line, or an asterisk (<code>*</code>) line. If the former is defined first, then the array is defined as an
+        object array. If a <code>*</code> line appears first, it is defined as a string array.
+      </p>
+      <p>
+        Object arrays should treat <code>token:</code> lines as commands, and <code>*</code> lines as plain-text. String
+        arrays should treat <code>token:</code> lines as plain-text and <code>*</code> lines as commands.
+      </p>
+      <p>
+        Multi-line values are allowed within both object and string arrays:
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+        <span class="hljs-selector-attr">[object]</span>
+        key: value...
+        ...with multiple lines.
+        :end
+
+        [object]
+        * value...
+        ...with multiple lines
+        :end
+        </code></pre>
+    </section>
+
+    <section id="nested-arrays">
+      <h3 id="x6-3-nested-arrays"><bdi class="secno">6.3 </bdi>Nested arrays<a class="self-link" aria-label="§"
+          href="#nested-arrays"></a></h3>
+
+      <p>
+        Array elements can also contain nested-arrays (i.e., sub-arrays). To open a nested array, add a <code>.</code>
+        to the front of the array's key: <code>[.subarray]</code>. This signfies that <code>subarray</code> should be an
+        array called <code>subarray</code> within the current array element, instead of closing the current array and
+        opening a new one.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+        <span class="hljs-selector-attr">[array]</span>
+        <span class="hljs-selector-attr">[.subarray]</span>
+        key: value
+        </code></pre>
+      <p>
+        This should produce the following structure: <code>{"array": [{"subarray": [{"key": value"}]}]}</code>.
+      </p>
+      <p>
+        Nested array keys can be mixed freely with normal key/value pairs. Note that subarrays must be closed with empty
+        brackets (<code>[]</code>) in order to "return" to the parent element.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+        <span class="hljs-selector-attr">[array]</span>
+        key: Depth <span class="hljs-number">1</span>
+        [.subarray]
+        subkey: Depth <span class="hljs-number">2</span>
+        [] This returns us to the first element in <span class="hljs-string">"array."</span>
+        anotherkey: Depth <span class="hljs-number">1</span>
+        </code></pre>
+      <p>This should produce a top-level <code>array</code> with three keys: <code>key</code>, <code>subarray</code> and
+        <code>anotherkey</code>.</p>
+      <p>
+        The nested array's key functions the same as regular keys for determining an array's element delimitor. If a
+        nested array <code>subarray</code> is the first key within a parent array, then <code>subarray</code> will
+        become the array's delimitor.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+        <span class="hljs-selector-attr">[array]</span>
+        <span class="hljs-selector-attr">[.subarray]</span> First element
+        key: value
+        []
+        [.subarray] Second element
+        key: value
+        []
+        </code></pre>
+      <p>
+        Here, <code>array</code> will contain two elements, each with its own <code>subarray</code>.
+      </p>
+      <p>
+        Nested arrays can be <strong>either Object or String arrays</strong>, using the same rules as top-level arrays
+        for determining the type. Only object arrays can contain other arrays, but string arrays can exist at any depth
+        level.
+      </p>
+    </section>
+
+    <section id="freeform-arrays">
+      <h3 id="x6-4-freeform-arrays"><bdi class="secno">6.4 </bdi>Freeform arrays<a class="self-link" aria-label="§"
+          href="#freeform-arrays"></a></h3>
+
+      <p>
+        Where Object arrays build up data structures with multiple key/value pairs with no inherent ordering of keys,
+        Freeform arrays preserve the order of every line. Every line within a Freeform array results in an individual
+        object in the array. Sequential lines result in as many elements in the array; the values are not folded into
+        the same object.
+      </p>
+      <p>
+        Each array element is an object with two attributes: <code>type</code> and <code>value</code>. What is normally
+        treated as the <code>key</code> on each line becomes the <code>type</code>.
+      </p>
+      <p>
+        This type of array is useful when you want to tie ArchieML input more directly to the presentation order of
+        content. The order of content can then be directly preserved between the text input and the presentation on a
+        page.
+      </p>
+
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[+array]</span>
+          title: Middlemarch
+          author: George Eliot
+          []
+        </code></pre>
+      <pre><code aria-busy="false" class="hljs css">
+          {array: [
+            {type: <span class="hljs-string">"title"</span>, value: <span class="hljs-string">"Middlemarch"</span>},
+            {type: <span class="hljs-string">"author"</span>, value: <span class="hljs-string">"George Eliot"</span>}
+          ]}
+        </code></pre>
+      <p>
+        In this example, moving <code>title</code> below <code>author</code> changes the output, which is not the case
+        in standard Object arrays.
+      </p>
+
+      <p>
+        Lines of text which do not contain a key are preserved in Freeform arrays, and not ignored as they are in Object
+        arrays. These lines are given a presumed <code>type</code> of <strong>text</strong>. In this sense, Freeform
+        arrays are collections of lines, each of which may or may not be <code>tagged</code> with a type. Lines without
+        a type are given one by default.
+      </p>
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[+array]</span>
+          <span class="hljs-selector-tag">h1</span>: This is a header
+          h2: This is a sub-header
+          This is normal text.
+          []
+        </code></pre>
+      <pre><code aria-busy="false" class="hljs css">
+          {array: [
+            {type: <span class="hljs-string">"h1"</span>, value: <span class="hljs-string">"This is a header"</span>},
+            {type: <span class="hljs-string">"h2"</span>, value: <span class="hljs-string">"This is a sub-header"</span>},
+            {type: <span class="hljs-string">"text"</span>, value: <span class="hljs-string">"This is normal text"</span>}
+          ]}
+        </code></pre>
+
+      <p>
+        To open a Freeform array, prepend the array's key with a <code>+</code> character. This serves as an array
+        modifier similar to the leading <code>.</code> used in nested arrays. That array should then be treated as a
+        freeform array.
+      </p>
+      <p>
+        Freeform arrays can also be nested under other arrays by using both modifiers. The order of the modifiers must
+        not matter.
+      </p>
+
+      <pre><code aria-busy="false" class="hljs css">
+          <span class="hljs-selector-attr">[array]</span>
+            <span class="hljs-selector-attr">[.+nestedFreeform]</span>
+              Nested Freeform <span class="hljs-attribute">content</span>.
+            <span class="hljs-selector-attr">[]</span>
+          <span class="hljs-selector-attr">[]</span>
+        </code></pre>
+    </section>
+
+  </section>
+
+  <section id="inline-comments-deprecated">
+    <h2 id="x7-inline-comments-deprecated"><bdi class="secno">7. </bdi>Inline comments
+      <small><em>Deprecated</em></small><a class="self-link" aria-label="§" href="#inline-comments-deprecated"></a></h2>
+
+    <p>
+      <strong>NOTE: Inline comments have been deprecated. This section will be removed in the 1.0 recommendation. If
+        currently implemented as an option, it should default to off.</strong>
+    </p>
+    <p>
+      Inline comments in ArchieML are modeled after a common syntax in copy editing where editor's notes are placed
+      within square brackets. In this tradition, all text within a matching set of square brackets on a single line,
+      including the brackets, should be ignored by parsers.
+    </p>
+    <p>
+      In the event that square brackets are desired in the final value, a double set of brackets should be used. Parsers
+      should replace sets of double brackets with single sets of brackets in the output. Care should also be taken not
+      to remove text inside single brackets that is surrounded by an additional set of brackets.
+    </p>
+    <pre><code aria-busy="false" class="hljs javascript">
+        <span class="hljs-attr">key</span>: value [inline comment] more value.
+
+        <span class="hljs-attr">key</span>: value [[<span class="hljs-built_in">this</span> will appear <span class="hljs-keyword">in</span> single brackets]] more value.
+      </code></pre>
+    <p>
+      As with other punctuation, surrounding non-newline whitespace should not affect parsing.</p>
+    <p></p>
+    <p>
+      To avoid making assumptions about the end use of the output, whitespace on either side of inline comments is
+      preserved, which may result in extra whitespace after comments have been removed.
+    </p>
+  </section>
+
+  <section id="command-keys">
+    <h2 id="x8-command-keys"><bdi class="secno">8. </bdi>Command keys<a class="self-link" aria-label="§"
+        href="#command-keys"></a></h2>
+    <p>
+      Command keys are defined as any command line matching the <code>:token</code> pattern. Specifically, parsers
+      should only treat this pattern of line as a command if the token begins with any of the following sequences:
+    </p>
+    <ul>
+      <li><code>:skip</code></li>
+      <li><code>:endskip</code></li>
+      <li><code>:end</code></li>
+      <li><code>:ignore</code></li>
+    </ul>
+    <p>
+      Any text after the token should be ignored, and should not affect whether the line is interpreted as a command
+      key. This includes cases where the token and extra characters are not separated by whitespace, such as
+      <code>:ignoreeverything</code> This is so that the intended effect of the command is not lost due to simple syntax
+      errors.
+    </p>
+    <p>
+      Due to this flexibility, care should be taken so that <code>:endskip</code> lines are not interpreted as
+      <code>:end</code> lines.
+    </p>
+    <p>
+      Any unescaped command key should reset the buffer.
+    </p>
+
+    <section id="end-command">
+      <h3 id="x8-1-end-command"><bdi class="secno">8.1 </bdi>End command<a class="self-link" aria-label="§"
+          href="#end-command"></a></h3>
+
+      <p>
+        The specifics of <code>:end</code> command keys are described above in "<a href="#multi-line-values">Multi-line
+          values</a>."
+      </p>
+      <p>
+        It should be noted that <code>:end</code> lines which do not occur after a key/value line or array element line
+        (<code>*</code>) should have no effect on the output.</p>
+      <p></p>
+    </section>
+
+    <section id="skip-blocks">
+      <h3 id="x8-2-skip-blocks"><bdi class="secno">8.2 </bdi>Skip blocks<a class="self-link" aria-label="§"
+          href="#skip-blocks"></a></h3>
+
+      <p>
+        When a line beginning with <code>:skip</code> is encountered, the parser should begin to ignore all lines of
+        text. Plain text lines should not be added to the buffer, and all command lines should be ignored. This is with
+        the exception of two command keys which serve to end the skip block: <code>:endskip</code> (which closes the
+        block and signals to resume normal parsing) or <code>:ignore</code> (which stops parsing altogether).
+      </p>
+      <p>
+        This allows for creating blocks of text where even lines that fit the formal of command lines are ignored and do
+        not affect parsing.
+      </p>
+      <p>
+        <code>:endskip</code> should resume normal parsing. No special actions need be taken upon resuming parsing, and
+        the buffer should be empty at this point.
+      </p>
+    </section>
+
+    <section id="ignore">
+      <h3 id="x8-3-ignore"><bdi class="secno">8.3 </bdi>Ignore<a class="self-link" aria-label="§" href="#ignore"></a>
+      </h3>
+
+      <p>
+        As soon as a line beginning with <code>:ignore</code> is encountered, parsing should stop immediately, and the
+        output should be returned. This is a safety mechanism to allow for a safe comment / scratchpad area that has no
+        chance of ending up in, or affecting, the output.
+      </p>
+    </section>
+  </section>
+
+
+
+
+
+  <p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p>
+  <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+</body>
+
+</html>
