@@ -306,6 +306,7 @@ colors.blue: #00f
 red: #f00
 green: #0f0
 blue: #00f
+{}
 
 {numbers}
 one: 1
@@ -316,18 +317,59 @@ one-hundred: 100
 key: value
 </aml>
 
-  <p>You can end an object with a line beginning with {}, or by beginning a new object. ArchieML is parsed one line at a time, so ending "tags" like {} are never required.</p>
-
-  <p>Dot notation can be used in object namespaces as well:</p>
+  <p>Dot notation can be used in object blocks as well:</p>
 
 <aml>
 {colors.reds}
 crimson: #dc143c
 darkred: #8b0000
+{}
 
 {colors.blues}
 cornflowerblue: #6495ed
 darkblue: #00008b
+{}
+</aml>
+
+  <p>You can close an object by beginning a line with <code>{}</code>. ArchieML is parsed one line at a time, so you can also close an object by opening a new one.</p>
+
+<aml>
+  {colors}
+  red: #f00
+  green: #0f0
+  blue: #00f
+  
+  {numbers}
+  one: 1
+  ten: 10
+  one-hundred: 100
+  {}
+  
+  key: value
+</aml>
+
+  <h3>Nested object blocks</h3>
+
+  <p>Object blocks with names prepened with a period nest inside of open objects instead of ending them. Beginning a line with <code>{}</code> closes a nested object and returns to the parent.</p>
+
+<aml>
+  {colors}
+  red: #f00
+  green: #0f0
+  blue: #00f
+  
+  {.numbers}
+  one: 1
+  ten: 10
+  one-hundred: 100
+  {}
+  
+  nestedKey: nestedValue
+
+  {months}
+  january: 0
+  february: 1
+  
 </aml>
 
   <h3>Arrays of objects</h3>
@@ -387,7 +429,7 @@ Friday!
 key: value
 </aml>
 
-  <p>Unlike top-level arrays, nested arrays must be "closed" with empty brackets in order to move up to the parent level.</p>
+  <p>Much like nested object blocks, nested arrays must be "closed" with empty brackets in order to move up to the parent level.</p>
 
 <aml>
 [days]

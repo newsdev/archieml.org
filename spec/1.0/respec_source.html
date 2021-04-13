@@ -9,7 +9,7 @@
       var respecConfig = {
           specStatus:           "unofficial",
           shortName:            "archieml",
-          publishDate:          "2015-10-15",
+          publishDate:          "2020-08-24",
           logos: [{}],
           editors: [
                 {   name:       "Michael Strickland",
@@ -26,8 +26,10 @@
                     mailto:     "tom.giratikanon@nytimes.com"},
                 {   name:       "Archie Tse",
                     mailto:     "tse@nytimes.com"},
+                {   name:       "John-Michael Murphy",
+                    mailto:     "john-michael.murphy@nytimes.com"},
           ],
-          additionalCopyrightHolders: "Copyright © 2015 The New York Times"
+          additionalCopyrightHolders: "Copyright © 2020 The New York Times"
       };
     </script>
 
@@ -318,11 +320,62 @@
         The namespace defined by an object block should persist until either A) a new object block or array is defined, or B) an empty object or array key (<code>{}</code> or <code>[]</code>) is encountered. This allows for both explicit "closing" of a block, and implicit closing when a new object or array begins.
       </p>
       <p>
-        Keys within blocks should be treated exactly as they would if they had been defined naturally through dot notation. Becase of this, objects can be "reopened" if an object block is defined more than once (the second definition of a block does not replace the original defintion, as in arrays). This is to say, avoiding any conflicts encountered from the <a href="#conflict-resolution">conflict resoution</a> section above, values should always be merged into the output without deleting values unless necessary.
+        Keys within blocks should be treated exactly as they would if they had been defined naturally through dot notation. Because of this, objects can be "reopened" if an object block is defined more than once (the second definition of a block does not replace the original definition, as in arrays). This is to say, avoiding any conflicts encountered from the <a href="#conflict-resolution">conflict resolution</a> section above, values should always be merged into the output without deleting values unless necessary.
       </p>
       <p>
         As soon as an object is initially opened, an empty object at that key should be added as its value.
       </p>
+      
+      <section>
+        <h3>Nested object blocks</h3>
+        <p>
+          Nested object block notation removes the redundancies of dot notation.
+        </p>
+  
+        <p>
+          Object blocks with names prepended with a period should behave exactly as other object blocks, except their declaration should not close opened objects. Instead, they should nest inside of opened object blocks. The parser should not place any restrictions on nesting depth.
+        </p>
+  
+        <pre><code>
+          These are equivalent:
+  
+          {scope}
+          key: value
+          {.scope}
+          key: value
+          {.scope}
+          key: value
+  
+          {scope}
+          key: value
+          {scope.scope}
+          key: value
+          {scope.scope.scope}
+          key: value
+        </code></pre>
+  
+        <p>
+          Just like top-level object blocks, <code>{}</code> should end the object and return the parser to the scope held before encountering the nested object. Declaration of any top level object <code>{} [] [+]</code> should close all nested objects and reset the parser back to the top-level scope.
+        </p>
+  
+        <pre><code>
+          {scope}
+          {.scope}
+          key: value
+          {}
+          key: value
+          {.scope}
+          key: value
+  
+          {newScope}
+          key: value
+        </code></pre>
+  
+        <p>
+          This should produce the following structure: <code>{"scope":{"scope":{"key":"value"},"key":"value"},"newScope":{"key":"value"}}</code>.
+        </p>
+
+      </section>
     </section>
 
     <section>
